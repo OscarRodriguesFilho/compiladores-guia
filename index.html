@@ -112,32 +112,50 @@ section[id]{scroll-margin-top:96px}
 /* ---------- trilhos (diagramas sintáticos animados) ---------- */
 .trilhos{background:#fff;border:1px solid var(--rule);border-radius:12px;overflow:hidden}
 .trilhos .barra{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 22px;border-bottom:1px solid var(--rule);background:var(--sunk)}
-.trilhos .diagramas{padding:8px 0 4px}
-.tri{padding:14px 22px;border-bottom:1px dashed var(--rule);transition:background .2s ease,opacity .2s ease}
-.tri:last-child{border-bottom:0}
-.tri.dormindo{opacity:.4}
-.tri.acordado{background:#f7fbf9}
-.tri-cab{display:flex;align-items:center;gap:11px;margin-bottom:6px}
-.tri-cab .nome{font-family:var(--m);font-size:14px;font-weight:700;color:var(--ink-2)}
-.tri.acordado .tri-cab .nome{color:var(--green)}
-.tri-cab .marca{font-size:10.5px;letter-spacing:1px;text-transform:uppercase;font-weight:700;border-radius:4px;padding:3px 8px;background:var(--mint-2);color:#14583f;opacity:0}
-.tri.acordado .tri-cab .marca{opacity:1}
-.tri svg{max-width:100%;height:auto;display:block;color:#b3c7c4}
-.tri .cx-box rect{fill:#fff;stroke:#8fa8a3;stroke-width:1.8;transition:fill .18s ease,stroke .18s ease}
-.tri .cx-box text{fill:#24483f;font-family:ui-monospace,monospace;font-weight:700;transition:fill .18s ease}
-.tri .cx-box.on rect{fill:#145f46;stroke:#0b4c35;stroke-width:3}
-.tri .cx-box.on text{fill:#fff}
-.tri .cx-box.usado rect{fill:#e0f5e9;stroke:#52a67c}
-.tri .via{stroke:#b3c7c4;stroke-width:2;fill:none;transition:stroke .18s ease,stroke-width .18s ease}
-.tri .via.on{stroke:#145f46;stroke-width:3}
-.tri .pt{fill:#8fa8a3;transition:fill .18s ease}
-.tri .pt.on{fill:#145f46}
-.tri .rot{font-size:10.5px;fill:#5b6d65}
+.tri-corpo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,220px)}
+@media(max-width:900px){.tri-corpo{grid-template-columns:1fr}}
+.tri-lat{padding:18px;background:var(--sunk);border-left:1px solid var(--rule);display:flex;flex-direction:column;gap:16px}
+@media(max-width:900px){.tri-lat{border-left:0;border-top:1px solid var(--rule)}}
 
-.tri-pilha{display:flex;flex-direction:column;gap:4px;font:12.5px/1.5 var(--m)}
-.tri-pilha .q{background:#f2f5f6;border-left:3px solid #acbfba;border-radius:3px;padding:6px 10px;color:var(--ink)}
-.tri-pilha .q:last-child{background:#e1f3e9;border-left-color:var(--green);font-weight:700}
-.tri-pilha .vazia{font-family:var(--f);font-size:13px;color:var(--ink-3)}
+.tri{padding:16px 22px;border-bottom:1px dashed var(--rule);transition:background .2s ease,opacity .25s ease}
+.tri:last-child{border-bottom:0}
+.tri.dormindo{opacity:.32}
+.tri.acordado{background:#f6fbf8}
+.tri-cab{display:flex;align-items:center;gap:11px;margin-bottom:4px}
+.tri-cab .nome{font-family:var(--m);font-size:13.5px;font-weight:700;color:var(--ink-3);letter-spacing:.4px}
+.tri.acordado .tri-cab .nome{color:var(--green)}
+.tri-cab .marca{font-size:10px;letter-spacing:1px;text-transform:uppercase;font-weight:700;border-radius:4px;padding:3px 8px;background:var(--mint-2);color:#14583f;opacity:0;transition:opacity .2s ease}
+.tri.acordado .tri-cab .marca{opacity:1}
+.tri svg{max-width:100%;height:auto;display:block}
+
+/* trilhos e formas */
+.via{stroke:#9fb3b0;stroke-width:1.8;fill:none;transition:stroke .2s ease,stroke-width .2s ease}
+.via.feito{stroke:#7fc4a2;stroke-width:2.2}
+.via.on{stroke:#145f46;stroke-width:3.4}
+.fig rect,.fig circle,.fig ellipse{fill:#fff;stroke:#7d918d;stroke-width:1.8;transition:fill .2s ease,stroke .2s ease,stroke-width .2s ease}
+.fig text{fill:#2b4a44;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-weight:700;transition:fill .2s ease}
+.fig.feito rect,.fig.feito circle,.fig.feito ellipse{fill:#e0f5e9;stroke:#52a67c}
+.fig.on rect,.fig.on circle,.fig.on ellipse{fill:#145f46;stroke:#0b4c35;stroke-width:2.6}
+.fig.on text{fill:#fff}
+.seta{fill:#9fb3b0;transition:fill .2s ease}
+.seta.on{fill:#145f46}
+.rotulo{font-size:10.5px;fill:#7b8c88;font-family:system-ui,sans-serif;font-weight:400}
+
+/* faixas sobre o texto */
+.faixas{padding:16px 22px;border-top:1px solid var(--rule);background:#fff}
+.faixa-txt{font:22px/1.5 var(--m);letter-spacing:.14em;white-space:pre;color:var(--ink)}
+.faixa-txt .fx-ch{transition:color .18s ease}
+.faixa-txt .fx-lido{color:var(--ink-3)}
+.faixa-linha{display:flex;align-items:center;gap:10px;margin-top:5px}
+.faixa-linha .fl-nome{font:10.5px/1 var(--m);font-weight:700;letter-spacing:.6px;width:88px;flex:none;text-align:right;color:var(--fc)}
+.faixa-barras{position:relative;height:15px;flex:1;font:22px/1 var(--m);letter-spacing:.14em}
+.faixa-barras i{position:absolute;top:4px;height:7px;border-radius:2px;background:var(--fc);opacity:.85;animation:cresce .28s ease}
+@keyframes cresce{from{transform:scaleX(.1);opacity:0}to{transform:scaleX(1);opacity:.85}}
+.fl-F{--fc:#bd711d}
+.fl-T{--fc:#215c7a}
+.fl-E{--fc:#14674c}
+.faixas .leg{display:flex;gap:16px;margin-top:12px;font-size:12px;color:var(--ink-2);flex-wrap:wrap}
+.faixas .leg b{display:inline-block;width:20px;height:6px;border-radius:2px;margin-right:6px;vertical-align:middle}
 
 /* ---------- código ---------- */
 .code{background:var(--code);color:var(--code-t);border:0;border-radius:10px;padding:17px 20px;overflow-x:auto;font:13.5px/1.8 var(--m);tab-size:4}
@@ -928,96 +946,136 @@ E  termina 3 + 8 = 11</pre></div>
       <div class="trilhos">
         <div class="barra">
           <span style="font-size:12px;font-weight:650;color:var(--ink-2)">Expressão</span>
-          <input type="text" id="tri-inp" value="3+4*2" spellcheck="false" autocomplete="off">
+          <input type="text" id="tri-inp" value="2+3*4" spellcheck="false" autocomplete="off">
           <div class="presets" id="tri-presets"></div>
         </div>
 
-        <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,230px)">
-          <div class="diagramas">
+        <div class="tri-corpo">
+          <div>
             <div class="tri" id="tri-E">
               <div class="tri-cab"><span class="nome">EXPRESSION</span><span class="marca">percorrendo</span></div>
-              <svg viewBox="0 0 640 128" role="img" aria-label="Diagrama EXPRESSION: entra, chama TERM, e pode sair ou voltar por um laço que passa por mais ou menos.">
-  <circle class="pt" id="e-ini" cx="18" cy="86" r="6"/>
-  <path class="via" id="e-v1" d="M24 86 H72"/>
-  <g class="cx-box" id="e-term"><rect x="72" y="69" width="116" height="34" rx="6"/><text x="130.0" y="91" text-anchor="middle" font-size="13">TERM</text></g>
-  <path class="via" id="e-v2" d="M188 86 H520"/>
-  <path class="via" id="e-v3" d="M520 86 H592"/>
-  <circle class="pt" id="e-fim" cx="604" cy="86" r="6" fill="none" stroke="#8fa8a3" stroke-width="2.5"/>
-  <path class="via" id="e-loop-a" d="M452 86 V34 H386"/>
-  <g class="cx-box" id="e-op"><rect x="246" y="17" width="140" height="34" rx="6"/><text x="316.0" y="39" text-anchor="middle" font-size="13">+   ou   &#8722;</text></g>
-  <path class="via" id="e-loop-b" d="M246 34 H56 V86"/>
-  <circle class="pt" cx="452" cy="86" r="3.5"/>
-  <circle class="pt" cx="56" cy="86" r="3.5"/>
-  <text class="rot" x="322" y="72" text-anchor="middle">o laço volta para ler outro TERM</text>
+              <svg viewBox="0 0 560 232" role="img" aria-label="Diagrama e">
+  <path class="via" id="e-e1" d="M14 52 H98"/>
+  <polygon class="seta" id="e-s1" points="74,47 83,52 74,57"/>
+  <g class="fig" id="e-box"><rect x="120" y="24" width="190" height="56"/><text x="215.0" y="57.0" text-anchor="middle" font-size="14">TERM</text></g>
+  <path class="via" id="e-e2" d="M310 52 H404"/>
+  <path class="via" id="e-sai" d="M404 52 H520"/>
+  <polygon class="seta" id="e-ssai" points="512,47 521,52 512,57"/>
+  <circle class="fig" cx="98" cy="52" r="3.5" style="fill:#7d918d;stroke:none"/>
+  <circle class="fig" cx="404" cy="52" r="3.5" style="fill:#7d918d;stroke:none"/>
+
+  <path class="via" id="e-la" d="M404 52 V128 H350"/>
+  <g class="fig" id="e-opa"><circle cx="300" cy="128" r="26"/><text x="300" y="133" text-anchor="middle" font-size="18">+</text></g>
+  <path class="via" id="e-lb" d="M274 128 H98 V52"/>
+  <polygon class="seta" id="e-sa" points="346,123 337,128 346,133"/>
+  <polygon class="seta" id="e-sb" points="180,123 171,128 180,133"/>
+
+  <path class="via" id="e-lc" d="M404 128 V190 H350"/>
+  <g class="fig" id="e-opb"><circle cx="300" cy="190" r="26"/><text x="300" y="195" text-anchor="middle" font-size="18">&#8722;</text></g>
+  <path class="via" id="e-ld" d="M274 190 H62 V52"/>
+  <polygon class="seta" id="e-sc" points="346,185 337,190 346,195"/>
+  <polygon class="seta" id="e-sd" points="180,185 171,190 180,195"/>
+  <text class="rotulo" x="452" y="132">o laço volta</text>
+  <text class="rotulo" x="452" y="146">para ler outro</text>
+  <text class="rotulo" x="452" y="160">TERM</text>
 </svg>
             </div>
             <div class="tri" id="tri-T">
               <div class="tri-cab"><span class="nome">TERM</span><span class="marca">percorrendo</span></div>
-              <svg viewBox="0 0 640 128" role="img" aria-label="Diagrama TERM: entra, chama FACTOR, e pode sair ou voltar por um laço que passa por vezes ou dividido.">
-  <circle class="pt" id="t-ini" cx="18" cy="86" r="6"/>
-  <path class="via" id="t-v1" d="M24 86 H72"/>
-  <g class="cx-box" id="t-factor"><rect x="72" y="69" width="116" height="34" rx="6"/><text x="130.0" y="91" text-anchor="middle" font-size="13">FACTOR</text></g>
-  <path class="via" id="t-v2" d="M188 86 H520"/>
-  <path class="via" id="t-v3" d="M520 86 H592"/>
-  <circle class="pt" id="t-fim" cx="604" cy="86" r="6" fill="none" stroke="#8fa8a3" stroke-width="2.5"/>
-  <path class="via" id="t-loop-a" d="M452 86 V34 H386"/>
-  <g class="cx-box" id="t-op"><rect x="246" y="17" width="140" height="34" rx="6"/><text x="316.0" y="39" text-anchor="middle" font-size="13">*   ou   /</text></g>
-  <path class="via" id="t-loop-b" d="M246 34 H56 V86"/>
-  <circle class="pt" cx="452" cy="86" r="3.5"/>
-  <circle class="pt" cx="56" cy="86" r="3.5"/>
-  <text class="rot" x="322" y="72" text-anchor="middle">o laço volta para ler outro FACTOR</text>
+              <svg viewBox="0 0 560 232" role="img" aria-label="Diagrama t">
+  <path class="via" id="t-e1" d="M14 52 H98"/>
+  <polygon class="seta" id="t-s1" points="74,47 83,52 74,57"/>
+  <g class="fig" id="t-box"><rect x="120" y="24" width="190" height="56"/><text x="215.0" y="57.0" text-anchor="middle" font-size="14">FACTOR</text></g>
+  <path class="via" id="t-e2" d="M310 52 H404"/>
+  <path class="via" id="t-sai" d="M404 52 H520"/>
+  <polygon class="seta" id="t-ssai" points="512,47 521,52 512,57"/>
+  <circle class="fig" cx="98" cy="52" r="3.5" style="fill:#7d918d;stroke:none"/>
+  <circle class="fig" cx="404" cy="52" r="3.5" style="fill:#7d918d;stroke:none"/>
+
+  <path class="via" id="t-la" d="M404 52 V128 H350"/>
+  <g class="fig" id="t-opa"><circle cx="300" cy="128" r="26"/><text x="300" y="133" text-anchor="middle" font-size="18">*</text></g>
+  <path class="via" id="t-lb" d="M274 128 H98 V52"/>
+  <polygon class="seta" id="t-sa" points="346,123 337,128 346,133"/>
+  <polygon class="seta" id="t-sb" points="180,123 171,128 180,133"/>
+
+  <path class="via" id="t-lc" d="M404 128 V190 H350"/>
+  <g class="fig" id="t-opb"><circle cx="300" cy="190" r="26"/><text x="300" y="195" text-anchor="middle" font-size="18">/</text></g>
+  <path class="via" id="t-ld" d="M274 190 H62 V52"/>
+  <polygon class="seta" id="t-sc" points="346,185 337,190 346,195"/>
+  <polygon class="seta" id="t-sd" points="180,185 171,190 180,195"/>
+  <text class="rotulo" x="452" y="132">o laço volta</text>
+  <text class="rotulo" x="452" y="146">para ler outro</text>
+  <text class="rotulo" x="452" y="160">FACTOR</text>
 </svg>
             </div>
             <div class="tri" id="tri-F">
               <div class="tri-cab"><span class="nome">FACTOR</span><span class="marca">percorrendo</span></div>
-              <svg viewBox="0 0 640 210" role="img" aria-label="Diagrama FACTOR: três caminhos alternativos — um número, um operador unário seguido de FACTOR, ou um parêntese contendo EXPRESSION.">
-  <circle class="pt" id="f-ini" cx="18" cy="104" r="6"/>
-  <path class="via" id="f-v1" d="M24 104 H56"/>
+              <svg viewBox="0 0 700 300" role="img" aria-label="Diagrama FACTOR com três caminhos alternativos">
+  <path class="via" id="f-e1" d="M14 44 H66"/>
+  <polygon class="seta" id="f-s0" points="56,39 65,44 56,49"/>
+  <path class="via" id="f-espinha" d="M66 44 V254"/>
 
-  <path class="via" id="f-b1" d="M56 104 V34 H150"/>
-  <g class="cx-box" id="f-num"><rect x="150" y="17" width="130" height="34" rx="6"/><text x="215.0" y="39" text-anchor="middle" font-size="13">NUMBER</text></g>
-  <path class="via" id="f-b1b" d="M280 34 H560 V104"/>
+  <path class="via" id="f-b1" d="M66 44 H292"/>
+  <polygon class="seta" id="f-s1" points="284,39 293,44 284,49"/>
+  <g class="fig" id="f-num"><ellipse cx="370" cy="44" rx="78" ry="30"/><text x="370" y="49" text-anchor="middle" font-size="14">number</text></g>
+  <path class="via" id="f-b1b" d="M448 44 H596"/>
 
-  <path class="via" id="f-b2" d="M56 104 H150"/>
-  <g class="cx-box" id="f-un"><rect x="150" y="87" width="120" height="34" rx="6"/><text x="210.0" y="109" text-anchor="middle" font-size="13">+   ou   &#8722;</text></g>
-  <path class="via" id="f-b2m" d="M270 104 H304"/>
-  <g class="cx-box" id="f-unf"><rect x="304" y="87" width="120" height="34" rx="6"/><text x="364.0" y="109" text-anchor="middle" font-size="13">FACTOR</text></g>
-  <path class="via" id="f-b2b" d="M424 104 H560"/>
+  <path class="via" id="f-b2a" d="M66 118 H150"/>
+  <polygon class="seta" id="f-s2" points="142,113 151,118 142,123"/>
+  <g class="fig" id="f-mais"><circle cx="176" cy="118" r="26"/><text x="176" y="123" text-anchor="middle" font-size="18">+</text></g>
+  <path class="via" id="f-b2c" d="M202 118 H246"/>
+  <path class="via" id="f-b2d" d="M66 180 H150"/>
+  <polygon class="seta" id="f-s3" points="142,175 151,180 142,185"/>
+  <g class="fig" id="f-menos"><circle cx="176" cy="180" r="26"/><text x="176" y="185" text-anchor="middle" font-size="18">&#8722;</text></g>
+  <path class="via" id="f-b2e" d="M202 180 H246 V118"/>
+  <polygon class="seta" id="f-s4" points="241,126 246,117 251,126"/>
+  <path class="via" id="f-b2f" d="M246 118 H292"/>
+  <polygon class="seta" id="f-s5" points="284,113 293,118 284,123"/>
+  <g class="fig" id="f-fac"><rect x="292" y="90" width="170" height="56"/><text x="377.0" y="123.0" text-anchor="middle" font-size="14">FACTOR</text></g>
+  <path class="via" id="f-b2g" d="M462 118 H596"/>
 
-  <path class="via" id="f-b3" d="M56 104 V176 H128"/>
-  <g class="cx-box" id="f-ab"><rect x="128" y="159" width="44" height="34" rx="6"/><text x="150.0" y="181" text-anchor="middle" font-size="16">(</text></g>
-  <path class="via" id="f-b3m" d="M172 176 H212"/>
-  <g class="cx-box" id="f-expr"><rect x="212" y="159" width="150" height="34" rx="6"/><text x="287.0" y="181" text-anchor="middle" font-size="13">EXPRESSION</text></g>
-  <path class="via" id="f-b3n" d="M362 176 H402"/>
-  <g class="cx-box" id="f-fe"><rect x="402" y="159" width="44" height="34" rx="6"/><text x="424.0" y="181" text-anchor="middle" font-size="16">)</text></g>
-  <path class="via" id="f-b3b" d="M446 176 H560 V104"/>
+  <path class="via" id="f-b3a" d="M66 254 H126"/>
+  <polygon class="seta" id="f-s6" points="118,249 127,254 118,259"/>
+  <g class="fig" id="f-ab"><circle cx="152" cy="254" r="26"/><text x="152" y="259" text-anchor="middle" font-size="18">(</text></g>
+  <path class="via" id="f-b3b" d="M178 254 H228"/>
+  <polygon class="seta" id="f-s7" points="220,249 229,254 220,259"/>
+  <g class="fig" id="f-expr"><rect x="228" y="226" width="196" height="56"/><text x="326.0" y="259.0" text-anchor="middle" font-size="14">EXPRESSION</text></g>
+  <path class="via" id="f-b3c" d="M424 254 H484"/>
+  <polygon class="seta" id="f-s8" points="476,249 485,254 476,259"/>
+  <g class="fig" id="f-fe"><circle cx="510" cy="254" r="26"/><text x="510" y="259" text-anchor="middle" font-size="18">)</text></g>
+  <path class="via" id="f-b3d" d="M536 254 H596"/>
 
-  <path class="via" id="f-v2" d="M560 104 H592"/>
-  <circle class="pt" id="f-fim" cx="604" cy="104" r="6" fill="none" stroke="#8fa8a3" stroke-width="2.5"/>
-  <circle class="pt" cx="56" cy="104" r="3.5"/>
-  <circle class="pt" cx="560" cy="104" r="3.5"/>
-  <text class="rot" x="470" y="28" text-anchor="middle">três caminhos alternativos: escolha um</text>
+  <path class="via" id="f-saida" d="M596 254 V44 H672"/>
+  <polygon class="seta" id="f-s9" points="591,56 596,47 601,56"/>
+  <polygon class="seta" id="f-s10" points="664,39 673,44 664,49"/>
+  <circle class="fig" cx="66" cy="44" r="3.5" style="fill:#7d918d;stroke:none"/>
+  <circle class="fig" cx="596" cy="44" r="3.5" style="fill:#7d918d;stroke:none"/>
 </svg>
             </div>
           </div>
-          <div style="padding:18px;background:var(--sunk);border-left:1px solid var(--rule);display:flex;flex-direction:column;gap:16px">
-            <div class="bloco">
-              <div class="eyebrow">Token atual</div>
-              <div id="tri-tok"></div>
-            </div>
-            <div class="bloco">
-              <div class="eyebrow">Trilhos abertos</div>
-              <div class="tri-pilha" id="tri-pilha"></div>
-            </div>
-            <div class="bloco">
-              <div class="eyebrow">Resultado parcial</div>
-              <div id="tri-res"></div>
-            </div>
+          <div class="tri-lat">
+            <div class="bloco"><div class="eyebrow">Token atual</div><div id="tri-tok"></div></div>
+            <div class="bloco"><div class="eyebrow">Diagramas abertos</div><div class="tri-pilha" id="tri-pilha"></div></div>
+            <div class="bloco"><div class="eyebrow">Resultado parcial</div><div id="tri-res"></div></div>
+          </div>
+        </div>
+
+        <div class="faixas">
+          <div class="eyebrow" style="margin-bottom:10px">Que pedaço do texto cada diagrama cobre</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <span style="width:88px;flex:none"></span>
+            <div class="faixa-txt" id="tri-texto"></div>
+          </div>
+          <div id="tri-faixas"></div>
+          <div class="leg">
+            <span><b style="background:#bd711d"></b>FACTOR</span>
+            <span><b style="background:#215c7a"></b>TERM</span>
+            <span><b style="background:#14674c"></b>EXPRESSION</span>
           </div>
         </div>
 
         <div class="narra" style="padding:14px 22px;border-top:1px solid var(--rule);margin:0">
-          <span class="selo parse" id="tri-selo">&#8212;</span>
+          <span class="selo parse" id="tri-selo">passo</span>
           <span class="txt"><span class="l1" id="tri-n1">&#8212;</span><span class="l2" id="tri-n2"></span></span>
         </div>
 
@@ -1038,6 +1096,9 @@ E  termina 3 + 8 = 11</pre></div>
       </div>
 
       <div class="passo-n"><span class="bola">3</span><h3>Operadores unários</h3></div>
+
+
+
       <p class="prose">Em <code class="inl">-3</code>, o <code class="inl">-</code> não é subtração entre dois operandos: ele se aplica diretamente ao <code class="inl">3</code>. Por isso a gramática permite <code class="inl">FACTOR &#8594; "-" FACTOR</code> e <code class="inl">FACTOR &#8594; "+" FACTOR</code>.</p>
       <p class="prose">E como <code class="inl">FACTOR</code> chama outro <code class="inl">FACTOR</code>, construções como <code class="inl">--3</code>, <code class="inl">+-3</code> e <code class="inl">+--++3</code> funcionam <strong>sem nenhum código específico</strong> para unários encadeados. É recursão fazendo o trabalho.</p>
 
@@ -1070,6 +1131,128 @@ esse FACTOR inteiro vira o operando esquerdo do *</pre></div>
         <div class="etapa g">EXPRESSION &#8212; cuida de + e &#8722;</div><div class="liga">&#8595; chama</div>
         <div class="etapa g">TERM &#8212; cuida de * e /</div><div class="liga">&#8595; chama</div>
         <div class="etapa a">FACTOR &#8212; NUMBER | &#177;FACTOR | ( EXPRESSION )</div>
+      </div>
+
+      <div class="passo-n"><span class="bola">&#9679;</span><h3>Para onde a gramática vai</h3></div>
+      <p class="prose">A partir do <strong>Roteiro 5</strong> a linguagem deixa de ser uma expressão solta e vira um <strong>programa</strong>: várias linhas, variáveis e saída. Vale ver agora, porque quase tudo que você já entendeu continua igual &#8212; e o que muda, muda pouco.</p>
+
+      <div class="fig-box" style="display:flex;flex-direction:column;gap:26px">
+        <figure>
+          <figcaption style="font-family:var(--m);font-weight:700;color:var(--ink-2);font-size:13px;margin-bottom:-4px">PROGRAM</figcaption>
+          <svg viewBox="0 0 360 120" role="img" aria-label="Diagrama PROGRAM: zero ou mais STMT em laço.">
+  <circle cx="18" cy="78" r="6" fill="#4b5f5b"/>
+  <path class="via" d="M24 78 H64"/><polygon class="seta" points="56,73 65,78 56,83"/>
+  <path class="via" d="M64 78 H104"/>
+  <g class="fig"><rect x="104" y="58" width="130" height="40"/><text x="169.0" y="83.0" text-anchor="middle" font-size="13" font-style="italic">STMT</text></g>
+  <path class="via" d="M234 78 H274"/>
+  <path class="via" d="M274 78 H316"/><polygon class="seta" points="308,73 317,78 308,83"/>
+  <circle cx="330" cy="78" r="7" fill="none" stroke="#4b5f5b" stroke-width="2"/><circle cx="330" cy="78" r="3" fill="#4b5f5b"/>
+  <path class="via" d="M274 78 V38 H64 V78"/><polygon class="seta" points="176,33 167,38 176,43"/>
+</svg>
+          <figcaption>Um programa é <strong>zero ou mais</strong> comandos. Só isso &#8212; e é aqui que o laço mais externo do compilador vai morar.</figcaption>
+        </figure>
+
+        <figure>
+          <figcaption style="font-family:var(--m);font-weight:700;color:var(--ink-2);font-size:13px;margin-bottom:-4px">STMT</figcaption>
+          <svg viewBox="0 0 760 186" role="img" aria-label="Diagrama STMT: atribuição, print, ou nada — e sempre termina em EOL.">
+  <circle cx="16" cy="40" r="6" fill="#4b5f5b"/>
+  <path class="via" d="M22 40 H58"/><polygon class="seta" points="50,35 59,40 50,45"/>
+  <path class="via" d="M58 40 H560"/>
+  <circle cx="58" cy="40" r="3.5" fill="#7d918d"/>
+  <circle cx="560" cy="40" r="3.5" fill="#7d918d"/>
+
+  <path class="via" d="M58 40 V96 H104"/><polygon class="seta" points="96,91 105,96 96,101"/>
+  <g class="fig"><rect x="104" y="76" width="86" height="40" rx="20.0"/><text x="147.0" y="101.0" text-anchor="middle" font-size="13">IDEN</text></g>
+  <path class="via" d="M190 96 H222"/><polygon class="seta" points="214,91 223,96 214,101"/>
+  <g class="fig"><circle cx="246" cy="96" r="22"/><text x="246" y="101" text-anchor="middle" font-size="17">=</text></g>
+  <path class="via" d="M268 96 H304"/><polygon class="seta" points="296,91 305,96 296,101"/>
+  <g class="fig"><rect x="304" y="76" width="118" height="40"/><text x="363.0" y="101.0" text-anchor="middle" font-size="13" font-style="italic">EXPR</text></g>
+  <path class="via" d="M422 96 H560 V40"/>
+
+  <path class="via" d="M58 96 V150 H104"/><polygon class="seta" points="96,145 105,150 96,155"/>
+  <g class="fig"><rect x="104" y="130" width="96" height="40" rx="20.0"/><text x="152.0" y="155.0" text-anchor="middle" font-size="13">PRINT</text></g>
+  <path class="via" d="M200 150 H230"/><polygon class="seta" points="222,145 231,150 222,155"/>
+  <g class="fig"><circle cx="254" cy="150" r="21"/><text x="254" y="155" text-anchor="middle" font-size="17">(</text></g>
+  <path class="via" d="M275 150 H310"/><polygon class="seta" points="302,145 311,150 302,155"/>
+  <g class="fig"><rect x="310" y="130" width="118" height="40"/><text x="369.0" y="155.0" text-anchor="middle" font-size="13" font-style="italic">EXPR</text></g>
+  <path class="via" d="M428 150 H460"/><polygon class="seta" points="452,145 461,150 452,155"/>
+  <g class="fig"><circle cx="484" cy="150" r="21"/><text x="484" y="155" text-anchor="middle" font-size="17">)</text></g>
+  <path class="via" d="M505 150 H560 V40"/>
+  <polygon class="seta" points="555,52 560,43 565,52"/>
+
+  <path class="via" d="M560 40 H612"/><polygon class="seta" points="604,35 613,40 604,45"/>
+  <g class="fig"><rect x="612" y="20" width="74" height="40" rx="20.0"/><text x="649.0" y="45.0" text-anchor="middle" font-size="13">EOL</text></g>
+  <path class="via" d="M686 40 H716"/><polygon class="seta" points="708,35 717,40 708,45"/>
+  <circle cx="730" cy="40" r="7" fill="none" stroke="#4b5f5b" stroke-width="2"/><circle cx="730" cy="40" r="3" fill="#4b5f5b"/>
+</svg>
+          <figcaption>Um comando é uma <strong>atribuição</strong> (<code class="inl">x = EXPR</code>), um <strong>print</strong>, <em>ou nada</em> &#8212; repare na linha reta de cima, que pula os dois e vai direto ao <code class="inl">EOL</code>: é o que permite linha em branco. E todo comando termina em <code class="inl">EOL</code>, o token de fim de linha.</figcaption>
+        </figure>
+
+        <figure>
+          <figcaption style="font-family:var(--m);font-weight:700;color:var(--ink-2);font-size:13px;margin-bottom:-4px">FACTOR &#8212; com uma alternativa a mais</figcaption>
+          <svg viewBox="0 0 700 310" role="img" aria-label="Diagrama FACTOR com quatro caminhos: INT, IDEN, unário seguido de FACTOR, ou parênteses com EXPR.">
+  <circle cx="16" cy="40" r="6" fill="#4b5f5b"/>
+  <path class="via" d="M22 40 H62"/><polygon class="seta" points="54,35 63,40 54,45"/>
+  <path class="via" d="M62 40 V262"/>
+  <circle cx="62" cy="40" r="3.5" fill="#7d918d"/>
+  <circle cx="580" cy="40" r="3.5" fill="#7d918d"/>
+
+  <path class="via" d="M62 40 H216"/><polygon class="seta" points="208,35 217,40 208,45"/>
+  <g class="fig"><rect x="216" y="20" width="104" height="40" rx="20.0"/><text x="268.0" y="45.0" text-anchor="middle" font-size="13">INT</text></g>
+  <path class="via" d="M320 40 H580"/>
+
+  <path class="via" d="M62 104 H216"/><polygon class="seta" points="208,99 217,104 208,109"/>
+  <g class="fig"><rect x="216" y="84" width="104" height="40" rx="20.0"/><text x="268.0" y="109.0" text-anchor="middle" font-size="13">IDEN</text></g>
+  <path class="via" d="M320 104 H580 V40"/>
+
+  <path class="via" d="M62 168 H130"/><polygon class="seta" points="122,163 131,168 122,173"/>
+  <g class="fig"><circle cx="154" cy="168" r="22"/><text x="154" y="173" text-anchor="middle" font-size="17">+</text></g>
+  <path class="via" d="M176 168 H212"/>
+  <path class="via" d="M62 222 H130"/><polygon class="seta" points="122,217 131,222 122,227"/>
+  <g class="fig"><circle cx="154" cy="222" r="22"/><text x="154" y="227" text-anchor="middle" font-size="17">&#8722;</text></g>
+  <path class="via" d="M176 222 H212 V168"/><polygon class="seta" points="207,178 212,169 217,178"/>
+  <path class="via" d="M212 168 H250"/><polygon class="seta" points="242,163 251,168 242,173"/>
+  <g class="fig"><rect x="250" y="148" width="140" height="40"/><text x="320.0" y="173.0" text-anchor="middle" font-size="13" font-style="italic">FACTOR</text></g>
+  <path class="via" d="M390 168 H580 V40"/>
+
+  <path class="via" d="M62 282 H130"/><polygon class="seta" points="122,277 131,282 122,287"/>
+  <g class="fig"><circle cx="154" cy="282" r="21"/><text x="154" y="287" text-anchor="middle" font-size="17">(</text></g>
+  <path class="via" d="M175 282 H214"/><polygon class="seta" points="206,277 215,282 206,287"/>
+  <g class="fig"><rect x="214" y="262" width="128" height="40"/><text x="278.0" y="287.0" text-anchor="middle" font-size="13" font-style="italic">EXPR</text></g>
+  <path class="via" d="M342 282 H386"/><polygon class="seta" points="378,277 387,282 378,287"/>
+  <g class="fig"><circle cx="410" cy="282" r="21"/><text x="410" y="287" text-anchor="middle" font-size="17">)</text></g>
+  <path class="via" d="M431 282 H580 V40"/>
+  <polygon class="seta" points="575,52 580,43 585,52"/>
+
+  <path class="via" d="M580 40 H648"/><polygon class="seta" points="640,35 649,40 640,45"/>
+  <circle cx="664" cy="40" r="7" fill="none" stroke="#4b5f5b" stroke-width="2"/><circle cx="664" cy="40" r="3" fill="#4b5f5b"/>
+</svg>
+          <figcaption>O quarto caminho é novo: além de <code class="inl">INT</code>, unário e parêntese, um fator agora pode ser um <strong><code class="inl">IDEN</code></strong> &#8212; o nome de uma variável. É a única mudança no FACTOR.</figcaption>
+        </figure>
+      </div>
+
+      <div class="nota f-syn">
+        <span class="t">O que NÃO muda &#8212; e é a maior parte</span>
+        <p><code class="inl">EXPR</code> e <code class="inl">TERM</code> são <strong>idênticos</strong> aos que você percorreu acima: mesmo laço, mesmos operadores, mesma precedência. A hierarquia de três níveis que você aprendeu na Aula 6 fica intacta enquanto a linguagem cresce por cima dela. Duas camadas novas aparecem <em>acima</em> (<code class="inl">PROGRAM</code> e <code class="inl">STMT</code>) e uma alternativa nova <em>dentro</em> do <code class="inl">FACTOR</code>.</p>
+      </div>
+
+      <div class="tab-wrap">
+        <table class="tab">
+          <thead><tr><th>o que aparece</th><th>o que significa</th><th>consequência no código</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">PROGRAM</td><td>zero ou mais comandos</td><td>um <code class="inl">while</code> no topo, até o fim do arquivo</td></tr>
+            <tr><td class="mono">STMT</td><td>atribuição, print, ou linha vazia</td><td>novo nível de <code class="inl">parse_statement()</code></td></tr>
+            <tr><td class="mono">IDEN</td><td>nome de variável</td><td>o Lexer passa a reconhecer letras; nó <code class="inl">Identifier</code></td></tr>
+            <tr><td class="mono">EOL</td><td>fim de linha, um token de verdade</td><td>o <code class="inl">\n</code> deixa de ser espaço em branco descartável</td></tr>
+            <tr><td class="mono">=</td><td>atribuição, não comparação</td><td>nó <code class="inl">Assignment</code> com dois filhos</td></tr>
+            <tr><td class="mono">PRINT</td><td>palavra reservada</td><td>o Lexer separa identificadores de palavras-chave</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="nota f-sem">
+        <span class="t">E o que isso exige que a gramática sozinha não dá</span>
+        <p>Com variáveis entra uma pergunta que nenhum diagrama responde: <strong>essa variável foi declarada antes de ser usada?</strong> Sintaticamente <code class="inl">y = x + 1</code> é impecável mesmo que <code class="inl">x</code> nunca tenha existido. É a fronteira formal que a <a href="#t6">hierarquia de Chomsky</a> descreve &#8212; e por isso entra uma <strong>tabela de símbolos</strong>, passada como argumento para o <code class="inl">evaluate()</code>, numa fase semântica separada.</p>
       </div>
 
       <a class="proxima" href="#a7"><span><span class="lbl">Próxima seção</span><span class="tt">Aula 7 · GLC e autômatos de pilha</span></span><span class="seta">&#8594;</span></a>
@@ -4164,148 +4347,152 @@ function repetir(s, n) { var r = ""; for (var k = 0; k < n; k++) r += s; return 
 (function () {
   var elInp = document.getElementById("tri-inp");
   if (!elInp) return;
-  var elTok = document.getElementById("tri-tok"), elPilha = document.getElementById("tri-pilha");
-  var elRes = document.getElementById("tri-res"), elN1 = document.getElementById("tri-n1");
-  var elN2 = document.getElementById("tri-n2"), elConta = document.getElementById("tri-conta");
-  var elSlider = document.getElementById("tri-slider"), elPlay = document.getElementById("tri-play");
-  var elPres = document.getElementById("tri-presets");
+  var q = function (id) { return document.getElementById(id); };
+  var elTok = q("tri-tok"), elPilha = q("tri-pilha"), elRes = q("tri-res");
+  var elN1 = q("tri-n1"), elN2 = q("tri-n2"), elConta = q("tri-conta");
+  var elSlider = q("tri-slider"), elPlay = q("tri-play"), elPres = q("tri-presets");
+  var elTexto = q("tri-texto"), elFaixas = q("tri-faixas"), elSelo = q("tri-selo");
 
   var SY = { "+": "PLUS", "-": "MINUS", "*": "MULT", "/": "DIV", "(": "OPEN_PAR", ")": "CLOSE_PAR" };
   var DGT = "0123456789";
 
-  ["3+4*2", "(2+3)*4", "2*3+4", "-5+1", "4/(1+1)*2"].forEach(function (s) {
+  ["2+3*4", "(2+3)*4", "2*3+4", "-5+1", "4/(1+1)*2"].forEach(function (s) {
     var b = document.createElement("button");
     b.type = "button"; b.className = "preset"; b.textContent = s;
-    b.addEventListener("click", function () { elInp.value = s; recalcular(false); });
+    b.addEventListener("click", function () { elInp.value = s; recalc(false); });
     elPres.appendChild(b);
   });
 
-  function analisar(codigo) {
-    var passos = [], pos = 0, next = null, pilha = [], res = null, erro = null;
+  function analisar(cod) {
+    var passos = [], pos = 0, next = null, iniTok = 0, pilha = [], spans = [], res = null;
 
-    function snap(dg, acesos, usados, l1, l2) {
+    function snap(dg, acesos, l1, l2) {
       passos.push({
-        dg: dg, acesos: acesos || [], usados: (usados || []).slice(),
-        pilha: pilha.slice(), tok: next ? { t: next.type, v: next.value } : null,
-        res: res, l1: l1, l2: l2 || ""
+        dg: dg, acesos: acesos || [], pilha: pilha.slice(), spans: spans.slice(),
+        tok: next ? { t: next.type, v: next.value } : null, pos: iniTok, res: res, l1: l1, l2: l2 || ""
       });
     }
-    var usados = [];
-    function usar(id) { if (usados.indexOf(id) < 0) usados.push(id); }
-
     function sel() {
-      while (pos < codigo.length && /\s/.test(codigo.charAt(pos))) pos++;
-      if (pos >= codigo.length) { next = { type: "EOF", value: "" }; return; }
-      var ch = codigo.charAt(pos);
-      if (SY[ch]) { pos++; next = { type: SY[ch], value: ch }; return; }
-      if (DGT.indexOf(ch) >= 0) {
-        var n = ch; pos++;
-        while (pos < codigo.length && DGT.indexOf(codigo.charAt(pos)) >= 0) { n += codigo.charAt(pos); pos++; }
+      while (pos < cod.length && /\s/.test(cod.charAt(pos))) pos++;
+      iniTok = pos;
+      if (pos >= cod.length) { next = { type: "EOF", value: "" }; return; }
+      var c = cod.charAt(pos);
+      if (SY[c]) { pos++; next = { type: SY[c], value: c }; return; }
+      if (DGT.indexOf(c) >= 0) {
+        var n = c; pos++;
+        while (pos < cod.length && DGT.indexOf(cod.charAt(pos)) >= 0) { n += cod.charAt(pos); pos++; }
         next = { type: "INT", value: parseInt(n, 10) }; return;
       }
-      throw new Error("[Lexer] simbolo invalido: " + ch);
+      throw new Error("[Lexer] simbolo invalido: " + c);
+    }
+    function fecha(nome, ini) {
+      var fim = iniTok;
+      while (fim > ini && /\s/.test(cod.charAt(fim - 1))) fim--;
+      if (fim > ini) spans.push({ n: nome, a: ini, b: fim });
     }
 
     function factor() {
+      var ini = iniTok;
       pilha.push("FACTOR");
-      snap("F", ["f-ini", "f-v1"], usados, "Entrou no trilho FACTOR. Tres caminhos possiveis.", "qual deles? depende do token atual");
-      var tk = next;
-      var v;
+      snap("F", ["f-e1", "f-s0", "f-espinha"], "Entrou no FACTOR. Tres caminhos saem daqui — qual deles depende do token atual.", "FACTOR = number | ±FACTOR | ( EXPRESSION )");
+      var tk = next, v;
       if (tk.type === "INT") {
-        usar("f-num");
-        snap("F", ["f-b1", "f-num"], usados, "Token e um numero: toma o caminho de cima e consome " + tk.value + ".", "FACTOR -> NUMBER");
+        snap("F", ["f-b1", "f-s1", "f-num"], "O token e um numero: caminho de cima. Consome o circulo — isto e um TOKEN, nao uma chamada.", "consome number = " + tk.value);
         sel();
-        snap("F", ["f-b1b", "f-v2", "f-fim"], usados, "Sai do FACTOR devolvendo " + tk.value + ".", "return " + tk.value);
+        snap("F", ["f-b1b", "f-saida", "f-s9", "f-s10"], "Sai do FACTOR devolvendo " + tk.value + ".", "return " + tk.value);
         v = tk.value;
       } else if (tk.type === "PLUS" || tk.type === "MINUS") {
-        usar("f-un");
-        snap("F", ["f-b2", "f-un"], usados, "Token e um operador unario " + tk.value + ": caminho do meio.", "FACTOR -> ('+'|'-') FACTOR");
+        var eh = tk.value === "+";
+        snap("F", eh ? ["f-b2a", "f-s2", "f-mais"] : ["f-b2d", "f-s3", "f-menos"],
+             "O token e o unario " + tk.value + ": caminho do meio.", "consome o circulo " + tk.value);
         sel();
-        snap("F", ["f-b2m", "f-unf"], usados, "O caminho do meio chama o proprio FACTOR - recursao.", "parse_factor()");
+        snap("F", eh ? ["f-b2c", "f-b2f", "f-s5", "f-fac"] : ["f-b2e", "f-s4", "f-b2f", "f-s5", "f-fac"],
+             "O retangulo FACTOR e uma CHAMADA: entra de novo no proprio diagrama.", "parse_factor()  — recursao");
         var a = factor();
-        v = (tk.value === "-") ? -a : a;
-        usar("f-unf");
-        snap("F", ["f-b2b", "f-v2", "f-fim"], usados, "Aplica o " + tk.value + " e sai com " + v + ".", "return " + v);
+        v = eh ? a : -a;
+        snap("F", ["f-b2g", "f-saida", "f-s9", "f-s10"], "Aplica o " + tk.value + " e sai com " + v + ".", "return " + v);
       } else if (tk.type === "OPEN_PAR") {
-        usar("f-ab");
-        snap("F", ["f-b3", "f-ab"], usados, "Token e '(' : caminho de baixo.", "FACTOR -> '(' EXPRESSION ')'");
+        snap("F", ["f-b3a", "f-s6", "f-ab"], "O token e '(' : caminho de baixo. Consome o circulo.", "consome (");
         sel();
-        snap("F", ["f-b3m", "f-expr"], usados, "Volta ao topo da gramatica: um EXPRESSION dentro do parentese.", "parse_expression()");
+        snap("F", ["f-b3b", "f-s7", "f-expr"], "O retangulo EXPRESSION chama o diagrama do topo — volta ao comeco da gramatica.", "parse_expression()");
         v = expr();
         if (next.type !== "CLOSE_PAR") throw new Error("[Parser] esperava ')' e achou " + next.type);
-        usar("f-fe");
-        snap("F", ["f-b3n", "f-fe"], usados, "Fecha o parentese.", "consome ')'");
+        snap("F", ["f-b3c", "f-s8", "f-fe"], "Consome o ')' que fecha.", "consome )");
         sel();
-        snap("F", ["f-b3b", "f-v2", "f-fim"], usados, "Sai do FACTOR com " + v + ".", "return " + v);
+        snap("F", ["f-b3d", "f-saida", "f-s9", "f-s10"], "Sai do FACTOR com " + v + ".", "return " + v);
       } else {
         throw new Error("[Parser] FACTOR nao aceita " + tk.type);
       }
-      pilha.pop();
+      pilha.pop(); fecha("F", ini);
       return v;
     }
 
     function term() {
+      var ini = iniTok;
       pilha.push("TERM");
-      snap("T", ["t-ini", "t-v1", "t-factor"], usados, "Entrou no trilho TERM. Primeiro passo: ir ao FACTOR.", "parse_factor()");
+      snap("T", ["t-e1", "t-s1", "t-box"], "Entrou no TERM. O primeiro retangulo e uma chamada ao FACTOR.", "parse_factor()");
       var r = factor();
-      usar("t-factor");
-      snap("T", ["t-v2"], usados, "Voltou do FACTOR com " + r + ". Ha um * ou / a seguir?", "while next in (MULT, DIV)");
+      snap("T", ["t-e2"], "Voltou do FACTOR com " + r + ". Chegou na bifurcacao: sair, ou tomar o laco?", "while next in (MULT, DIV)");
       while (next.type === "MULT" || next.type === "DIV") {
-        var op = next.value;
-        usar("t-op");
-        snap("T", ["t-loop-a", "t-op"], usados, "Sim: " + op + ". Toma o laco em vez de sair.", "e por isso que * liga mais forte que +");
+        var op = next.value, ehM = op === "*";
+        snap("T", ehM ? ["t-la", "t-sa", "t-opa"] : ["t-lc", "t-sc", "t-opb"],
+             "Ha um " + op + ": desce e toma o laco em vez de sair.", "e por isso que * e / ligam mais forte que + e −");
         sel();
-        snap("T", ["t-loop-b", "t-factor"], usados, "O laco volta para ler outro FACTOR.", "parse_factor()");
+        snap("T", ehM ? ["t-lb", "t-sb", "t-box"] : ["t-ld", "t-sd", "t-box"],
+             "O laco volta para ANTES do retangulo: le outro FACTOR.", "parse_factor()");
         var d = factor();
-        r = (op === "*") ? r * d : Math.floor(r / d);
-        snap("T", ["t-v2"], usados, "TERM calculou " + op + " -> " + r + ". Ha mais?", "result " + (op === "*" ? "*=" : "//=") + " ...");
+        r = ehM ? r * d : Math.floor(r / d);
+        snap("T", ["t-e2"], "TERM calculou " + op + " → " + r + ". Ha mais?", "result " + (ehM ? "*=" : "//=") + " ...");
       }
-      snap("T", ["t-v3", "t-fim"], usados, "Nao ha mais * nem /. Sai do TERM devolvendo " + r + ".", "return " + r);
-      pilha.pop();
+      snap("T", ["t-sai", "t-ssai"], "Nao ha mais * nem /. Sai do TERM com " + r + ".", "return " + r);
+      pilha.pop(); fecha("T", ini);
       return r;
     }
 
     function expr() {
+      var ini = iniTok;
       pilha.push("EXPRESSION");
-      snap("E", ["e-ini", "e-v1", "e-term"], usados, "Entrou no trilho EXPRESSION. Primeiro passo: ir ao TERM.", "parse_term()");
+      snap("E", ["e-e1", "e-s1", "e-box"], "Entrou no EXPRESSION. O primeiro retangulo e uma chamada ao TERM.", "parse_term()");
       var r = term();
-      usar("e-term");
       res = r;
-      snap("E", ["e-v2"], usados, "Voltou do TERM com " + r + ". Ha um + ou - a seguir?", "while next in (PLUS, MINUS)");
+      snap("E", ["e-e2"], "Voltou do TERM com " + r + ". Bifurcacao: sair, ou tomar o laco?", "while next in (PLUS, MINUS)");
       while (next.type === "PLUS" || next.type === "MINUS") {
-        var op = next.value;
-        usar("e-op");
-        snap("E", ["e-loop-a", "e-op"], usados, "Sim: " + op + ". Toma o laco.", "consome o operador");
+        var op = next.value, ehP = op === "+";
+        snap("E", ehP ? ["e-la", "e-sa", "e-opa"] : ["e-lc", "e-sc", "e-opb"],
+             "Ha um " + op + ": desce e toma o laco.", "consome o operador");
         sel();
-        snap("E", ["e-loop-b", "e-term"], usados, "O laco volta para ler outro TERM.", "parse_term()");
+        snap("E", ehP ? ["e-lb", "e-sb", "e-box"] : ["e-ld", "e-sd", "e-box"],
+             "O laco volta para antes do retangulo: le outro TERM.", "parse_term()");
         var d = term();
-        r = (op === "+") ? r + d : r - d;
+        r = ehP ? r + d : r - d;
         res = r;
-        snap("E", ["e-v2"], usados, "EXPRESSION calculou " + op + " -> " + r + ".", "result " + (op === "+" ? "+=" : "-=") + " ...");
+        snap("E", ["e-e2"], "EXPRESSION calculou " + op + " → " + r + ".", "result " + (ehP ? "+=" : "-=") + " ...");
       }
-      snap("E", ["e-v3", "e-fim"], usados, "Nao ha mais + nem -. Sai do EXPRESSION com " + r + ".", "return " + r);
-      pilha.pop();
+      snap("E", ["e-sai", "e-ssai"], "Nao ha mais + nem −. Sai do EXPRESSION com " + r + ".", "return " + r);
+      pilha.pop(); fecha("E", ini);
       return r;
     }
 
+    var erro = null;
     try {
       sel();
       var total = expr();
       if (next.type !== "EOF") throw new Error("[Parser] sobrou " + next.type);
       res = total;
-      snap(null, ["e-fim"], usados, "Chegou ao fim do trilho com a entrada toda consumida. Resultado: " + total + ".", "cadeia valida");
+      snap(null, [], "Percurso completo, entrada toda consumida. Resultado: " + total + ".", "cadeia valida");
     } catch (e) {
       erro = e.message;
-      snap(null, [], usados, erro, "o percurso parou aqui");
+      snap(null, [], erro, "o percurso parou aqui");
     }
-    return { passos: passos, erro: erro };
+    return { passos: passos, erro: erro, cod: cod };
   }
 
-  var est = null, idx = 0, timer = null;
+  var est = null, idx = 0, timer = null, feitos = {};
 
-  function recalcular(aoFim) {
+  function recalc(aoFim) {
     parar();
-    est = analisar(elInp.value);
+    try { est = analisar(elInp.value); }
+    catch (e) { est = { passos: [{ dg: null, acesos: [], pilha: [], spans: [], tok: null, pos: 0, res: null, l1: String(e), l2: "" }], erro: String(e), cod: elInp.value }; }
     elSlider.max = String(Math.max(0, est.passos.length - 1));
     idx = (aoFim === false) ? 0 : est.passos.length - 1;
     Array.prototype.forEach.call(elPres.children, function (b) {
@@ -4321,29 +4508,67 @@ function repetir(s, n) { var r = ""; for (var k = 0; k < n; k++) r += s; return 
     elConta.textContent = "passo " + (idx + 1) + " / " + est.passos.length;
 
     ["E", "T", "F"].forEach(function (d) {
-      var el = document.getElementById("tri-" + d);
+      var el = q("tri-" + d);
       el.classList.toggle("acordado", s.dg === d);
       el.classList.toggle("dormindo", s.dg !== d);
     });
 
-    Array.prototype.forEach.call(document.querySelectorAll(".tri .via, .tri .cx-box, .tri .pt"), function (g) {
-      g.classList.remove("on"); g.classList.remove("usado");
+    /* trilho ja percorrido = acumulado dos passos anteriores do mesmo diagrama */
+    feitos = {};
+    for (var k = 0; k <= idx; k++) {
+      est.passos[k].acesos.forEach(function (id) { feitos[id] = true; });
+    }
+    Array.prototype.forEach.call(document.querySelectorAll(".tri .via, .tri .fig, .tri .seta"), function (g) {
+      g.classList.remove("on"); g.classList.remove("feito");
     });
-    s.usados.forEach(function (id) { var g = document.getElementById(id); if (g) g.classList.add("usado"); });
-    s.acesos.forEach(function (id) { var g = document.getElementById(id); if (g) { g.classList.remove("usado"); g.classList.add("on"); } });
+    Object.keys(feitos).forEach(function (id) { var g = q(id); if (g) g.classList.add("feito"); });
+    s.acesos.forEach(function (id) { var g = q(id); if (g) { g.classList.remove("feito"); g.classList.add("on"); } });
 
     elTok.innerHTML = s.tok
       ? '<span class="tokchip"><strong>' + esc(s.tok.t) + '</strong><span class="v">' + esc(JSON.stringify(s.tok.v)) + "</span></span>"
       : '<span class="tokchip vazio">&#8212;</span>';
 
     elPilha.innerHTML = s.pilha.length
-      ? s.pilha.map(function (q, i) { return '<div class="q" style="margin-left:' + (i * 9) + 'px">' + esc(q) + "</div>"; }).join("")
-      : '<span class="vazia">nenhum trilho aberto</span>';
+      ? s.pilha.map(function (x, i) { return '<div class="q" style="margin-left:' + (i * 9) + 'px">' + esc(x) + "</div>"; }).join("")
+      : '<span class="vazia">nenhum aberto</span>';
 
     elRes.innerHTML = (s.res === null || s.res === undefined)
       ? '<div class="resbox vazio">ainda nao ha</div>'
       : '<div class="resbox">' + esc(s.res) + "</div>";
 
+    /* texto com cursor */
+    var cod = est.cod, html = "";
+    for (var i = 0; i < cod.length; i++) {
+      html += '<span class="fx-ch' + (i < s.pos ? " fx-lido" : "") + '">' + esc(cod.charAt(i) === " " ? " " : cod.charAt(i)) + "</span>";
+    }
+    elTexto.innerHTML = html;
+
+    /* faixas: uma linha por nivel, empilhando as que se sobrepoem */
+    var CH = 22 * 0.6 + 22 * 0.14;   /* largura aproximada de um caractere mono + tracking */
+    var NOMES = { F: "FACTOR", T: "TERM", E: "EXPRESSION" };
+    var out = "";
+    ["F", "T", "E"].forEach(function (n) {
+      var meus = s.spans.filter(function (x) { return x.n === n; });
+      if (!meus.length) return;
+      var linhas = [];
+      meus.slice().sort(function (a, b) { return a.a - b.a || b.b - a.b; }).forEach(function (sp) {
+        for (var li = 0; li < linhas.length; li++) {
+          if (linhas[li].every(function (o) { return sp.b <= o.a || o.b <= sp.a; })) { linhas[li].push(sp); return; }
+        }
+        linhas.push([sp]);
+      });
+      linhas.forEach(function (L, li) {
+        var barras = L.map(function (sp) {
+          return '<i style="left:' + (sp.a * CH) + 'px;width:' + Math.max(6, (sp.b - sp.a) * CH - 4) + 'px"></i>';
+        }).join("");
+        out += '<div class="faixa-linha fl-' + n + '"><span class="fl-nome">' + (li === 0 ? NOMES[n] : "") +
+          '</span><span class="faixa-barras">' + barras + "</span></div>";
+      });
+    });
+    elFaixas.innerHTML = out || '<div class="faixa-linha"><span class="fl-nome"></span><span style="font-size:12.5px;color:var(--ink-3)">nenhum diagrama terminou ainda</span></div>';
+
+    elSelo.textContent = s.dg ? NOMES[s.dg] : (est.erro && idx === est.passos.length - 1 ? "fim" : "fim");
+    elSelo.className = "selo " + (s.dg === "F" ? "eval" : s.dg === "T" ? "parse" : s.dg === "E" ? "lex" : "parse");
     elN1.textContent = s.l1;
     elN2.textContent = s.l2;
   }
@@ -4351,9 +4576,9 @@ function repetir(s, n) { var r = ""; for (var k = 0; k < n; k++) r += s; return 
   function parar() { if (timer) { clearInterval(timer); timer = null; } elPlay.textContent = "▶ Percorrer"; }
   function ir(n) { idx = Math.max(0, Math.min(est.passos.length - 1, n)); pinta(); }
 
-  document.getElementById("tri-prox").addEventListener("click", function () { parar(); ir(idx + 1); });
-  document.getElementById("tri-ant").addEventListener("click", function () { parar(); ir(idx - 1); });
-  document.getElementById("tri-ini").addEventListener("click", function () { parar(); ir(0); });
+  q("tri-prox").addEventListener("click", function () { parar(); ir(idx + 1); });
+  q("tri-ant").addEventListener("click", function () { parar(); ir(idx - 1); });
+  q("tri-ini").addEventListener("click", function () { parar(); ir(0); });
   elSlider.addEventListener("input", function () { parar(); ir(parseInt(elSlider.value, 10)); });
   elPlay.addEventListener("click", function () {
     if (timer) { parar(); return; }
@@ -4362,13 +4587,12 @@ function repetir(s, n) { var r = ""; for (var k = 0; k < n; k++) r += s; return 
     timer = setInterval(function () {
       if (idx >= est.passos.length - 1) { parar(); return; }
       ir(idx + 1);
-    }, 850);
+    }, 900);
   });
-  elInp.addEventListener("input", function () { recalcular(false); });
+  elInp.addEventListener("input", function () { recalc(false); });
 
-  recalcular(true);
+  recalc(true);
 })();
-
 </script>
 
 </body>
