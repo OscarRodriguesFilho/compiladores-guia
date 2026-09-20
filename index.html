@@ -157,6 +157,68 @@ section[id]{scroll-margin-top:96px}
 .faixas .leg{display:flex;gap:16px;margin-top:12px;font-size:12px;color:var(--ink-2);flex-wrap:wrap}
 .faixas .leg b{display:inline-block;width:20px;height:6px;border-radius:2px;margin-right:6px;vertical-align:middle}
 
+
+/* ---------- simulado ---------- */
+.sim-hero{display:flex;justify-content:space-between;gap:28px;align-items:center;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:26px 28px;flex-wrap:wrap}
+.sim-hero .txt{flex:1 1 420px;display:flex;flex-direction:column;gap:8px}
+.sim-hero h3{font-size:23px;letter-spacing:-.5px}
+.sim-hero p{color:var(--ink-2);font-size:14.5px;max-width:720px}
+.sim-placar{min-width:150px;min-height:118px;border-radius:10px;background:var(--mint-l);border:1px solid #bfdcd0;display:grid;place-items:center;text-align:center;color:var(--green);padding:12px}
+.sim-placar strong{font-size:38px;line-height:1;font-variant-numeric:tabular-nums}
+.sim-placar span{display:block;font-size:11px;font-weight:750;letter-spacing:1px;text-transform:uppercase;margin-top:6px}
+.sim-placar small{display:block;font-size:12px;color:var(--ink-2);font-weight:400;letter-spacing:0;text-transform:none;margin-top:3px}
+
+.sim-nav{display:flex;flex-wrap:wrap;gap:8px}
+.sim-nav a{text-decoration:none;border:1px solid #c7d5d3;background:#fff;color:var(--green);border-radius:999px;padding:6px 13px;font-size:13px;font-weight:700}
+.sim-nav a:hover{background:var(--mint-l)}
+
+.bloco-sim{margin-top:34px;scroll-margin-top:96px}
+.bloco-sim>h3{font-size:20px;margin-bottom:4px}
+.bloco-sim>p.intro{color:var(--ink-2);font-size:14.5px;margin-bottom:14px}
+
+.qcard{background:#fff;border:1px solid var(--rule);border-radius:11px;padding:20px 22px;margin-bottom:14px}
+.qcard>header{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:11px}
+.qcard .qn{font-family:var(--m);font-size:12px;font-weight:700;color:var(--green);letter-spacing:.5px}
+.qcard .qv{font-size:12px;background:var(--sunk2);border-radius:5px;padding:3px 9px;color:var(--ink-2);font-weight:650}
+.qcard .qnota{font-size:12px;border-radius:5px;padding:3px 9px;font-weight:700;margin-left:auto}
+.qcard .qnota.bom{background:var(--mint-2);color:#14583f}
+.qcard .qnota.meio{background:#fdf1e0;color:#8a5313}
+.qcard .qnota.ruim{background:var(--err-bg);color:#a04422}
+.qcard .enun{font-size:15.5px;line-height:1.6;color:var(--ink)}
+.qcard .enun em{color:var(--ink-2)}
+
+details.resp{border:1px solid var(--rule);border-radius:9px;background:var(--sunk);margin-top:14px;padding:0 18px}
+details.resp>summary{padding:14px 0;cursor:pointer;font-size:14.5px;font-weight:650;color:var(--green);list-style:none;display:flex;align-items:center;gap:9px}
+details.resp>summary::-webkit-details-marker{display:none}
+details.resp>summary::before{content:"▸";font-size:.85rem}
+details.resp[open]>summary::before{content:"▾"}
+details.resp .corpo{border-top:1px solid var(--rule);padding:16px 0 18px;display:flex;flex-direction:column;gap:13px}
+details.resp .corpo p,details.resp .corpo li{font-size:14.5px;color:var(--ink-2)}
+details.resp .corpo ul,details.resp .corpo ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px}
+details.resp .corpo strong{color:var(--ink)}
+
+.armadilha{border-left:3px solid #a04422;background:#fdf1ec;border-radius:0 8px 8px 0;padding:13px 16px;display:flex;flex-direction:column;gap:5px}
+.armadilha .lbl{font-size:10.5px;letter-spacing:1.1px;text-transform:uppercase;color:#a04422;font-weight:750}
+.armadilha p{font-size:14px;color:var(--ink-2)}
+
+.criterios{border:1px solid var(--rule);border-radius:8px;background:#fff;padding:14px 16px;display:flex;flex-direction:column;gap:9px}
+.criterios .ct{font-size:11px;letter-spacing:1.1px;text-transform:uppercase;color:var(--ink-3);font-weight:750}
+.criterios label{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink-2);cursor:pointer;flex-direction:row;font-weight:400}
+.criterios input[type=checkbox]{margin-top:3px;accent-color:var(--green);width:16px;height:16px;flex:none}
+.criterios label span.pv{margin-left:auto;font-family:var(--m);font-size:12px;color:var(--ink-3);white-space:nowrap;padding-left:12px}
+.criterios label.ok{color:var(--ink)}
+
+.sim-testador{border:1px solid var(--rule);border-radius:9px;background:#fff;padding:16px 18px;display:flex;flex-direction:column;gap:12px}
+.sim-testador .linha{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.sim-testador input[type=text]{font-family:var(--m);font-size:15px;border:1px solid #bfccce;border-radius:6px;padding:8px 11px;width:170px;background:#fff;color:var(--ink)}
+.sim-ver{display:flex;align-items:center;gap:10px;font-weight:650;font-size:14.5px;flex-wrap:wrap}
+.sim-ver .b{font-size:11px;letter-spacing:1px;text-transform:uppercase;border-radius:5px;padding:4px 10px;font-weight:750}
+.sim-ver.sim .b{background:var(--mint-2);color:#14583f}
+.sim-ver.nao .b{background:var(--err-bg);color:#a04422}
+.sim-ver .pq{font-weight:400;color:var(--ink-2)}
+.sim-cadeia{font-family:var(--m);font-size:19px;letter-spacing:.12em}
+.sim-cadeia .troca{color:#a04422;font-weight:700;border-bottom:2px solid #a04422}
+
 /* ---------- código ---------- */
 .code{background:var(--code);color:var(--code-t);border:0;border-radius:10px;padding:17px 20px;overflow-x:auto;font:13.5px/1.8 var(--m);tab-size:4}
 .code pre{margin:0}
@@ -520,6 +582,16 @@ footer.fim{margin-top:44px;padding-top:20px;border-top:1px solid var(--rule);fon
 
     <div class="sn-grupo sn-g-ref">
       <a class="sn-part" href="#ref" data-sec="ref"><span class="rom">IV</span>Referência</a>
+    </div>
+
+    <div class="sn-grupo sn-g-aulas">
+      <a class="sn-part" href="#simulado" data-sec="simulado"><span class="rom">V</span>Simulado</a>
+      <div class="sn-subs">
+        <a class="sn-sub sn-s-syn" href="#sim-a" data-sub="sim-a">Linguagens formais</a>
+        <a class="sn-sub sn-s-lex" href="#sim-b" data-sub="sim-b">Compiladores</a>
+        <a class="sn-sub sn-s-sem" href="#sim-c" data-sub="sim-c">Projeto e paradigmas</a>
+        <a class="sn-sub sn-s-err" href="#sim-licoes" data-sub="sim-licoes">Lições que se repetem</a>
+      </div>
     </div>
 
   </nav>
@@ -3072,6 +3144,510 @@ SYMBOLS = { ..., <span class="s">"!"</span>: <span class="s">"FACT"</span> }
   </div>
 </section>
 
+
+<!-- ============================================================ SIMULADO -->
+
+<section id="simulado">
+  <div class="section-head">
+    <div class="eyebrow">Parte V</div>
+    <h2>Simulado</h2>
+  </div>
+
+  <div class="sim-hero">
+    <div class="txt">
+      <h3>Dezesseis questões de provas anteriores</h3>
+      <p>Todas com <strong>gabarito comentado</strong> e, mais importante, com <strong>onde a nota foi perdida</strong> na correção original. O conteúdo vai de linguagens formais até o projeto do compilador &#8212; para antes de Máquina de Turing.</p>
+      <p>Marque os critérios que a sua resposta cumpriria; o placar se ajusta sozinho e fica salvo no navegador.</p>
+    </div>
+    <div class="sim-placar">
+      <div>
+        <strong id="sim-pts">0,0</strong>
+        <span>de 31,5</span>
+        <small id="sim-pct">comece marcando</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="sim-nav">
+    <a href="#sim-a">Linguagens formais</a>
+    <a href="#sim-b">Compiladores</a>
+    <a href="#sim-c">Projeto e paradigmas</a>
+    <a href="#sim-licoes">As lições que se repetem</a>
+  </div>
+
+  <div class="bloco-sim" id="sim-a">
+    <h3>Bloco A &#183; Linguagens formais</h3>
+    <p class="intro">Gramáticas, classes de linguagens, reconhecedores e pumping lemma.</p>
+      <div class="qcard">
+        <header>
+          <span class="qn">Questão 1</span>
+          <span class="qv">3,50 pt</span>
+          <span class="qnota meio">obteve 2,45</span>
+        </header>
+        <div class="enun">&#8220;Linguagens são conjuntos de cadeias. E existem diversas classes de linguagens.&#8221; Discorra sobre a frase usando o conteúdo e os diagramas da disciplina. <em>Use exemplos.</em></div>
+        <details class="resp"><summary>Ver resposta comentada</summary>
+          <div class="corpo">
+            <p><strong>Comece pela definição.</strong> Dado um alfabeto &#931;, o conjunto &#931;* reúne todas as cadeias finitas formáveis com seus símbolos. Uma linguagem é qualquer subconjunto: <code class="inl">L &#8838; &#931;*</code>.</p>
+            <p><strong>Depois classifique, e diga o critério.</strong> As classes se distinguem pelo <em>poder de máquina necessário para reconhecê-las</em> &#8212; e se encaixam umas nas outras (hierarquia de Chomsky):</p>
+            <div class="code syn"><pre>Regulares &#8834; Livres de contexto &#8834; Sensíveis ao contexto &#8834; Recursivamente enumeráveis</pre></div>
+            <p><strong>Então dê exemplos E explique o que cada um mostra.</strong></p>
+            <ul>
+              <li><code class="inl">L&#8321; = { ab&#8319; : n &#8805; 0 }</code> é <strong>regular</strong>: basta lembrar &#8220;já vi o a?&#8221;, o que cabe num número fixo de estados. Autômato finito resolve.</li>
+              <li><code class="inl">L&#8322; = { a&#8319;b&#8319; : n &#8805; 0 }</code> <strong>não</strong> é regular: é preciso lembrar <em>quantos</em> a apareceram, e esse número não tem teto &#8212; nenhum conjunto finito de estados dá conta. É livre de contexto, e o autômato de pilha resolve porque <strong>a pilha é a memória que falta</strong>.</li>
+            </ul>
+            <p>Essa última frase é o que amarra tudo: a classificação não é uma taxonomia arbitrária, ela mede <em>quanta memória</em> o reconhecimento exige.</p>
+<div class="criterios"><span class="ct">O que uma resposta de nota máxima precisa ter</span><label><input type="checkbox" data-pt="0.7"><span>Define L &#8838; &#931;* formalmente</span><span class="pv">0,7 pt</span></label><label><input type="checkbox" data-pt="0.7"><span>Cita a hierarquia de Chomsky com a inclusão entre classes</span><span class="pv">0,7 pt</span></label><label><input type="checkbox" data-pt="0.7"><span>Dá pelo menos dois exemplos de classes diferentes</span><span class="pv">0,7 pt</span></label><label><input type="checkbox" data-pt="0.8"><span>Explica <em>por que</em> cada exemplo pertence àquela classe</span><span class="pv">0,8 pt</span></label><label><input type="checkbox" data-pt="0.6"><span>Relaciona cada classe ao seu reconhecedor (AF, pilha)</span><span class="pv">0,6 pt</span></label></div>
+<div class="armadilha"><span class="lbl">Onde a nota foi perdida</span><p>A resposta listou os exemplos e desenhou o autômato, mas não explicou <strong>o que os exemplos significam</strong> nem por que a classe muda. O professor anotou exatamente isso ao lado do desenho. Citar não é discorrer: em questão discursiva, cada exemplo precisa vir com a frase que diz o que ele demonstra.</p></div>
+          </div>
+        </details>
+      </div>
+      <div class="qcard">
+        <header>
+          <span class="qn">Questão 2</span>
+          <span class="qv">3,00 pt</span>
+          <span class="qnota ruim">obteve 1,50</span>
+        </header>
+        <div class="enun">Explique o que são <strong>Gramáticas</strong> e qual a sua utilidade no escopo da disciplina.</div>
+        <details class="resp"><summary>Ver resposta comentada</summary>
+          <div class="corpo">
+            <p>Uma gramática formal é a quádrupla</p>
+            <div class="code syn"><pre>G = ( V , &#931; , P , S )
+
+    V   conjunto de símbolos NÃO TERMINAIS (variáveis)
+    &#931;   conjunto de símbolos TERMINAIS
+    P   conjunto de regras de produção
+    S &#8712; V   símbolo inicial</pre></div>
+            <p>As regras dizem como partir de <code class="inl">S</code> e fazer <strong>derivações</strong> até sobrar só terminais. Por exemplo, <code class="inl">S &#8594; aSb | &#949;</code> gera <code class="inl">{ a&#8319;b&#8319; }</code>:</p>
+            <div class="code"><pre>S &#8658; aSb &#8658; aaSbb &#8658; aabb</pre></div>
+            <p><strong>A utilidade &#8212; que é metade da nota:</strong> a gramática <em>descreve formalmente a sintaxe</em> de uma linguagem. No compilador, ela é o contrato que o <strong>parser</strong> implementa: ele usa a gramática para decidir se a sequência de tokens que o lexer produziu tem estrutura válida, e para construir a árvore. Cada regra da gramática vira uma função do parser &#8212; <code class="inl">EXPRESSION</code>, <code class="inl">TERM</code>, <code class="inl">FACTOR</code>. Sem gramática não há critério objetivo de &#8220;programa válido&#8221;.</p>
+<div class="criterios"><span class="ct">O que uma resposta de nota máxima precisa ter</span><label><input type="checkbox" data-pt="0.8"><span>Dá a quádrupla completa com os quatro componentes</span><span class="pv">0,8 pt</span></label><label><input type="checkbox" data-pt="0.4"><span>Diz que V são os NÃO TERMINAIS (não &#8220;vocabulário&#8221;)</span><span class="pv">0,4 pt</span></label><label><input type="checkbox" data-pt="0.6"><span>Mostra uma derivação concreta de exemplo</span><span class="pv">0,6 pt</span></label><label><input type="checkbox" data-pt="0.8"><span>Liga a gramática ao parser e à árvore sintática</span><span class="pv">0,8 pt</span></label><label><input type="checkbox" data-pt="0.4"><span>Menciona que cada regra vira uma função no código</span><span class="pv">0,4 pt</span></label></div>
+<div class="armadilha"><span class="lbl">Onde a nota foi perdida</span><p>Dois problemas. Primeiro, <code class="inl">V</code> foi definido como &#8220;o vocabulário da linguagem&#8221; &#8212; é o conjunto de <strong>não terminais</strong>. Segundo, e mais caro: a utilidade foi resolvida em uma linha (&#8220;definir uma única linguagem&#8221;). A questão vale 3,00 e a palavra <em>utilidade</em> está no enunciado: metade da nota está em ligar a gramática ao trabalho concreto do parser.</p></div>
+          </div>
+        </details>
+      </div>
+      <div class="qcard">
+        <header>
+          <span class="qn">Questão 3.a</span>
+          <span class="qv">0,50 pt</span>
+          <span class="qnota meio">obteve 0,30</span>
+        </header>
+        <div class="enun">Seja <code class="inl">L = { a<sup>m</sup>b<sup>n</sup> : m,n &#8805; 0 } &#8746; { b<sup>m</sup>a<sup>n</sup> : m,n &#8805; 0 }</code>. <strong>Liste 5 cadeias possíveis de L.</strong></div>
+        <details class="resp"><summary>Ver resposta comentada</summary>
+          <div class="corpo">
+            <p>O critério é simples e vale decorar: a cadeia pode ter <strong>no máximo uma troca de símbolo</strong>. Ou é um bloco de <code class="inl">a</code> seguido de um bloco de <code class="inl">b</code>, ou o contrário.</p>
+            <div class="code"><pre>&#949;          (m = 0, n = 0)
+a
+bbb
+aaabb
+bbbaaaa</pre></div>
+            <p>Teste você mesmo &#8212; o campo aceita qualquer cadeia de <code class="inl">a</code> e <code class="inl">b</code>:</p>
+            <div class="sim-testador">
+              <div class="linha">
+                <input type="text" id="sim-l-inp" value="abba" spellcheck="false" autocomplete="off">
+                <div class="presets" id="sim-l-presets"></div>
+              </div>
+              <div class="sim-cadeia" id="sim-l-cad"></div>
+              <div class="sim-ver" id="sim-l-ver"></div>
+            </div>
+<div class="criterios"><span class="ct">O que uma resposta de nota máxima precisa ter</span><label><input type="checkbox" data-pt="0.3"><span>Cinco cadeias, todas com no máximo uma troca de símbolo</span><span class="pv">0,3 pt</span></label><label><input type="checkbox" data-pt="0.2"><span>Inclui a cadeia vazia &#949; e/ou casos com m ou n = 0</span><span class="pv">0,2 pt</span></label></div>
+<div class="armadilha"><span class="lbl">Onde a nota foi perdida</span><p><code class="inl">abba</code> foi marcada como errada, e está mesmo: ela troca de símbolo <strong>duas</strong> vezes (a&#8594;b&#8594;a). Nem <code class="inl">a*b*</code> nem <code class="inl">b*a*</code> aceitam isso. A pegadinha é ler a união como &#8220;qualquer mistura de a e b&#8221; &#8212; não é: é um bloco seguido de outro bloco, e só.</p></div>
+          </div>
+        </details>
+      </div>
+      <div class="qcard">
+        <header>
+          <span class="qn">Questão 3.b</span>
+          <span class="qv">1,00 pt</span>
+          <span class="qnota ruim">obteve 0,00</span>
+        </header>
+        <div class="enun">Faça um <strong>reconhecedor adequado</strong> para a linguagem <code class="inl">L</code> acima.</div>
+        <details class="resp"><summary>Ver resposta comentada</summary>
+          <div class="corpo">
+            <p><strong>Não precisa de pilha.</strong> Repare que o enunciado usa <code class="inl">m</code> e <code class="inl">n</code> <em>independentes</em> &#8212; não exige que sejam iguais. Logo:</p>
+            <div class="code syn"><pre>L = a* b*  |  b* a*</pre></div>
+            <p>Isso é uma <strong>expressão regular</strong>, então um autômato finito basta. Um AFN resolve com uma escolha inicial entre os dois ramos:</p>
+            <div class="code"><pre>              a          b
+             ┌─┐        ┌─┐
+    ┌──&#8594; q1 ─┘  ──b──&#8594; q2┘        ramo 1: a* b*
+    │   (aceita)      (aceita)
+ &#8594; q0
+    │   (aceita)      (aceita)
+    └──&#8594; q3 ─┐  ──a──&#8594; q4┐        ramo 2: b* a*
+             └─┘        └─┘
+              b          a</pre></div>
+            <p>Todos os estados são de aceitação, porque <code class="inl">&#949;</code>, <code class="inl">a</code>, <code class="inl">bbb</code> etc. pertencem a L. Dá para determinizar depois, mas o AFN já responde a questão.</p>
+<div class="criterios"><span class="ct">O que uma resposta de nota máxima precisa ter</span><label><input type="checkbox" data-pt="0.4"><span>Percebe que m e n são independentes &#8212; não exige m = n</span><span class="pv">0,4 pt</span></label><label><input type="checkbox" data-pt="0.3"><span>Conclui que a linguagem é regular</span><span class="pv">0,3 pt</span></label><label><input type="checkbox" data-pt="0.3"><span>Apresenta AF, AFN ou expressão regular como reconhecedor</span><span class="pv">0,3 pt</span></label></div>
+<div class="armadilha"><span class="lbl">Onde a nota foi perdida</span><p>A resposta propôs um <strong>autômato de pilha não determinístico</strong> &#8212; máquina forte demais para o problema. O erro nasce de ler <code class="inl">a<sup>m</sup>b<sup>n</sup></code> como se fosse <code class="inl">a<sup>n</sup>b<sup>n</sup></code>. <strong>Sempre confira se os expoentes são o mesmo símbolo</strong>: essa única letra decide entre regular e livre de contexto.</p></div>
+          </div>
+        </details>
+      </div>
+      <div class="qcard">
+        <header>
+          <span class="qn">Questão 3.c</span>
+          <span class="qv">1,00 pt</span>
+          <span class="qnota meio">marcada 1,00 &#8212; ver ressalva</span>
+        </header>
+        <div class="enun">&#8220;Essa linguagem é Livre de Contexto, mas não é Regular.&#8221; Concorde ou discorde. <strong>Justifique.</strong></div>
+        <details class="resp"><summary>Ver resposta comentada</summary>
+          <div class="corpo">
+            <p>Pela linguagem <em>como está impressa</em> no enunciado, a resposta correta é <strong>discordo</strong>:</p>
+            <ul>
+              <li><code class="inl">L = a*b* &#8746; b*a*</code> é <strong>regular</strong> &#8212; tem expressão regular, logo tem autômato finito.</li>
+              <li>Toda linguagem regular <em>também</em> é livre de contexto (a inclusão é própria, mas vale). Então &#8220;é livre de contexto&#8221; não é falso; o que é falso é o &#8220;<strong>mas não é regular</strong>&#8221;.</li>
+            </ul>
+            <p>A afirmação só seria verdadeira se a linguagem fosse <code class="inl">{ a&#8319;b&#8319; }</code>, com o <em>mesmo</em> expoente dos dois lados.</p>
+            <div class="nota f-err" style="margin:0">
+              <span class="t">Ressalva importante</span>
+              <p>Esta questão recebeu nota cheia na correção original, com a justificativa de que &#8220;os a e b têm o mesmo número&#8221; &#8212; o que <strong>não</strong> é o que o enunciado impresso diz. Há inconsistência entre o enunciado fotografado e a correção. <strong>Não memorize a justificativa dada</strong>: memorize o critério. Se os expoentes forem independentes, é regular; se forem amarrados, é livre de contexto.</p>
+            </div>
+<div class="criterios"><span class="ct">O que uma resposta de nota máxima precisa ter</span><label><input type="checkbox" data-pt="0.4"><span>Identifica corretamente se os expoentes são independentes ou amarrados</span><span class="pv">0,4 pt</span></label><label><input type="checkbox" data-pt="0.3"><span>Sabe que toda regular também é livre de contexto</span><span class="pv">0,3 pt</span></label><label><input type="checkbox" data-pt="0.3"><span>Justifica com expressão regular ou autômato, não por intuição</span><span class="pv">0,3 pt</span></label></div>
+<div class="armadilha"><span class="lbl">Onde a nota foi perdida</span><p>Aqui a armadilha é de leitura, não de conceito. A justificativa escrita (&#8220;o mesmo número de a e de b&#8221;) descreve uma linguagem <em>diferente</em> da que está no enunciado. Numa prova, releia os índices antes de decidir a classe.</p></div>
+          </div>
+        </details>
+      </div>
+      <div class="qcard">
+        <header>
+          <span class="qn">Questão 3.d</span>
+          <span class="qv">1,00 pt</span>
+          <span class="qnota bom">obteve 1,00</span>
+        </header>
+        <div class="enun">&#8220;Para provar que ela é Regular, bastaria fazer um <em>Pumping Lemma</em>.&#8221; Concorde ou discorde. <strong>Justifique.</strong></div>
+        <details class="resp"><summary>Ver resposta comentada</summary>
+          <div class="corpo">
+            <p><strong>Discordo.</strong> O lema do bombeamento é uma <strong>condição necessária</strong>, não suficiente:</p>
+            <div class="code syn"><pre>L regular            &#8658;      L satisfaz o pumping lemma     &#10003;
+L satisfaz o lema    &#8658;/     L regular                      &#10007;</pre></div>
+            <p>Por isso ele é usado <strong>por contradição, para provar que algo NÃO é regular</strong>: você supõe regular, aplica o lema, e chega a uma palavra bombeada que sai da linguagem.</p>
+            <p>Para provar que <em>é</em> regular, os caminhos válidos são construtivos: exibir uma expressão regular, um AFD/AFN, uma gramática regular, ou usar propriedades de fechamento a partir de linguagens sabidamente regulares.</p>
+<div class="criterios"><span class="ct">O que uma resposta de nota máxima precisa ter</span><label><input type="checkbox" data-pt="0.4"><span>Diz que o lema é condição necessária, não suficiente</span><span class="pv">0,4 pt</span></label><label><input type="checkbox" data-pt="0.3"><span>Explica que ele serve para provar NÃO-regularidade, por contradição</span><span class="pv">0,3 pt</span></label><label><input type="checkbox" data-pt="0.3"><span>Lista ao menos um caminho válido para provar regularidade</span><span class="pv">0,3 pt</span></label></div>
+<div class="armadilha"><span class="lbl">Onde a nota foi perdida</span><p>Nada perdido aqui &#8212; a resposta acertou o raciocínio. Vale apenas reforçar a formulação: o problema não é o lema &#8220;ser inconclusivo&#8221;, é que a implicação só vale num sentido.</p></div>
+          </div>
+        </details>
+      </div>
+      <div class="qcard">
+        <header>
+          <span class="qn">Questão extra</span>
+          <span class="qv">+1,00 pt</span>
+          <span class="qnota ruim">obteve 0,00</span>
+        </header>
+        <div class="enun">Prove formalmente que <code class="inl">L = { wcw : w &#8712; {a,b}* }</code> <strong>não é Livre de Contexto</strong>.</div>
+        <details class="resp"><summary>Ver resposta comentada</summary>
+          <div class="corpo">
+            <p>Use o <strong>pumping lemma para CFL</strong>. O passo decisivo é escolher uma palavra que <em>realmente pertença a L</em>.</p>
+            <ol>
+              <li>Suponha L livre de contexto. Existe então o comprimento <em>p</em> do lema.</li>
+              <li>Escolha <code class="inl">w = a<sup>p</sup>b<sup>p</sup></code>, logo <code class="inl">z = a<sup>p</sup>b<sup>p</sup> c a<sup>p</sup>b<sup>p</sup></code>. <strong>Confira: z &#8712; L</strong>, porque as duas metades em volta do <code class="inl">c</code> são idênticas.</li>
+              <li>O lema garante <code class="inl">z = uvxyz'</code> com <code class="inl">|vxy| &#8804; p</code> e <code class="inl">vy &#8800; &#949;</code>.</li>
+              <li>Como <code class="inl">|vxy| &#8804; p</code>, esse trecho é curto demais para tocar <em>as duas</em> metades e o <code class="inl">c</code> ao mesmo tempo. Dois casos: ou ele fica inteiro de um lado do <code class="inl">c</code>, ou engloba o <code class="inl">c</code> mas só a vizinhança dele.</li>
+              <li>Bombeando com <em>i</em> = 2: no primeiro caso uma metade cresce e a outra não, então deixam de ser iguais. No segundo, ou o <code class="inl">c</code> se duplica (e a palavra nem tem a forma <code class="inl">wcw</code>), ou o fim da primeira metade e o começo da segunda mudam de tamanhos diferentes.</li>
+              <li>Em todos os casos <code class="inl">uv&#178;xy&#178;z' &#8713; L</code>. <strong>Contradição</strong> &#8212; L não é livre de contexto.</li>
+            </ol>
+<div class="criterios"><span class="ct">O que uma resposta de nota máxima precisa ter</span><label><input type="checkbox" data-pt="0.3"><span>Escolhe uma palavra que de fato pertence a L</span><span class="pv">0,3 pt</span></label><label><input type="checkbox" data-pt="0.3"><span>Usa a decomposição em CINCO partes, com |vxy| &#8804; p e vy &#8800; &#949;</span><span class="pv">0,3 pt</span></label><label><input type="checkbox" data-pt="0.2"><span>Analisa os casos possíveis de posição de vxy</span><span class="pv">0,2 pt</span></label><label><input type="checkbox" data-pt="0.2"><span>Conclui por contradição</span><span class="pv">0,2 pt</span></label></div>
+<div class="armadilha"><span class="lbl">Onde a nota foi perdida</span><p>A tentativa escolheu <code class="inl">z = a<sup>k</sup>b<sup>k</sup>c<sup>k</sup></code> &#8212; que <strong>nem pertence a L</strong>. Em <code class="inl">wcw</code> existe <em>um</em> <code class="inl">c</code>, no meio, e as duas metades são cópias. Se a palavra escolhida não está na linguagem, a prova inteira desmorona antes de começar. <strong>Primeiro passo de todo pumping: verificar que z &#8712; L.</strong></p></div>
+          </div>
+        </details>
+      </div>
+  </div>
+
+  <div class="bloco-sim" id="sim-b">
+    <h3>Bloco B &#183; Compiladores</h3>
+    <p class="intro">Fases de compilação, implementação de operadores, AST e classes de linguagem.</p>
+      <div class="qcard">
+        <header>
+          <span class="qn">Questão 1</span>
+          <span class="qv">4,00 pt</span>
+          <span class="qnota ruim">obteve 1,00</span>
+        </header>
+        <div class="enun">Usando como base a <strong>v2.0</strong> do compilador, explique passo a passo como implementaria o operador <code class="inl">&gt;=</code> entre duas expressões. A desigualdade teria a <strong>menor precedência possível</strong> e retornaria 1 (true) ou 0 (false). <em>Explore detalhadamente todas as etapas de compilação.</em></div>
+        <details class="resp"><summary>Ver resposta comentada</summary>
+          <div class="corpo">
+            <p>A palavra que vale os 4 pontos é <strong>detalhadamente</strong>. Uma fase por vez, com o que muda em cada uma:</p>
+            <p><strong>1 &#183; Lexer.</strong> Token novo <code class="inl">GE</code>. Testar <code class="inl">&gt;=</code> <em>antes</em> de <code class="inl">&gt;</code> sozinho, senão o lexer devolve dois tokens errados (mesma armadilha do <code class="inl">**</code> no extra credit).</p>
+            <div class="code"><pre>x &gt;= 4 + 1   &#8594;   IDEN(x) GE INT(4) PLUS INT(1)</pre></div>
+            <p><strong>2 &#183; Gramática e parser.</strong> Menor precedência significa <strong>um nível NOVO acima do atual topo</strong>. O que hoje é <code class="inl">EXPRESSION</code> passa a ser chamado por uma camada relacional:</p>
+            <div class="code syn"><pre>RELEXPR    = EXPRESSION, { "&gt;=", EXPRESSION } ;
+EXPRESSION = TERM, { ("+"|"-"), TERM } ;</pre></div>
+            <p>Assim <code class="inl">x &gt;= 4+1</code> agrupa como <code class="inl">x &gt;= (4+1)</code>, e não <code class="inl">(x&gt;=4)+1</code>. Quem chamava <code class="inl">parse_expression()</code> passa a chamar <code class="inl">parse_relexpr()</code>.</p>
+            <p><strong>3 &#183; AST.</strong> Nenhuma classe nova: é uma operação binária, então reusa <code class="inl">BinOp</code> com <code class="inl">value = "&gt;="</code>. Para <code class="inl">x &gt;= 4+1</code>:</p>
+            <div class="code"><pre>      BinOp('&gt;=')
+       /        \
+  Identifier    BinOp('+')
+     (x)        /       \
+            IntVal(4) IntVal(1)</pre></div>
+            <p><strong>4 &#183; Semântico.</strong> O <code class="inl">evaluate()</code> do <code class="inl">BinOp</code> ganha o ramo <code class="inl">&gt;=</code>, devolvendo <code class="inl">1</code> ou <code class="inl">0</code>. É aqui que entra a checagem de tipos: comparar inteiro com string deve levantar <code class="inl">[Semantic]</code>. A tabela de símbolos resolve o <code class="inl">Identifier</code> <code class="inl">x</code>.</p>
+            <p><strong>5 &#183; Geração de código.</strong> Avalia os dois lados, compara e materializa o booleano como inteiro:</p>
+            <div class="code"><pre>  MOV EAX, esquerda
+  CMP EAX, direita
+  JGE verdadeiro
+  MOV EAX, 0
+  JMP fim
+verdadeiro:
+  MOV EAX, 1
+fim:</pre></div>
+            <p><strong>6 &#183; Testes.</strong> <code class="inl">5&gt;=5 &#8594; 1</code> &#183; <code class="inl">6&gt;=5 &#8594; 1</code> &#183; <code class="inl">4&gt;=5 &#8594; 0</code> &#183; <code class="inl">2 &gt;= 4+1 &#8594; 0</code> (este é o que prova a precedência).</p>
+<div class="criterios"><span class="ct">O que uma resposta de nota máxima precisa ter</span><label><input type="checkbox" data-pt="0.6"><span>Lexer: token novo e a ordem de teste &gt;= antes de &gt;</span><span class="pv">0,6 pt</span></label><label><input type="checkbox" data-pt="1.0"><span>Gramática: cria um NÍVEL NOVO acima do EXPRESSION</span><span class="pv">1,0 pt</span></label><label><input type="checkbox" data-pt="0.5"><span>Justifica a precedência com um exemplo que a comprova</span><span class="pv">0,5 pt</span></label><label><input type="checkbox" data-pt="0.7"><span>AST: diz qual nó usa e desenha a árvore</span><span class="pv">0,7 pt</span></label><label><input type="checkbox" data-pt="0.6"><span>Semântico: avaliação e verificação de tipos</span><span class="pv">0,6 pt</span></label><label><input type="checkbox" data-pt="0.6"><span>Geração de código: comparação e materialização de 0/1</span><span class="pv">0,6 pt</span></label></div>
+<div class="armadilha"><span class="lbl">Onde a nota foi perdida</span><p>A resposta <strong>nomeou</strong> as fases (&#8220;adicionaria no lexer, depois no parser, depois na symbol table&#8221;) sem dizer o que muda em cada uma. Duas falhas específicas: não tratou a <strong>precedência</strong>, que é o coração do enunciado, e citou a tabela de símbolos como se ela guardasse os valores 0 e 1 &#8212; ela guarda <em>variáveis</em>, não resultados de comparação. Em questão de 4 pontos que diz &#8220;detalhadamente&#8221;, cada fase precisa de um exemplo concreto.</p></div>
+          </div>
+        </details>
+      </div>
+      <div class="qcard">
+        <header>
+          <span class="qn">Questão 2</span>
+          <span class="qv">3,00 pt</span>
+          <span class="qnota bom">obteve 3,00</span>
+        </header>
+        <div class="enun">Explique em quais etapas de compilação o seu compilador dispara erros (exceções). Dê exemplos de entradas inválidas para cada etapa.</div>
+        <details class="resp"><summary>Ver resposta comentada</summary>
+          <div class="corpo">
+            <p>Resposta modelo &#8212; esta questão saiu com nota cheia. A estrutura que funciona é uma pergunta por fase:</p>
+            <div class="tab-wrap" style="margin:0">
+              <table class="tab">
+                <thead><tr><th>etapa</th><th>a pergunta que ela faz</th><th>exemplo que falha</th><th>prefixo</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Léxica</strong></td><td>&#8220;esses caracteres formam tokens?&#8221;</td><td class="mono">@ x = 10;</td><td class="mono">[Lexer]</td></tr>
+                  <tr><td><strong>Sintática</strong></td><td>&#8220;esses tokens estão numa ordem válida?&#8221;</td><td class="mono">x = 10</td><td class="mono">[Parser]</td></tr>
+                  <tr><td><strong>Semântica</strong></td><td>&#8220;essa estrutura faz sentido?&#8221;</td><td class="mono">x = 10 + "Raul";</td><td class="mono">[Semantic]</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>O detalhe que dá força à resposta: nos três exemplos, <strong>o erro anterior não aconteceu</strong>. Em <code class="inl">x = 10</code> todos os tokens são válidos &#8212; só falta o <code class="inl">;</code>. Em <code class="inl">10 + "Raul"</code> os tokens e a ordem estão perfeitos &#8212; o problema é o significado. Mostrar essa progressão prova que você entendeu a separação de fases, não só decorou a lista.</p>
+<div class="criterios"><span class="ct">O que uma resposta de nota máxima precisa ter</span><label><input type="checkbox" data-pt="0.8"><span>Nomeia as três fases</span><span class="pv">0,8 pt</span></label><label><input type="checkbox" data-pt="1.2"><span>Dá um exemplo de entrada inválida para cada</span><span class="pv">1,2 pt</span></label><label><input type="checkbox" data-pt="1.0"><span>Os exemplos passam pelas fases anteriores sem erro</span><span class="pv">1,0 pt</span></label></div>
+
+          </div>
+        </details>
+      </div>
+      <div class="qcard">
+        <header>
+          <span class="qn">Questão 3.a</span>
+          <span class="qv">parte de 3,00 pt</span>
+          <span class="qnota meio">obteve 0,75</span>
+        </header>
+        <div class="enun">&#8220;O projeto do compilador implementa uma sintaxe que pode ser representada por uma <strong>Linguagem Sensível ao Contexto</strong>.&#8221; Verdadeiro ou falso? <strong>Justifique.</strong></div>
+        <details class="resp"><summary>Ver resposta comentada</summary>
+          <div class="corpo">
+            <p><strong>Verdadeiro</strong>, mas pelo motivo certo &#8212; e com a ressalva que vale o resto da nota.</p>
+            <p>A inclusão da hierarquia é própria mas vale para cima: <code class="inl">Regulares &#8838; LC &#8838; LSC</code>. Como a sintaxe do compilador é descrita por uma gramática livre de contexto, ela <em>também</em> pertence à classe das sensíveis ao contexto. Toda LC é LSC.</p>
+            <p><strong>A ressalva:</strong> isso não significa que seja <em>necessária</em> uma LSC. Uma gramática livre de contexto é suficiente para a parte sintática, e é o que o projeto usa. Dizer &#8220;pode ser representada&#8221; é diferente de &#8220;precisa ser&#8221;.</p>
+            <p>Onde o compilador realmente esbarra em sensibilidade ao contexto é na <strong>fase semântica</strong>: &#8220;toda variável usada foi declarada&#8221; não é expressável por GLC. Mas isso não se resolve com uma gramática mais forte &#8212; resolve-se com tabela de símbolos.</p>
+<div class="criterios"><span class="ct">O que uma resposta de nota máxima precisa ter</span><label><input type="checkbox" data-pt="0.4"><span>Afirma verdadeiro usando a inclusão entre classes</span><span class="pv">0,4 pt</span></label><label><input type="checkbox" data-pt="0.4"><span>Ressalva que LC é suficiente &#8212; LSC não é necessária</span><span class="pv">0,4 pt</span></label><label><input type="checkbox" data-pt="0.2"><span>Menciona que a restrição de contexto real está no semântico</span><span class="pv">0,2 pt</span></label></div>
+<div class="armadilha"><span class="lbl">Onde a nota foi perdida</span><p>A cadeia de inclusão estava certa, mas faltou a ressalva: o enunciado pergunta se <em>pode</em> ser representada, e responder só isso deixa metade da questão de fora. Diga também o que é <strong>suficiente</strong>.</p></div>
+          </div>
+        </details>
+      </div>
+      <div class="qcard">
+        <header>
+          <span class="qn">Questão 3.b</span>
+          <span class="qv">parte de 3,00 pt</span>
+          <span class="qnota ruim">obteve 0,00</span>
+        </header>
+        <div class="enun">&#8220;A AST gerada pelo Parser é uma <strong>árvore de derivação não-ambígua</strong>.&#8221; Verdadeiro ou falso? <strong>Justifique.</strong></div>
+        <details class="resp"><summary>Ver resposta comentada</summary>
+          <div class="corpo">
+            <p><strong>Falso.</strong> AST e árvore de derivação são coisas diferentes:</p>
+            <div class="tab-wrap" style="margin:0">
+              <table class="tab">
+                <thead><tr><th></th><th>árvore de derivação</th><th>AST</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>contém</strong></td><td>todo não-terminal aplicado: EXPRESSION, TERM, FACTOR, NUMBER</td><td>só operadores e valores</td></tr>
+                  <tr><td><strong>prova</strong></td><td>que a cadeia obedece à gramática</td><td>nada &#8212; ela já assume isso</td></tr>
+                  <tr><td><strong>serve para</strong></td><td>a análise sintática</td><td>avaliar e gerar código</td></tr>
+                  <tr><td><strong>parênteses</strong></td><td>aparecem como terminais</td><td>desaparecem</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>E a segunda metade da afirmação também não se sustenta: <strong>quem elimina a ambiguidade é a gramática</strong>, estratificada em EXPRESSION/TERM/FACTOR, ou regras explícitas de precedência e associatividade. A AST é <em>consequência</em> de uma gramática não ambígua, não a causa dela. Uma gramática ambígua produziria ASTs diferentes para a mesma entrada &#8212; a árvore não teria como se defender.</p>
+<div class="criterios"><span class="ct">O que uma resposta de nota máxima precisa ter</span><label><input type="checkbox" data-pt="0.3"><span>Responde FALSO</span><span class="pv">0,3 pt</span></label><label><input type="checkbox" data-pt="0.7"><span>Distingue AST de árvore de derivação com ao menos um critério</span><span class="pv">0,7 pt</span></label><label><input type="checkbox" data-pt="0.5"><span>Diz que quem remove ambiguidade é a gramática, não a árvore</span><span class="pv">0,5 pt</span></label></div>
+<div class="armadilha"><span class="lbl">Onde a nota foi perdida</span><p>A resposta afirmou verdadeiro e justificou com &#8220;a profundidade dos tokens tira a ambiguidade&#8221;. Dois erros num só: tratou AST e árvore de derivação como sinônimos, e inverteu a causalidade &#8212; a profundidade <em>reflete</em> a precedência que a gramática já definiu; ela não a cria.</p></div>
+          </div>
+        </details>
+      </div>
+  </div>
+
+  <div class="bloco-sim" id="sim-c">
+    <h3>Bloco C &#183; Projeto e paradigmas</h3>
+    <p class="intro">Escopo, evolução do projeto, tipos, paradigmas e otimizações.</p>
+      <div class="qcard">
+        <header>
+          <span class="qn">Questão 1</span>
+          <span class="qv">3,00 pt</span>
+          <span class="qnota bom">obteve 2,75</span>
+        </header>
+        <div class="enun">Explique como foi implementado o <strong>escopo local de variáveis</strong> no projeto.</div>
+        <details class="resp"><summary>Ver resposta comentada</summary>
+          <div class="corpo">
+            <p>Cada escopo tem a <strong>sua própria tabela de símbolos</strong>, e cada tabela guarda uma referência para a tabela do escopo que a contém (<code class="inl">parent</code>).</p>
+            <ul>
+              <li>Ao entrar numa função ou num bloco <code class="inl">{ ... }</code>, cria-se uma tabela filha apontando para a atual.</li>
+              <li>Ao <strong>declarar</strong>, a variável entra apenas na tabela atual.</li>
+              <li>Ao <strong>buscar</strong>, procura-se na tabela atual; se não achar, sobe para o <code class="inl">parent</code>, e assim até a global. Se chegar ao topo sem achar, é erro semântico.</li>
+            </ul>
+            <p>Essa cadeia de busca é o que produz o <strong>shadowing</strong>:</p>
+            <div class="code"><pre>let x = 5;
+{
+    let x = 10;
+    print(x);     <span class="c">// 10 - acha na tabela local e para</span>
+}
+print(x);         <span class="c">// 5  - a tabela local morreu ao fechar o bloco</span></pre></div>
+            <p>Além do valor, a tabela guarda o <strong>tipo</strong> e a <strong>posição na pilha</strong> &#8212; esta última é o que a geração de código usa para emitir <code class="inl">[EBP-4]</code>, <code class="inl">[EBP-8]</code> e assim por diante.</p>
+<div class="criterios"><span class="ct">O que uma resposta de nota máxima precisa ter</span><label><input type="checkbox" data-pt="0.8"><span>Uma tabela de símbolos por escopo</span><span class="pv">0,8 pt</span></label><label><input type="checkbox" data-pt="1.0"><span>Referência ao escopo pai e busca em cadeia</span><span class="pv">1,0 pt</span></label><label><input type="checkbox" data-pt="0.7"><span>Explica shadowing com exemplo</span><span class="pv">0,7 pt</span></label><label><input type="checkbox" data-pt="0.5"><span>Menciona o que a tabela guarda além do valor (tipo, offset)</span><span class="pv">0,5 pt</span></label></div>
+<div class="armadilha"><span class="lbl">Onde a nota foi perdida</span><p>Quase nota cheia. O que faltou foi fechar o ciclo: além de criar a tabela filha, dizer que ela <strong>é descartada ao sair do bloco</strong> &#8212; é isso que faz o <code class="inl">x</code> externo voltar a valer 5.</p></div>
+          </div>
+        </details>
+      </div>
+      <div class="qcard">
+        <header>
+          <span class="qn">Questão 2</span>
+          <span class="qv">3,00 pt</span>
+          <span class="qnota bom">obteve 3,00</span>
+        </header>
+        <div class="enun">Explique detalhadamente as principais diferenças de implementação entre a <strong>v2.3</strong> e a <strong>v3.0</strong> do projeto.</div>
+        <details class="resp"><summary>Ver resposta comentada</summary>
+          <div class="corpo">
+            <p>Resposta modelo &#8212; saiu com nota cheia. O eixo é: <strong>v2.3 acrescenta funções; v3.0 troca interpretar por compilar</strong>.</p>
+            <p><strong>v2.3 &#183; funções.</strong> Tokens e palavras reservadas novas (<code class="inl">fn</code>, <code class="inl">return</code>); o parser ganha a estrutura de declaração e chamada; a AST ganha nós <code class="inl">FuncDec</code>, <code class="inl">FuncCall</code>, <code class="inl">Block</code> e <code class="inl">Return</code>. Cada chamada cria uma tabela de símbolos nova &#8212; é aqui que o escopo da questão anterior vira essencial.</p>
+            <p><strong>v3.0 &#183; geração de assembly.</strong> O <code class="inl">evaluate()</code> ganha um irmão, <code class="inl">generate()</code>, que percorre a <em>mesma</em> árvore mas emite instruções em vez de calcular. As mudanças concretas:</p>
+            <ul>
+              <li>variáveis deixam de viver num dicionário e passam a ter <strong>posição na pilha</strong>, acessadas como <code class="inl">[EBP-4]</code>;</li>
+              <li><code class="inl">EAX</code> vira o registrador de trabalho para o resultado de cada expressão;</li>
+              <li>condicionais e laços viram <code class="inl">CMP</code> + <code class="inl">JE</code>/<code class="inl">JMP</code> com rótulos únicos;</li>
+              <li>chamadas de função exigem prólogo e epílogo (<code class="inl">PUSH EBP</code> / <code class="inl">MOV EBP, ESP</code> / <code class="inl">POP EBP</code>).</li>
+            </ul>
+            <p>A frase que amarra: <strong>a árvore não muda</strong>. O que muda é o que se faz ao percorrê-la.</p>
+<div class="criterios"><span class="ct">O que uma resposta de nota máxima precisa ter</span><label><input type="checkbox" data-pt="1.2"><span>v2.3: funções, tokens, nós novos na AST</span><span class="pv">1,2 pt</span></label><label><input type="checkbox" data-pt="1.0"><span>v3.0: geração de assembly em vez de interpretação</span><span class="pv">1,0 pt</span></label><label><input type="checkbox" data-pt="0.8"><span>Cita a pilha, EBP e os offsets de variáveis</span><span class="pv">0,8 pt</span></label></div>
+
+          </div>
+        </details>
+      </div>
+      <div class="qcard">
+        <header>
+          <span class="qn">Questão 3</span>
+          <span class="qv">2,00 pt</span>
+          <span class="qnota ruim">obteve 0,00</span>
+        </header>
+        <div class="enun">Discorra sobre <strong>Paradigmas de Programação</strong>.</div>
+        <details class="resp"><summary>Ver resposta comentada</summary>
+          <div class="corpo">
+            <p>Paradigma é um <strong>modelo de organizar e pensar</strong> a construção de programas &#8212; não tem relação com velocidade nem com a forma de execução.</p>
+            <div class="tab-wrap" style="margin:0">
+              <table class="tab">
+                <thead><tr><th>paradigma</th><th>ideia central</th><th>linguagens</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Imperativo / procedural</strong></td><td>sequência de comandos que <em>modificam estado</em></td><td>C, Pascal</td></tr>
+                  <tr><td><strong>Orientado a objetos</strong></td><td>objetos que combinam <em>estado e comportamento</em></td><td>Java, C#, C++</td></tr>
+                  <tr><td><strong>Funcional</strong></td><td>funções, composição, <em>imutabilidade</em>, sem efeitos colaterais</td><td>Haskell, Lisp</td></tr>
+                  <tr><td><strong>Lógico / declarativo</strong></td><td>descreve <em>relações</em> e deixa a máquina buscar a solução</td><td>Prolog</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="code"><pre><span class="c">// imperativo: eu digo COMO fazer</span>
+soma = 0;
+for (i = 0; i &lt; 10; i++) soma += i;
+
+<span class="c">// funcional: eu digo O QUE quero</span>
+soma = reduce(add, range(0, 10))</pre></div>
+            <p>Vale acrescentar que a maioria das linguagens modernas é <strong>multiparadigma</strong>: Python permite procedural, OO e funcional no mesmo arquivo. E citar o próprio projeto: o compilador foi escrito em Python <em>orientado a objetos</em> (a hierarquia <code class="inl">Node</code> é polimorfismo puro), e compila uma linguagem <em>imperativa</em>.</p>
+<div class="criterios"><span class="ct">O que uma resposta de nota máxima precisa ter</span><label><input type="checkbox" data-pt="0.5"><span>Define paradigma como modelo de organizar o pensamento/programa</span><span class="pv">0,5 pt</span></label><label><input type="checkbox" data-pt="0.8"><span>Cita ao menos três paradigmas com a ideia central de cada</span><span class="pv">0,8 pt</span></label><label><input type="checkbox" data-pt="0.4"><span>Dá exemplos de linguagens por paradigma</span><span class="pv">0,4 pt</span></label><label><input type="checkbox" data-pt="0.3"><span>Menciona linguagens multiparadigma</span><span class="pv">0,3 pt</span></label></div>
+<div class="armadilha"><span class="lbl">Onde a nota foi perdida</span><p>A resposta falou de <strong>compilado × interpretado</strong> e de desempenho. Isso é uma classificação de <em>como a linguagem é executada</em>, não de paradigma &#8212; C e Haskell são ambas compiladas e estão em paradigmas opostos. Zerou por responder outra pergunta. Quando o enunciado é uma palavra-chave do vocabulário da disciplina, comece <strong>definindo a palavra</strong>.</p></div>
+          </div>
+        </details>
+      </div>
+      <div class="qcard">
+        <header>
+          <span class="qn">Questão 4</span>
+          <span class="qv">2,00 pt</span>
+          <span class="qnota bom">obteve 2,00</span>
+        </header>
+        <div class="enun">Qual foi o impacto em cada etapa de compilação com a adoção de <strong>tipos</strong> na linguagem compilada?</div>
+        <details class="resp"><summary>Ver resposta comentada</summary>
+          <div class="corpo">
+            <p>Resposta modelo &#8212; nota cheia. A estrutura vencedora é descer a pipeline dizendo o que cada fase ganhou:</p>
+            <div class="code syn"><pre>Lexer         reconhece as palavras de tipo como tokens
+              (let, mut, i32, str, bool) &#8212; via dicionário de keywords
+     &#8595;
+Parser        a gramática aceita declarações tipadas:
+              let mut x : i32 = 5 ;
+     &#8595;
+Symbol Table  passa a guardar o TIPO junto do valor
+     &#8595;
+Semântico     verifica compatibilidade nas operações
+     &#8595;
+Codegen       escolhe a instrução adequada ao tipo</pre></div>
+            <p>A tabela de símbolos vira o centro da coisa:</p>
+            <div class="tab-wrap" style="margin:0">
+              <table class="tab">
+                <thead><tr><th>id</th><th>tipo</th><th>valor</th></tr></thead>
+                <tbody>
+                  <tr><td class="mono">x</td><td class="mono">bool</td><td class="mono">true</td></tr>
+                  <tr><td class="mono">y</td><td class="mono">i32</td><td class="mono">3</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>E o exemplo que fecha: <code class="inl">x = 10 + "Raul"</code> passa pelo léxico e pelo sintático sem problema &#8212; só o semântico, consultando os tipos, consegue reprovar.</p>
+<div class="criterios"><span class="ct">O que uma resposta de nota máxima precisa ter</span><label><input type="checkbox" data-pt="0.8"><span>Percorre todas as fases, uma a uma</span><span class="pv">0,8 pt</span></label><label><input type="checkbox" data-pt="0.6"><span>Mostra o que a tabela de símbolos passa a guardar</span><span class="pv">0,6 pt</span></label><label><input type="checkbox" data-pt="0.6"><span>Dá um exemplo de erro que só o semântico pega</span><span class="pv">0,6 pt</span></label></div>
+
+          </div>
+        </details>
+      </div>
+      <div class="qcard">
+        <header>
+          <span class="qn">Questão extra</span>
+          <span class="qv">+1,00 pt</span>
+          <span class="qnota ruim">obteve 0,00</span>
+        </header>
+        <div class="enun">Proponha <strong>otimizações</strong> no projeto do interpretador. Justifique em que etapa poderiam ser aplicadas e por que preservam o comportamento do programa.</div>
+        <details class="resp"><summary>Ver resposta comentada</summary>
+          <div class="corpo">
+            <p>A otimização canônica para esse projeto é <strong>constant folding</strong> (dobramento de constantes): resolver em tempo de compilação tudo que não depende de dados de execução.</p>
+            <div class="code"><pre>x = 3 + 4 * 2;
+
+              +                         a AST é reescrita
+             / \          &#8594;            para:
+            3   *
+               / \                      IntVal(11)
+              4   2</pre></div>
+            <p><strong>Em que etapa:</strong> sobre a AST, <em>depois</em> do parsing e preferencialmente <em>depois</em> das verificações semânticas &#8212; se você dobrar antes, perde a chance de reportar erro de tipo em uma subexpressão que sumiu.</p>
+            <p><strong>Por que preserva o comportamento:</strong> as operações envolvidas são <em>puras</em> &#8212; não leem nem alteram estado, não dependem de entrada, não têm efeito colateral. <code class="inl">3+4*2</code> e <code class="inl">11</code> são indistinguíveis para o resto do programa. O cuidado: a aritmética do compilador precisa seguir <em>exatamente</em> a semântica da linguagem-alvo (mesma divisão inteira, mesmo overflow), senão a otimização muda o resultado.</p>
+            <p>Outras respostas aceitáveis: propagação de constantes, eliminação de código morto, eliminação de subexpressões redundantes, simplificações algébricas seguras (<code class="inl">x*1</code>, <code class="inl">x+0</code>).</p>
+<div class="criterios"><span class="ct">O que uma resposta de nota máxima precisa ter</span><label><input type="checkbox" data-pt="0.3"><span>Propõe uma otimização real, com nome</span><span class="pv">0,3 pt</span></label><label><input type="checkbox" data-pt="0.4"><span>Diz em que etapa se aplica e por quê</span><span class="pv">0,4 pt</span></label><label><input type="checkbox" data-pt="0.3"><span>Justifica a preservação de comportamento (pureza / ausência de efeito)</span><span class="pv">0,3 pt</span></label></div>
+<div class="armadilha"><span class="lbl">Onde a nota foi perdida</span><p>A proposta foi &#8220;criar uma AST no lexer&#8221; para paralelizar. Não existe: a AST é produto do <strong>parser</strong>, porque só ele conhece a estrutura sintática. O lexer vê uma fita de caracteres e não tem como saber que <code class="inl">4*2</code> agrupa antes de <code class="inl">3+</code>. Antes de propor otimização, confirme <em>qual fase produz o quê</em>.</p></div>
+          </div>
+        </details>
+      </div>
+  </div>
+
+  <div class="bloco-sim" id="sim-licoes">
+    <h3>As lições que se repetem</h3>
+    <p class="intro">Olhando as dezesseis correções juntas, os pontos perdidos caem em cinco padrões. Eles valem mais que qualquer conteúdo específico.</p>
+
+    <div class="lado-lado" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+      <div class="cx c-err">
+        <header><span class="tt">1 &#183; Citar não é discorrer</span><span class="ss">Q1 e Q2 do bloco A, Q1 do bloco B</span></header>
+        <div class="bd"><p>Listar exemplos ou nomear as fases não pontua. Cada item precisa vir com a frase que diz <strong>o que ele demonstra</strong>. Em questões de 3 ou 4 pontos, conte quantas ideias distintas o enunciado pede &#8212; normalmente é uma por ponto.</p></div>
+      </div>
+      <div class="cx c-err">
+        <header><span class="tt">2 &#183; Leia os índices</span><span class="ss">Q3.b e Q3.c</span></header>
+        <div class="bd"><p><code class="inl">a<sup>m</sup>b<sup>n</sup></code> e <code class="inl">a<sup>n</sup>b<sup>n</sup></code> são linguagens de <strong>classes diferentes</strong>. Uma única letra decide entre regular e livre de contexto, entre autômato finito e pilha. Circule os expoentes antes de responder qualquer coisa.</p></div>
+      </div>
+      <div class="cx c-err">
+        <header><span class="tt">3 &#183; Pumping só prova negativa</span><span class="ss">Q3.d e a extra</span></header>
+        <div class="bd"><p>Ele é condição <strong>necessária</strong>. Serve para provar que algo <em>não</em> pertence à classe, por contradição. E o primeiro passo de toda aplicação é <strong>verificar que a palavra escolhida pertence à linguagem</strong> &#8212; foi o que derrubou a questão extra.</p></div>
+      </div>
+      <div class="cx c-err">
+        <header><span class="tt">4 &#183; Não confunda os artefatos</span><span class="ss">Q3.b do bloco B, extra do bloco C</span></header>
+        <div class="bd"><p>AST &#8800; árvore de derivação. AST nasce no <strong>parser</strong>, nunca no lexer. Tabela de símbolos guarda <strong>variáveis</strong>, não resultados. Saber qual fase produz o quê evita três zeros diferentes.</p></div>
+      </div>
+      <div class="cx c-err">
+        <header><span class="tt">5 &#183; Defina a palavra do enunciado</span><span class="ss">Q3 do bloco C</span></header>
+        <div class="bd"><p>&#8220;Discorra sobre paradigmas&#8221; zerou porque a resposta falou de compilado × interpretado. Quando o enunciado traz um termo do vocabulário da disciplina, a <strong>primeira frase</strong> tem que ser a definição dele.</p></div>
+      </div>
+      <div class="cx c-lex">
+        <header><span class="tt">&#8730; O que funcionou</span><span class="ss">as quatro questões com nota cheia</span></header>
+        <div class="bd"><p>Todas seguiram o mesmo formato: <strong>uma tabela ou pipeline</strong> percorrendo as fases, com <strong>um exemplo concreto por linha</strong>, e uma frase final amarrando. Erros de compilação, v2.3×v3.0 e tipos saíram com 100% assim.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="fim">
   <hr class="rule" style="margin-bottom:12px">
   <p>Código e estrutura verificados nas tags <code class="inl">v0.0.0</code>, <code class="inl">v1.0.0</code>, <code class="inl">v1.1.1</code> e <code class="inl">v1.2.1</code> do repositório. Os depuradores reimplementam em JavaScript a gramática exata de cada versão.</p>
@@ -4593,6 +5169,83 @@ function repetir(s, n) { var r = ""; for (var k = 0; k < n; k++) r += s; return 
 
   recalc(true);
 })();
+
+/* =========================================================================
+   SIMULADO - placar e testador de cadeias
+   ========================================================================= */
+(function () {
+  var secao = document.getElementById("simulado");
+  if (!secao) return;
+  var caixas = Array.prototype.slice.call(secao.querySelectorAll('.criterios input[type=checkbox]'));
+  var elPts = document.getElementById("sim-pts"), elPct = document.getElementById("sim-pct");
+  var CHAVE = "simulado-compiladores";
+
+  var total = caixas.reduce(function (s, c) { return s + parseFloat(c.getAttribute("data-pt")); }, 0);
+  var elDe = secao.querySelector(".sim-placar span");
+  if (elDe) elDe.textContent = "de " + total.toFixed(1).replace(".", ",");
+
+  function salvar() {
+    try { localStorage.setItem(CHAVE, JSON.stringify(caixas.map(function (c) { return c.checked ? 1 : 0; }))); } catch (e) {}
+  }
+  function carregar() {
+    try {
+      var v = JSON.parse(localStorage.getItem(CHAVE) || "[]");
+      if (v.length === caixas.length) caixas.forEach(function (c, i) { c.checked = !!v[i]; });
+    } catch (e) {}
+  }
+  function atualizar() {
+    var s = 0;
+    caixas.forEach(function (c) {
+      if (c.checked) s += parseFloat(c.getAttribute("data-pt"));
+      c.parentNode.classList.toggle("ok", c.checked);
+    });
+    elPts.textContent = s.toFixed(1).replace(".", ",");
+    var pct = total ? Math.round(s / total * 100) : 0;
+    elPct.textContent = pct === 0 ? "comece marcando" : pct + "% dos critérios";
+    salvar();
+  }
+  caixas.forEach(function (c) { c.addEventListener("change", atualizar); });
+  carregar(); atualizar();
+})();
+
+/* ---- testador da linguagem a*b* U b*a* ---- */
+(function () {
+  var inp = document.getElementById("sim-l-inp");
+  if (!inp) return;
+  var cad = document.getElementById("sim-l-cad"), ver = document.getElementById("sim-l-ver");
+  var pres = document.getElementById("sim-l-presets");
+
+  ["", "a", "bbb", "aaabb", "bbbaaaa", "abba", "abab"].forEach(function (s) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "preset"; b.textContent = s === "" ? "ε" : s;
+    b.addEventListener("click", function () { inp.value = s; testar(); });
+    pres.appendChild(b);
+  });
+
+  function testar() {
+    var s = inp.value.replace(/\s/g, "");
+    var invalido = /[^ab]/.test(s);
+    var trocas = [], html = "";
+    for (var i = 0; i < s.length; i++) {
+      var troca = i > 0 && s.charAt(i) !== s.charAt(i - 1);
+      if (troca) trocas.push(i);
+      html += '<span class="' + (troca ? "troca" : "") + '">' + esc(s.charAt(i)) + "</span>";
+    }
+    cad.innerHTML = html || '<span style="color:var(--ink-3);font-size:14px">ε (cadeia vazia)</span>';
+
+    var ok = !invalido && trocas.length <= 1;
+    ver.className = "sim-ver " + (ok ? "sim" : "nao");
+    var pq;
+    if (invalido) pq = "só os símbolos a e b pertencem ao alfabeto.";
+    else if (trocas.length === 0) pq = s.length ? "um bloco só — cabe em a*b* com n = 0." : "a cadeia vazia pertence (m = n = 0).";
+    else if (trocas.length === 1) pq = "exatamente uma troca de símbolo na posição " + trocas[0] + " — é um bloco seguido de outro.";
+    else pq = trocas.length + " trocas de símbolo (posições " + trocas.join(", ") + ") — L admite no máximo uma.";
+    ver.innerHTML = '<span class="b">' + (ok ? "pertence a L" : "fora de L") + '</span><span class="pq">' + pq + "</span>";
+  }
+  inp.addEventListener("input", testar);
+  testar();
+})();
+
 </script>
 
 </body>
