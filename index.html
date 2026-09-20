@@ -93,6 +93,52 @@ section{padding-top:46px;display:flex;flex-direction:column;gap:16px}
 .section-head{display:flex;flex-direction:column;gap:7px}
 hr.rule{border:0;border-top:1px solid var(--rule);margin:0}
 
+
+/* ---------- seções sequenciais ---------- */
+.secoes{display:flex;flex-direction:column}
+.painel{padding-top:40px;margin-top:34px;border-top:1px solid var(--rule);scroll-margin-top:96px}
+.painel:first-child{margin-top:14px;padding-top:6px;border-top:0}
+section[id]{scroll-margin-top:96px}
+@media(max-width:1040px){.painel,section[id]{scroll-margin-top:150px}}
+
+/* rótulo de continuidade no fim de cada seção */
+.proxima{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:30px;padding:16px 20px;border:1px solid var(--rule);border-radius:10px;background:#fff;text-decoration:none;color:inherit}
+.proxima:hover{border-color:#bfdcd0;background:var(--mint-l)}
+.proxima .lbl{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-3);font-weight:700}
+.proxima .tt{font-weight:650;font-size:15.5px;color:var(--ink);margin-top:3px}
+.proxima .seta{font-size:20px;color:var(--green)}
+
+
+/* ---------- trilhos (diagramas sintáticos animados) ---------- */
+.trilhos{background:#fff;border:1px solid var(--rule);border-radius:12px;overflow:hidden}
+.trilhos .barra{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 22px;border-bottom:1px solid var(--rule);background:var(--sunk)}
+.trilhos .diagramas{padding:8px 0 4px}
+.tri{padding:14px 22px;border-bottom:1px dashed var(--rule);transition:background .2s ease,opacity .2s ease}
+.tri:last-child{border-bottom:0}
+.tri.dormindo{opacity:.4}
+.tri.acordado{background:#f7fbf9}
+.tri-cab{display:flex;align-items:center;gap:11px;margin-bottom:6px}
+.tri-cab .nome{font-family:var(--m);font-size:14px;font-weight:700;color:var(--ink-2)}
+.tri.acordado .tri-cab .nome{color:var(--green)}
+.tri-cab .marca{font-size:10.5px;letter-spacing:1px;text-transform:uppercase;font-weight:700;border-radius:4px;padding:3px 8px;background:var(--mint-2);color:#14583f;opacity:0}
+.tri.acordado .tri-cab .marca{opacity:1}
+.tri svg{max-width:100%;height:auto;display:block;color:#b3c7c4}
+.tri .cx-box rect{fill:#fff;stroke:#8fa8a3;stroke-width:1.8;transition:fill .18s ease,stroke .18s ease}
+.tri .cx-box text{fill:#24483f;font-family:ui-monospace,monospace;font-weight:700;transition:fill .18s ease}
+.tri .cx-box.on rect{fill:#145f46;stroke:#0b4c35;stroke-width:3}
+.tri .cx-box.on text{fill:#fff}
+.tri .cx-box.usado rect{fill:#e0f5e9;stroke:#52a67c}
+.tri .via{stroke:#b3c7c4;stroke-width:2;fill:none;transition:stroke .18s ease,stroke-width .18s ease}
+.tri .via.on{stroke:#145f46;stroke-width:3}
+.tri .pt{fill:#8fa8a3;transition:fill .18s ease}
+.tri .pt.on{fill:#145f46}
+.tri .rot{font-size:10.5px;fill:#5b6d65}
+
+.tri-pilha{display:flex;flex-direction:column;gap:4px;font:12.5px/1.5 var(--m)}
+.tri-pilha .q{background:#f2f5f6;border-left:3px solid #acbfba;border-radius:3px;padding:6px 10px;color:var(--ink)}
+.tri-pilha .q:last-child{background:#e1f3e9;border-left-color:var(--green);font-weight:700}
+.tri-pilha .vazia{font-family:var(--f);font-size:13px;color:var(--ink-3)}
+
 /* ---------- código ---------- */
 .code{background:var(--code);color:var(--code-t);border:0;border-radius:10px;padding:17px 20px;overflow-x:auto;font:13.5px/1.8 var(--m);tab-size:4}
 .code pre{margin:0}
@@ -422,34 +468,34 @@ footer.fim{margin-top:44px;padding-top:20px;border-top:1px solid var(--rule);fon
     <div class="sn-grupo sn-g-aulas">
       <a class="sn-part" href="#aulas" data-sec="aulas"><span class="rom">I</span>As aulas</a>
       <div class="sn-subs">
-        <a class="sn-sub sn-s-syn" href="#aulas" data-aba="a4"><span class="n">A4</span>Lexer e Parser</a>
-        <a class="sn-sub sn-s-lex" href="#aulas" data-aba="a5"><span class="n">A5</span>Regulares</a>
-        <a class="sn-sub sn-s-syn" href="#aulas" data-aba="a6"><span class="n">A6</span>Precedência</a>
-        <a class="sn-sub sn-s-err" href="#aulas" data-aba="a7"><span class="n">A7</span>GLC e pilha</a>
-        <a class="sn-sub sn-s-sem" href="#aulas" data-aba="a8"><span class="n">A8</span>Árvores</a>
-        <a class="sn-sub sn-s-ink" href="#aulas" data-aba="a9"><span class="n">A9</span>LL, LR, limites</a>
+        <a class="sn-sub sn-s-syn" href="#a4" data-sub="a4"><span class="n">A4</span>Lexer e Parser</a>
+        <a class="sn-sub sn-s-lex" href="#a5" data-sub="a5"><span class="n">A5</span>Regulares</a>
+        <a class="sn-sub sn-s-syn" href="#a6" data-sub="a6"><span class="n">A6</span>Precedência</a>
+        <a class="sn-sub sn-s-err" href="#a7" data-sub="a7"><span class="n">A7</span>GLC e pilha</a>
+        <a class="sn-sub sn-s-sem" href="#a8" data-sub="a8"><span class="n">A8</span>Árvores</a>
+        <a class="sn-sub sn-s-ink" href="#a9" data-sub="a9"><span class="n">A9</span>LL, LR, limites</a>
       </div>
     </div>
 
     <div class="sn-grupo sn-g-teoria">
       <a class="sn-part" href="#teoria" data-sec="teoria"><span class="rom">II</span>A teoria</a>
       <div class="sn-subs">
-        <a class="sn-sub sn-s-syn" href="#teoria" data-aba="t1">Gramática</a>
-        <a class="sn-sub sn-s-lex" href="#teoria" data-aba="t2">Autômatos</a>
-        <a class="sn-sub sn-s-err" href="#teoria" data-aba="t3">Pumping</a>
-        <a class="sn-sub sn-s-sem" href="#teoria" data-aba="t5">Fechamento</a>
-        <a class="sn-sub sn-s-lex" href="#teoria" data-aba="t6">Chomsky</a>
-        <a class="sn-sub sn-s-sem" href="#teoria" data-aba="t4">Árvores</a>
+        <a class="sn-sub sn-s-syn" href="#t1" data-sub="t1">Gramática</a>
+        <a class="sn-sub sn-s-lex" href="#t2" data-sub="t2">Autômatos</a>
+        <a class="sn-sub sn-s-err" href="#t3" data-sub="t3">Pumping</a>
+        <a class="sn-sub sn-s-sem" href="#t5" data-sub="t5">Fechamento</a>
+        <a class="sn-sub sn-s-lex" href="#t6" data-sub="t6">Chomsky</a>
+        <a class="sn-sub sn-s-sem" href="#t4" data-sub="t4">Árvores</a>
       </div>
     </div>
 
     <div class="sn-grupo sn-g-impl">
       <a class="sn-part" href="#impl" data-sec="impl"><span class="rom">III</span>Os roteiros</a>
       <div class="sn-subs">
-        <a class="sn-sub sn-s-ink" href="#impl" data-aba="r1"><span class="n">v0.0</span>Nascem as classes</a>
-        <a class="sn-sub sn-s-lex" href="#impl" data-aba="r2"><span class="n">v1.0</span>Separação de fases</a>
-        <a class="sn-sub sn-s-syn" href="#impl" data-aba="r3"><span class="n">v1.1</span>Precedência</a>
-        <a class="sn-sub sn-s-sem" href="#impl" data-aba="r4"><span class="n">v1.2</span>A AST</a>
+        <a class="sn-sub sn-s-ink" href="#r1" data-sub="r1"><span class="n">v0.0</span>Nascem as classes</a>
+        <a class="sn-sub sn-s-lex" href="#r2" data-sub="r2"><span class="n">v1.0</span>Separação de fases</a>
+        <a class="sn-sub sn-s-syn" href="#r3" data-sub="r3"><span class="n">v1.1</span>Precedência</a>
+        <a class="sn-sub sn-s-sem" href="#r4" data-sub="r4"><span class="n">v1.2</span>A AST</a>
         <a class="sn-sub sn-s-sem" href="#colinha" data-sec="colinha">Operador novo · colinha</a>
       </div>
     </div>
@@ -515,30 +561,10 @@ footer.fim{margin-top:44px;padding-top:20px;border-top:1px solid var(--rule);fon
   </div>
   <p class="prose">Seis aulas que formam um arco: a teoria vira código, as linguagens regulares fecham, o parser ganha precedência, a linguagem sobe de classe, as árvores aparecem, e no fim vêm as estratégias de parsing e os limites formais.</p>
 
-  <div class="abas-wrap">
-    <div class="abas" style="grid-template-columns:repeat(auto-fit,minmax(152px,1fr))" role="tablist" aria-label="Aulas">
-      <button class="aba a-syn" role="tab" id="tab-a4" aria-controls="a4" aria-selected="true" type="button">
-        <span class="ar">Aula 4</span><span class="av">Lexer e Parser</span><span class="ad">Diagrama sintático e tokenização</span>
-      </button>
-      <button class="aba a-lex" role="tab" id="tab-a5" aria-controls="a5" aria-selected="false" tabindex="-1" type="button">
-        <span class="ar">Aula 5</span><span class="av">Regulares</span><span class="ad">ER, AFD/AFN, pumping, fechamento</span>
-      </button>
-      <button class="aba a-syn" role="tab" id="tab-a6" aria-controls="a6" aria-selected="false" tabindex="-1" type="button">
-        <span class="ar">Aula 6</span><span class="av">Precedência</span><span class="ad">EXPRESSION, TERM, FACTOR</span>
-      </button>
-      <button class="aba a-err" role="tab" id="tab-a7" aria-controls="a7" aria-selected="false" tabindex="-1" type="button">
-        <span class="ar">Aula 7</span><span class="av">GLC e pilha</span><span class="ad">Autômatos de pilha, GLC &#8596; PDA</span>
-      </button>
-      <button class="aba a-sem" role="tab" id="tab-a8" aria-controls="a8" aria-selected="false" tabindex="-1" type="button">
-        <span class="ar">Aula 8</span><span class="av">Árvores</span><span class="ad">Derivação, ambiguidade e AST</span>
-      </button>
-      <button class="aba a-ink" role="tab" id="tab-a9" aria-controls="a9" aria-selected="false" tabindex="-1" type="button">
-        <span class="ar">Aula 9</span><span class="av">LL, LR, limites</span><span class="ad">Parsing, pumping CFL, Chomsky</span>
-      </button>
-    </div>
+  <div class="secoes">
 
     <!-- ================= AULA 4 ================= -->
-    <section id="a4" class="painel" role="tabpanel" aria-labelledby="tab-a4">
+    <section id="a4" class="painel">
       <div class="aula-cap">
         <span class="num">04</span>
         <span class="meta">
@@ -697,10 +723,12 @@ footer.fim{margin-top:44px;padding-top:20px;border-top:1px solid var(--rule);fon
       </div>
 
       <p class="prose">A partir daqui a disciplina deixa de ser sobre gramáticas no papel. A <strong>Aula 6</strong> pega esse mesmo parser e o faz respeitar precedência; a <strong>Aula 8</strong> o faz construir uma árvore em vez de calcular.</p>
+
+      <a class="proxima" href="#a5"><span><span class="lbl">Próxima seção</span><span class="tt">Aula 5 · Linguagens regulares</span></span><span class="seta">&#8594;</span></a>
     </section>
 
     <!-- ================= AULA 5 ================= -->
-    <section id="a5" class="painel" role="tabpanel" aria-labelledby="tab-a5" hidden>
+    <section id="a5" class="painel">
       <div class="aula-cap">
         <span class="num" style="color:var(--lex)">05</span>
         <span class="meta">
@@ -828,10 +856,12 @@ B &#8594; b B  |  &#949;</pre></div></div>
         <div class="etapa p">Pumping lemma &#8594; ferramenta para provar NÃO regularidade</div><div class="liga">&#8595;</div>
         <div class="etapa a">Fechamento &#8594; operações que preservam regularidade</div>
       </div>
+
+      <a class="proxima" href="#a6"><span><span class="lbl">Próxima seção</span><span class="tt">Aula 6 · Precedência</span></span><span class="seta">&#8594;</span></a>
     </section>
 
     <!-- ================= AULA 6 ================= -->
-    <section id="a6" class="painel" role="tabpanel" aria-labelledby="tab-a6" hidden>
+    <section id="a6" class="painel">
       <div class="aula-cap">
         <span class="num" style="color:var(--syn)">06</span>
         <span class="meta">
@@ -891,6 +921,122 @@ E  termina 3 + 8 = 11</pre></div>
       <p class="prose">Repare na linha "T vê + e termina": o <code class="inl">+</code> não pertence àquele nível, então o <code class="inl">TERM</code> devolve o que tem e deixa o <code class="inl">+</code> para quem o chamou. Esse <em>deixar para o de cima</em> é o mecanismo inteiro da precedência.</p>
       <p class="prose">O depurador da aba <strong>v1.1</strong>, na <a href="#impl">Parte III</a>, mostra esses quadros de chamada empilhando e desempilhando de verdade, cada um com o seu próprio <code class="inl">result</code>.</p>
 
+
+      <div class="passo-n"><span class="bola">&#9679;</span><h3>Os três diagramas, em movimento</h3></div>
+      <p class="prose">Cada regra da gramática é um <strong>trilho</strong>. Você entra pela esquerda, segue os caminhos e sai pela direita &#8212; e um retângulo com nome de regra significa "vá percorrer aquele outro trilho e volte". Digite uma expressão e veja o percurso acontecer.</p>
+
+      <div class="trilhos">
+        <div class="barra">
+          <span style="font-size:12px;font-weight:650;color:var(--ink-2)">Expressão</span>
+          <input type="text" id="tri-inp" value="3+4*2" spellcheck="false" autocomplete="off">
+          <div class="presets" id="tri-presets"></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,230px)">
+          <div class="diagramas">
+            <div class="tri" id="tri-E">
+              <div class="tri-cab"><span class="nome">EXPRESSION</span><span class="marca">percorrendo</span></div>
+              <svg viewBox="0 0 640 128" role="img" aria-label="Diagrama EXPRESSION: entra, chama TERM, e pode sair ou voltar por um laço que passa por mais ou menos.">
+  <circle class="pt" id="e-ini" cx="18" cy="86" r="6"/>
+  <path class="via" id="e-v1" d="M24 86 H72"/>
+  <g class="cx-box" id="e-term"><rect x="72" y="69" width="116" height="34" rx="6"/><text x="130.0" y="91" text-anchor="middle" font-size="13">TERM</text></g>
+  <path class="via" id="e-v2" d="M188 86 H520"/>
+  <path class="via" id="e-v3" d="M520 86 H592"/>
+  <circle class="pt" id="e-fim" cx="604" cy="86" r="6" fill="none" stroke="#8fa8a3" stroke-width="2.5"/>
+  <path class="via" id="e-loop-a" d="M452 86 V34 H386"/>
+  <g class="cx-box" id="e-op"><rect x="246" y="17" width="140" height="34" rx="6"/><text x="316.0" y="39" text-anchor="middle" font-size="13">+   ou   &#8722;</text></g>
+  <path class="via" id="e-loop-b" d="M246 34 H56 V86"/>
+  <circle class="pt" cx="452" cy="86" r="3.5"/>
+  <circle class="pt" cx="56" cy="86" r="3.5"/>
+  <text class="rot" x="322" y="72" text-anchor="middle">o laço volta para ler outro TERM</text>
+</svg>
+            </div>
+            <div class="tri" id="tri-T">
+              <div class="tri-cab"><span class="nome">TERM</span><span class="marca">percorrendo</span></div>
+              <svg viewBox="0 0 640 128" role="img" aria-label="Diagrama TERM: entra, chama FACTOR, e pode sair ou voltar por um laço que passa por vezes ou dividido.">
+  <circle class="pt" id="t-ini" cx="18" cy="86" r="6"/>
+  <path class="via" id="t-v1" d="M24 86 H72"/>
+  <g class="cx-box" id="t-factor"><rect x="72" y="69" width="116" height="34" rx="6"/><text x="130.0" y="91" text-anchor="middle" font-size="13">FACTOR</text></g>
+  <path class="via" id="t-v2" d="M188 86 H520"/>
+  <path class="via" id="t-v3" d="M520 86 H592"/>
+  <circle class="pt" id="t-fim" cx="604" cy="86" r="6" fill="none" stroke="#8fa8a3" stroke-width="2.5"/>
+  <path class="via" id="t-loop-a" d="M452 86 V34 H386"/>
+  <g class="cx-box" id="t-op"><rect x="246" y="17" width="140" height="34" rx="6"/><text x="316.0" y="39" text-anchor="middle" font-size="13">*   ou   /</text></g>
+  <path class="via" id="t-loop-b" d="M246 34 H56 V86"/>
+  <circle class="pt" cx="452" cy="86" r="3.5"/>
+  <circle class="pt" cx="56" cy="86" r="3.5"/>
+  <text class="rot" x="322" y="72" text-anchor="middle">o laço volta para ler outro FACTOR</text>
+</svg>
+            </div>
+            <div class="tri" id="tri-F">
+              <div class="tri-cab"><span class="nome">FACTOR</span><span class="marca">percorrendo</span></div>
+              <svg viewBox="0 0 640 210" role="img" aria-label="Diagrama FACTOR: três caminhos alternativos — um número, um operador unário seguido de FACTOR, ou um parêntese contendo EXPRESSION.">
+  <circle class="pt" id="f-ini" cx="18" cy="104" r="6"/>
+  <path class="via" id="f-v1" d="M24 104 H56"/>
+
+  <path class="via" id="f-b1" d="M56 104 V34 H150"/>
+  <g class="cx-box" id="f-num"><rect x="150" y="17" width="130" height="34" rx="6"/><text x="215.0" y="39" text-anchor="middle" font-size="13">NUMBER</text></g>
+  <path class="via" id="f-b1b" d="M280 34 H560 V104"/>
+
+  <path class="via" id="f-b2" d="M56 104 H150"/>
+  <g class="cx-box" id="f-un"><rect x="150" y="87" width="120" height="34" rx="6"/><text x="210.0" y="109" text-anchor="middle" font-size="13">+   ou   &#8722;</text></g>
+  <path class="via" id="f-b2m" d="M270 104 H304"/>
+  <g class="cx-box" id="f-unf"><rect x="304" y="87" width="120" height="34" rx="6"/><text x="364.0" y="109" text-anchor="middle" font-size="13">FACTOR</text></g>
+  <path class="via" id="f-b2b" d="M424 104 H560"/>
+
+  <path class="via" id="f-b3" d="M56 104 V176 H128"/>
+  <g class="cx-box" id="f-ab"><rect x="128" y="159" width="44" height="34" rx="6"/><text x="150.0" y="181" text-anchor="middle" font-size="16">(</text></g>
+  <path class="via" id="f-b3m" d="M172 176 H212"/>
+  <g class="cx-box" id="f-expr"><rect x="212" y="159" width="150" height="34" rx="6"/><text x="287.0" y="181" text-anchor="middle" font-size="13">EXPRESSION</text></g>
+  <path class="via" id="f-b3n" d="M362 176 H402"/>
+  <g class="cx-box" id="f-fe"><rect x="402" y="159" width="44" height="34" rx="6"/><text x="424.0" y="181" text-anchor="middle" font-size="16">)</text></g>
+  <path class="via" id="f-b3b" d="M446 176 H560 V104"/>
+
+  <path class="via" id="f-v2" d="M560 104 H592"/>
+  <circle class="pt" id="f-fim" cx="604" cy="104" r="6" fill="none" stroke="#8fa8a3" stroke-width="2.5"/>
+  <circle class="pt" cx="56" cy="104" r="3.5"/>
+  <circle class="pt" cx="560" cy="104" r="3.5"/>
+  <text class="rot" x="470" y="28" text-anchor="middle">três caminhos alternativos: escolha um</text>
+</svg>
+            </div>
+          </div>
+          <div style="padding:18px;background:var(--sunk);border-left:1px solid var(--rule);display:flex;flex-direction:column;gap:16px">
+            <div class="bloco">
+              <div class="eyebrow">Token atual</div>
+              <div id="tri-tok"></div>
+            </div>
+            <div class="bloco">
+              <div class="eyebrow">Trilhos abertos</div>
+              <div class="tri-pilha" id="tri-pilha"></div>
+            </div>
+            <div class="bloco">
+              <div class="eyebrow">Resultado parcial</div>
+              <div id="tri-res"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="narra" style="padding:14px 22px;border-top:1px solid var(--rule);margin:0">
+          <span class="selo parse" id="tri-selo">&#8212;</span>
+          <span class="txt"><span class="l1" id="tri-n1">&#8212;</span><span class="l2" id="tri-n2"></span></span>
+        </div>
+
+        <div class="passos">
+          <button class="btn" id="tri-ini" type="button">&#9198;</button>
+          <button class="btn" id="tri-ant" type="button">&#9664;</button>
+          <button class="btn play" id="tri-play" type="button">&#9654; Percorrer</button>
+          <button class="btn" id="tri-prox" type="button">&#9654;</button>
+          <input type="range" id="tri-slider" min="0" max="0" value="0" aria-label="Passos do percurso">
+          <span class="conta" id="tri-conta">&#8212;</span>
+        </div>
+      </div>
+
+      <div class="nota f-syn">
+        <span class="t">O que observar enquanto roda</span>
+        <p>Com <code class="inl">3+4*2</code>: o <code class="inl">EXPRESSION</code> mal começa e já manda para o <code class="inl">TERM</code>, que manda para o <code class="inl">FACTOR</code>, que finalmente consome o <code class="inl">3</code>. Na volta, o <code class="inl">TERM</code> olha se há <code class="inl">*</code> ou <code class="inl">/</code> &#8212; não há &#8212; e devolve. Só então o <code class="inl">EXPRESSION</code> vê o <code class="inl">+</code>. Mais adiante, quando o <code class="inl">TERM</code> encontra o <code class="inl">*</code>, ele <strong>não devolve</strong>: fica ali resolvendo <code class="inl">4*2</code> antes de entregar 8 para a soma. É a precedência acontecendo.</p>
+        <p>Experimente <code class="inl">(2+3)*4</code> e veja a coluna "trilhos abertos" crescer: dentro do parêntese há um <code class="inl">EXPRESSION</code> <em>por dentro</em> de outro. Essa pilha é a memória que um autômato finito não tem.</p>
+      </div>
+
       <div class="passo-n"><span class="bola">3</span><h3>Operadores unários</h3></div>
       <p class="prose">Em <code class="inl">-3</code>, o <code class="inl">-</code> não é subtração entre dois operandos: ele se aplica diretamente ao <code class="inl">3</code>. Por isso a gramática permite <code class="inl">FACTOR &#8594; "-" FACTOR</code> e <code class="inl">FACTOR &#8594; "+" FACTOR</code>.</p>
       <p class="prose">E como <code class="inl">FACTOR</code> chama outro <code class="inl">FACTOR</code>, construções como <code class="inl">--3</code>, <code class="inl">+-3</code> e <code class="inl">+--++3</code> funcionam <strong>sem nenhum código específico</strong> para unários encadeados. É recursão fazendo o trabalho.</p>
@@ -925,10 +1071,12 @@ esse FACTOR inteiro vira o operando esquerdo do *</pre></div>
         <div class="etapa g">TERM &#8212; cuida de * e /</div><div class="liga">&#8595; chama</div>
         <div class="etapa a">FACTOR &#8212; NUMBER | &#177;FACTOR | ( EXPRESSION )</div>
       </div>
+
+      <a class="proxima" href="#a7"><span><span class="lbl">Próxima seção</span><span class="tt">Aula 7 · GLC e autômatos de pilha</span></span><span class="seta">&#8594;</span></a>
     </section>
 
     <!-- ================= AULA 7 ================= -->
-    <section id="a7" class="painel" role="tabpanel" aria-labelledby="tab-a7" hidden>
+    <section id="a7" class="painel">
       <div class="aula-cap">
         <span class="num" style="color:var(--err)">07</span>
         <span class="meta">
@@ -1061,10 +1209,12 @@ gera:  a  ·  (a)  ·  ((a))  ·  (((a)))  &#8230;</pre></div>
         <div class="etapa a">Autômatos de pilha &#8212; a pilha fornece memória</div><div class="liga">&#8595;</div>
         <div class="etapa a">GLC &#8596; PDA</div>
       </div>
+
+      <a class="proxima" href="#a8"><span><span class="lbl">Próxima seção</span><span class="tt">Aula 8 · Árvores e ambiguidade</span></span><span class="seta">&#8594;</span></a>
     </section>
 
     <!-- ================= AULA 8 ================= -->
-    <section id="a8" class="painel" role="tabpanel" aria-labelledby="tab-a8" hidden>
+    <section id="a8" class="painel">
       <div class="aula-cap">
         <span class="num">08</span>
         <span class="meta">
@@ -1226,10 +1376,12 @@ gera:  a  ·  (a)  ·  ((a))  ·  (((a)))  &#8230;</pre></div>
         <div class="etapa a">Parser constrói a AST</div><div class="liga">&#8595;</div>
         <div class="etapa a">AST é avaliada recursivamente</div>
       </div>
+
+      <a class="proxima" href="#a9"><span><span class="lbl">Próxima seção</span><span class="tt">Aula 9 · LL, LR e limites</span></span><span class="seta">&#8594;</span></a>
     </section>
 
     <!-- ================= AULA 9 ================= -->
-    <section id="a9" class="painel" role="tabpanel" aria-labelledby="tab-a9" hidden>
+    <section id="a9" class="painel">
       <div class="aula-cap">
         <span class="num" style="color:var(--ink)">09</span>
         <span class="meta">
@@ -1409,6 +1561,8 @@ gera:  a  ·  (a)  ·  ((a))  ·  (((a)))  &#8230;</pre></div>
         <div class="etapa p">Fechamento &#8594; quais operações preservam a classe</div><div class="liga">&#8595;</div>
         <div class="etapa a">Hierarquia de Chomsky &#8594; Regular &#8834; CFL &#8834; CSL &#8834; RE</div>
       </div>
+
+      <a class="proxima" href="#teoria"><span><span class="lbl">Próxima seção</span><span class="tt">Parte II · A teoria por trás</span></span><span class="seta">&#8594;</span></a>
     </section>
   </div>
 </section>
@@ -1422,30 +1576,10 @@ gera:  a  ·  (a)  ·  ((a))  ·  (((a)))  &#8230;</pre></div>
   </div>
   <p class="prose">Quatro ideias que explicam <em>por que</em> o compilador tem duas fases, por que o <code class="inl">FACTOR</code> precisa ser recursivo, e por que parênteses não viram nó na árvore. Não são pré-requisitos abstratos: cada uma resolve um problema concreto do seu código.</p>
 
-  <div class="abas-wrap">
-    <div class="abas" role="tablist" aria-label="Tópicos de teoria">
-      <button class="aba a-syn" role="tab" id="tab-t1" aria-controls="t1" aria-selected="true" type="button">
-        <span class="ar">Tópico 1</span><span class="av">Gramática</span><span class="ad">EBNF, derivação, associatividade</span>
-      </button>
-      <button class="aba a-lex" role="tab" id="tab-t2" aria-controls="t2" aria-selected="false" tabindex="-1" type="button">
-        <span class="ar">Tópico 2</span><span class="av">Autômatos</span><span class="ad">O Lexer é uma máquina de estados</span>
-      </button>
-      <button class="aba a-err" role="tab" id="tab-t3" aria-controls="t3" aria-selected="false" tabindex="-1" type="button">
-        <span class="ar">Tópico 3</span><span class="av">Pumping</span><span class="ad">Regulares e livres de contexto</span>
-      </button>
-      <button class="aba a-sem" role="tab" id="tab-t5" aria-controls="t5" aria-selected="false" tabindex="-1" type="button">
-        <span class="ar">Tópico 4</span><span class="av">Fechamento</span><span class="ad">Que operações preservam a classe</span>
-      </button>
-      <button class="aba a-lex" role="tab" id="tab-t6" aria-controls="t6" aria-selected="false" tabindex="-1" type="button">
-        <span class="ar">Tópico 5</span><span class="av">Chomsky</span><span class="ad">A hierarquia das linguagens</span>
-      </button>
-      <button class="aba a-sem" role="tab" id="tab-t4" aria-controls="t4" aria-selected="false" tabindex="-1" type="button">
-        <span class="ar">Tópico 6</span><span class="av">Árvores</span><span class="ad">Derivação vs. AST</span>
-      </button>
-    </div>
+  <div class="secoes">
 
     <!-- ---------------- T1 GRAMÁTICA ---------------- -->
-    <section id="t1" class="painel" role="tabpanel" aria-labelledby="tab-t1">
+    <section id="t1" class="painel">
       <h3>A gramática da linguagem</h3>
       <p class="prose">Uma gramática define <strong>quais sequências de símbolos são válidas</strong>. A do seu compilador tem três regras, e cada uma vira uma função — quase palavra por palavra.</p>
 
@@ -1522,10 +1656,12 @@ DIGIT      = <span class="s">"0"</span> | <span class="s">"1"</span> | ... | <sp
         </table>
       </div>
       <p class="prose">O <code class="inl">while</code> que acumula da esquerda para a direita no <code class="inl">parse_expression()</code> é a tradução direta dessa recursão à esquerda. Por isso <code class="inl">10-3-2</code> dá 5 no seu código sem você ter pensado no assunto.</p>
+
+      <a class="proxima" href="#t2"><span><span class="lbl">Próxima seção</span><span class="tt">Autômatos finitos</span></span><span class="seta">&#8594;</span></a>
     </section>
 
     <!-- ---------------- T2 AUTÔMATOS ---------------- -->
-    <section id="t2" class="painel" role="tabpanel" aria-labelledby="tab-t2" hidden>
+    <section id="t2" class="painel">
       <h3>O Lexer é um autômato finito</h3>
       <p class="prose">Um <strong>autômato finito determinístico</strong> (AFD) é a máquina mais simples que existe para reconhecer padrões: um conjunto de estados, uma transição por símbolo lido, e alguns estados marcados como de aceitação. Ele tem uma limitação definidora — <strong>nenhuma memória além do estado atual</strong>. Não conta, não empilha, não lembra o que veio antes.</p>
       <p class="prose">E é exatamente isso que o seu <code class="inl">select_next()</code> é. A variável <code class="inl">position</code> não é memória do autômato: é só o ponteiro de leitura da fita.</p>
@@ -1628,10 +1764,12 @@ DIGIT      = <span class="s">"0"</span> | <span class="s">"1"</span> | ... | <sp
         <span class="t">Linguagem regular = reconhecível por autômato finito</span>
         <p>A camada léxica da sua linguagem — o que é um número, o que é um símbolo — é <strong>regular</strong>. É por isso que o <code class="inl">Lexer</code> quase não mudou do Roteiro 1 ao 4: acrescentar <code class="inl">*</code>, <code class="inl">/</code>, <code class="inl">(</code> e <code class="inl">)</code> foi só acrescentar transições saindo de q0. A estrutura da máquina continuou a mesma.</p>
       </div>
+
+      <a class="proxima" href="#t3"><span><span class="lbl">Próxima seção</span><span class="tt">Pumping lemma</span></span><span class="seta">&#8594;</span></a>
     </section>
 
     <!-- ---------------- T3 PUMPING ---------------- -->
-    <section id="t3" class="painel" role="tabpanel" aria-labelledby="tab-t3" hidden>
+    <section id="t3" class="painel">
       <h3>O lema do bombeamento</h3>
       <p class="prose">O lema do bombeamento (<em>pumping lemma</em>) é uma ferramenta para <strong>provar que uma linguagem NÃO é regular</strong> — ou seja, que nenhum autômato finito consegue reconhecê-la, por mais estados que você lhe dê.</p>
       <p class="prose">Ele importa muito concretamente aqui: é a razão formal de o <code class="inl">FACTOR</code> precisar chamar a si mesmo.</p>
@@ -1753,10 +1891,12 @@ DIGIT      = <span class="s">"0"</span> | <span class="s">"1"</span> | ... | <sp
         <span class="t">Por que isso importa para um compilador</span>
         <p><code class="inl">a<sup>n</sup>b<sup>n</sup>c<sup>n</sup></code> parece artificial, mas tem análogo real: <strong>"toda variável usada foi declarada antes, com o tipo certo"</strong> é uma restrição desse tipo. É por isso que nenhuma gramática livre de contexto valida um programa por completo, e por que existe uma <strong>fase semântica</strong> separada — com tabela de símbolos — depois da sintática. A sintaxe cuida da forma; ela literalmente não alcança o resto.</p>
       </div>
+
+      <a class="proxima" href="#t5"><span><span class="lbl">Próxima seção</span><span class="tt">Propriedades de fechamento</span></span><span class="seta">&#8594;</span></a>
     </section>
 
     <!-- ---------------- T5 FECHAMENTO ---------------- -->
-    <section id="t5" class="painel" role="tabpanel" aria-labelledby="tab-t5" hidden>
+    <section id="t5" class="painel">
       <h3>Propriedades de fechamento</h3>
       <p class="prose">Dizer que uma classe de linguagens é <strong>fechada</strong> sob uma operação significa uma coisa só: se você pega linguagens daquela classe e aplica a operação, o resultado <em>continua</em> na classe.</p>
 
@@ -1812,10 +1952,12 @@ L&#8321; , L&#8322; livres de contexto   &#8658;   L&#8321; &#8745; L&#8322;  po
 5. contradição &#8658; L não era regular</pre></div>
 
       <p class="prose">A vantagem sobre aplicar pumping direto em <em>L</em>: às vezes <em>L</em> é bagunçada demais para escolher uma palavra boa, mas <code class="inl">L &#8745; R</code> fica limpinha.</p>
+
+      <a class="proxima" href="#t6"><span><span class="lbl">Próxima seção</span><span class="tt">Hierarquia de Chomsky</span></span><span class="seta">&#8594;</span></a>
     </section>
 
     <!-- ---------------- T6 CHOMSKY ---------------- -->
-    <section id="t6" class="painel" role="tabpanel" aria-labelledby="tab-t6" hidden>
+    <section id="t6" class="painel">
       <h3>A hierarquia de Chomsky</h3>
       <p class="prose">Quatro classes encaixadas, cada uma estritamente maior que a anterior. A posição de uma linguagem na hierarquia responde a uma pergunta prática: <strong>que tipo de máquina é preciso construir para reconhecê-la?</strong></p>
 
@@ -1875,10 +2017,12 @@ L&#8321; , L&#8322; livres de contexto   &#8658;   L&#8321; &#8745; L&#8322;  po
         <span class="t">E o que fica de fora até do tipo 0</span>
         <p>Subindo até o topo, as recursivamente enumeráveis ainda deixam problemas sem resposta. O <strong>problema da parada</strong> — dado um programa e uma entrada, ele termina? — é <em>indecidível</em>: nenhum algoritmo o resolve para todos os casos. É por isso que, para regulares, perguntas como "<em>L</em>&#8321; = <em>L</em>&#8322;?" são decidíveis, enquanto as mesmas perguntas para CFL já não são todas.</p>
       </div>
+
+      <a class="proxima" href="#t4"><span><span class="lbl">Próxima seção</span><span class="tt">Árvores: derivação vs. AST</span></span><span class="seta">&#8594;</span></a>
     </section>
 
     <!-- ---------------- T4 ÁRVORES ---------------- -->
-    <section id="t4" class="painel" role="tabpanel" aria-labelledby="tab-t4" hidden>
+    <section id="t4" class="painel">
       <h3>Duas árvores diferentes</h3>
       <p class="prose">A palavra "árvore" é usada para duas coisas distintas, e confundi-las atrapalha. A <strong>árvore de derivação</strong> registra cada regra da gramática que foi aplicada. A <strong>AST</strong> guarda só o que é necessário para calcular. Compare as duas para a mesma expressão:</p>
 
@@ -1934,6 +2078,8 @@ L&#8321; , L&#8322; livres de contexto   &#8658;   L&#8321; &#8745; L&#8322;  po
     ...                                   <span class="c"># 3. só então opera — pós-ordem</span></pre></div>
 
       <p class="prose">No depurador da aba <strong>v1.2</strong>, mais abaixo, você vê esse percurso acontecendo: os nós acendem descendo até as folhas e os valores vão aparecendo de baixo para cima.</p>
+
+      <a class="proxima" href="#impl"><span><span class="lbl">Próxima seção</span><span class="tt">Parte III · Os roteiros</span></span><span class="seta">&#8594;</span></a>
     </section>
   </div>
 </section>
@@ -1962,24 +2108,10 @@ L&#8321; , L&#8322; livres de contexto   &#8658;   L&#8321; &#8745; L&#8322;  po
     </table>
   </div>
 
-  <div class="abas-wrap">
-    <div class="abas" role="tablist" aria-label="Roteiros do compilador">
-      <button class="aba a-ink" role="tab" id="tab-r1" aria-controls="r1" aria-selected="true" type="button">
-        <span class="ar">Roteiro 1</span><span class="av">v0.0</span><span class="ad">Nascem as três classes</span>
-      </button>
-      <button class="aba a-lex" role="tab" id="tab-r2" aria-controls="r2" aria-selected="false" tabindex="-1" type="button">
-        <span class="ar">Roteiro 2</span><span class="av">v1.0</span><span class="ad">Separação de fases</span>
-      </button>
-      <button class="aba a-syn" role="tab" id="tab-r3" aria-controls="r3" aria-selected="false" tabindex="-1" type="button">
-        <span class="ar">Roteiro 3</span><span class="av">v1.1</span><span class="ad">Precedência e recursão</span>
-      </button>
-      <button class="aba a-sem" role="tab" id="tab-r4" aria-controls="r4" aria-selected="false" tabindex="-1" type="button">
-        <span class="ar">Roteiro 4</span><span class="av">v1.2</span><span class="ad">Quatro classes de nó</span>
-      </button>
-    </div>
+  <div class="secoes">
 
     <!-- ---------------- R1 ---------------- -->
-    <section id="r1" class="painel" role="tabpanel" aria-labelledby="tab-r1">
+    <section id="r1" class="painel">
       <div class="rot-head">
         <span class="ver">v0.0</span>
         <span class="meta">
@@ -2047,10 +2179,12 @@ L&#8321; , L&#8322; livres de contexto   &#8658;   L&#8321; &#8745; L&#8322;  po
         </div>
         <p class="prose">O enunciado diz explicitamente: "Não há extra credit para esse roteiro". Os exercícios extras começam na versão <code class="inl">v1.0</code>, e cada um usa uma tag com prefixo <code class="inl">x</code> &#8212; <code class="inl">x1.0</code>, <code class="inl">x1.1</code>, <code class="inl">x1.2</code> &#8212; desenvolvida numa <strong>branch separada</strong>, criada a partir da tag aprovada do roteiro, e nunca mesclada na <code class="inl">main</code>.</p>
       </div>
+
+      <a class="proxima" href="#r2"><span><span class="lbl">Próxima seção</span><span class="tt">v1.0 · Separação de fases</span></span><span class="seta">&#8594;</span></a>
     </section>
 
     <!-- ---------------- R2 ---------------- -->
-    <section id="r2" class="painel" role="tabpanel" aria-labelledby="tab-r2" hidden>
+    <section id="r2" class="painel">
       <div class="rot-head">
         <span class="ver">v1.0</span>
         <span class="meta">
@@ -2182,10 +2316,12 @@ print(Parser.run(sys.argv[<span class="n">1</span>]))</pre></div>
 
         <p class="prose">O caso <code class="inl">1+2^3</code> é o que prova a precedência: se o <code class="inl">^</code> ligasse mais forte, daria <code class="inl">1+(2^3)</code> = 2. Dá 0, ou seja <code class="inl">(1+2)^3</code> = 3^3. Está no nível certo.</p>
       </div>
+
+      <a class="proxima" href="#r3"><span><span class="lbl">Próxima seção</span><span class="tt">v1.1 · Precedência e recursão</span></span><span class="seta">&#8594;</span></a>
     </section>
 
     <!-- ---------------- R3 ---------------- -->
-    <section id="r3" class="painel" role="tabpanel" aria-labelledby="tab-r3" hidden>
+    <section id="r3" class="painel">
       <div class="rot-head">
         <span class="ver">v1.1</span>
         <span class="meta">
@@ -2361,10 +2497,12 @@ BASE   = NUMBER
           <p><strong>Expoente negativo:</strong> <code class="inl">2 ** -3</code> é erro de sintaxe, porque o operando da direita é <code class="inl">BASE</code> e não <code class="inl">FACTOR</code>. É proposital: expoente negativo produziria fração e quebraria a garantia de resultado inteiro.</p>
         </div>
       </div>
+
+      <a class="proxima" href="#r4"><span><span class="lbl">Próxima seção</span><span class="tt">v1.2 · A árvore sintática</span></span><span class="seta">&#8594;</span></a>
     </section>
 
     <!-- ---------------- R4 ---------------- -->
-    <section id="r4" class="painel" role="tabpanel" aria-labelledby="tab-r4" hidden>
+    <section id="r4" class="painel">
       <div class="rot-head">
         <span class="ver">v1.2</span>
         <span class="meta">
@@ -2534,6 +2672,8 @@ SYMBOLS = { ..., <span class="s">"!"</span>: <span class="s">"FACT"</span> }
 
         <p class="prose">De novo, as duas primeiras linhas são o par que prova a precedência. <code class="inl">-3!</code> vale &#8722;6 (o fatorial agarra o 3 antes do sinal), e <code class="inl">(-3)!</code> nem chega a calcular &#8212; o parêntese fez o &#8722;3 existir antes, e aí o <code class="inl">[Semantic]</code> barra o negativo.</p>
       </div>
+
+      <a class="proxima" href="#colinha"><span><span class="lbl">Próxima seção</span><span class="tt">Colinha · Como acrescentar um operador</span></span><span class="seta">&#8594;</span></a>
     </section>
   </div>
 </section>
@@ -2763,52 +2903,6 @@ SYMBOLS = { ..., <span class="s">"!"</span>: <span class="s">"FACT"</span> }
    ========================================================================= */
 var FONTES = {"v0.0": "import sys\n\nDIGITS = \"0123456789\"\n\n\nclass Token:\n    def __init__(self, type, value):\n        self.type = type\n        self.value = value\n\n\nclass Tokenizer:\n    def __init__(self, source):\n        self.source = source\n        self.position = 0\n        self.next = None\n\n    def select_next(self):\n        while self.position < len(self.source) and self.source[self.position].isspace():\n            self.position += 1\n\n        if self.position >= len(self.source):\n            self.next = Token(\"EOF\", None)\n            return self.next\n\n        char = self.source[self.position]\n\n        if char == \"+\":\n            self.position += 1\n            self.next = Token(\"PLUS\", \"+\")\n        elif char == \"-\":\n            self.position += 1\n            self.next = Token(\"MINUS\", \"-\")\n        elif char in DIGITS:\n            number = \"\"\n            while self.position < len(self.source) and self.source[self.position] in DIGITS:\n                number += self.source[self.position]\n                self.position += 1\n            self.next = Token(\"INT\", int(number))\n        else:\n            raise Exception(f\"Caractere invalido '{char}' na posicao {self.position}\")\n\n        return self.next\n\n\nclass Parser:\n    def __init__(self):\n        self.tokenizer = None\n\n    def parse_expression(self):\n        if self.tokenizer.next.type != \"INT\":\n            raise Exception(f\"Esperado um numero, encontrado '{self.tokenizer.next.type}'\")\n\n        result = self.tokenizer.next.value\n        self.tokenizer.select_next()\n\n        while self.tokenizer.next.type in (\"PLUS\", \"MINUS\"):\n            operator = self.tokenizer.next.type\n            self.tokenizer.select_next()\n\n            if self.tokenizer.next.type != \"INT\":\n                raise Exception(f\"Esperado um numero apos o operador, encontrado '{self.tokenizer.next.type}'\")\n\n            if operator == \"PLUS\":\n                result += self.tokenizer.next.value\n            else:\n                result -= self.tokenizer.next.value\n\n            self.tokenizer.select_next()\n\n        return result\n\n    def run(self, code):\n        self.tokenizer = Tokenizer(code)\n        self.tokenizer.select_next()\n        result = self.parse_expression()\n\n        if self.tokenizer.next.type != \"EOF\":\n            raise Exception(f\"Token inesperado no fim da expressao: '{self.tokenizer.next.type}'\")\n\n        return result\n\n\ndef main():\n    if len(sys.argv) != 2:\n        raise Exception(\"Uso: python3 main.py '<expressao>'\")\n\n    print(Parser().run(sys.argv[1]))\n\n\nif __name__ == \"__main__\":\n    main()\n", "v1.0": "import sys\n\nDIGITS = \"0123456789\"\n\n\nclass Token:\n    def __init__(self, type, value):\n        self.type = type\n        self.value = value\n\n\nclass Lexer:\n    def __init__(self, source):\n        self.source = source\n        self.position = 0\n        self.next = None\n\n    def select_next(self):\n        while self.position < len(self.source) and self.source[self.position].isspace():\n            self.position += 1\n\n        if self.position >= len(self.source):\n            self.next = Token(\"EOF\", \"\")\n            return self.next\n\n        char = self.source[self.position]\n\n        if char == \"+\":\n            self.position += 1\n            self.next = Token(\"PLUS\", \"+\")\n        elif char == \"-\":\n            self.position += 1\n            self.next = Token(\"MINUS\", \"-\")\n        elif char in DIGITS:\n            number = char\n            self.position += 1\n            while self.position < len(self.source) and self.source[self.position] in DIGITS:\n                number += self.source[self.position]\n                self.position += 1\n            self.next = Token(\"INT\", int(number))\n        else:\n            raise Exception(f\"[Lexer] Invalid Symbol {char} at position {self.position}\")\n\n        return self.next\n\n\nclass Parser:\n    lexer = None\n\n    @staticmethod\n    def parse_expression():\n        if Parser.lexer.next.type != \"INT\":\n            raise Exception(f\"[Parser] Expected INT, found {Parser.lexer.next.type}\")\n\n        result = Parser.lexer.next.value\n        Parser.lexer.select_next()\n\n        while Parser.lexer.next.type in (\"PLUS\", \"MINUS\"):\n            operator = Parser.lexer.next.type\n            Parser.lexer.select_next()\n\n            if Parser.lexer.next.type != \"INT\":\n                raise Exception(f\"[Parser] Expected INT after {operator}, found {Parser.lexer.next.type}\")\n\n            if operator == \"PLUS\":\n                result += Parser.lexer.next.value\n            else:\n                result -= Parser.lexer.next.value\n\n            Parser.lexer.select_next()\n\n        return result\n\n    @staticmethod\n    def run(code):\n        Parser.lexer = Lexer(code)\n        Parser.lexer.select_next()\n        result = Parser.parse_expression()\n\n        if Parser.lexer.next.type != \"EOF\":\n            raise Exception(f\"[Parser] Unexpected token {Parser.lexer.next.type} after end of expression\")\n\n        return result\n\n\ndef main():\n    if len(sys.argv) != 2:\n        raise Exception(\"[Main] Usage: python3 main.py '<expression>'\")\n\n    print(Parser.run(sys.argv[1]))\n\n\nif __name__ == \"__main__\":\n    main()\n", "v1.1": "import sys\n\nDIGITS = \"0123456789\"\n\n\nclass Token:\n    def __init__(self, type, value):\n        self.type = type\n        self.value = value\n\n\nclass Lexer:\n    SYMBOLS = {\n        \"+\": \"PLUS\",\n        \"-\": \"MINUS\",\n        \"*\": \"MULT\",\n        \"/\": \"DIV\",\n        \"(\": \"OPEN_PAR\",\n        \")\": \"CLOSE_PAR\",\n    }\n\n    def __init__(self, source):\n        self.source = source\n        self.position = 0\n        self.next = None\n\n    def select_next(self):\n        while self.position < len(self.source) and self.source[self.position].isspace():\n            self.position += 1\n\n        if self.position >= len(self.source):\n            self.next = Token(\"EOF\", \"\")\n            return self.next\n\n        char = self.source[self.position]\n\n        if char in Lexer.SYMBOLS:\n            self.position += 1\n            self.next = Token(Lexer.SYMBOLS[char], char)\n        elif char in DIGITS:\n            number = char\n            self.position += 1\n            while self.position < len(self.source) and self.source[self.position] in DIGITS:\n                number += self.source[self.position]\n                self.position += 1\n            self.next = Token(\"INT\", int(number))\n        else:\n            raise Exception(f\"[Lexer] Invalid Symbol {char} at position {self.position}\")\n\n        return self.next\n\n\nclass Parser:\n    lexer = None\n\n    @staticmethod\n    def parse_expression():\n        result = Parser.parse_term()\n\n        while Parser.lexer.next.type in (\"PLUS\", \"MINUS\"):\n            operator = Parser.lexer.next.type\n            Parser.lexer.select_next()\n\n            if operator == \"PLUS\":\n                result += Parser.parse_term()\n            else:\n                result -= Parser.parse_term()\n\n        return result\n\n    @staticmethod\n    def parse_term():\n        result = Parser.parse_factor()\n\n        while Parser.lexer.next.type in (\"MULT\", \"DIV\"):\n            operator = Parser.lexer.next.type\n            Parser.lexer.select_next()\n\n            if operator == \"MULT\":\n                result *= Parser.parse_factor()\n            else:\n                result //= Parser.parse_factor()\n\n        return result\n\n    @staticmethod\n    def parse_factor():\n        token = Parser.lexer.next\n\n        if token.type == \"INT\":\n            Parser.lexer.select_next()\n            return token.value\n\n        if token.type == \"PLUS\":\n            Parser.lexer.select_next()\n            return Parser.parse_factor()\n\n        if token.type == \"MINUS\":\n            Parser.lexer.select_next()\n            return -Parser.parse_factor()\n\n        if token.type == \"OPEN_PAR\":\n            Parser.lexer.select_next()\n            result = Parser.parse_expression()\n\n            if Parser.lexer.next.type != \"CLOSE_PAR\":\n                raise Exception(f\"[Parser] Expected CLOSE_PAR, found {Parser.lexer.next.type}\")\n\n            Parser.lexer.select_next()\n            return result\n\n        raise Exception(f\"[Parser] Expected INT, unary operator or OPEN_PAR, found {token.type}\")\n\n    @staticmethod\n    def run(code):\n        Parser.lexer = Lexer(code)\n        Parser.lexer.select_next()\n        result = Parser.parse_expression()\n\n        if Parser.lexer.next.type != \"EOF\":\n            raise Exception(f\"[Parser] Unexpected token {Parser.lexer.next.type} after end of expression\")\n\n        return result\n\n\ndef main():\n    if len(sys.argv) != 2:\n        raise Exception(\"[Main] Usage: python3 main.py '<expression>'\")\n\n    print(Parser.run(sys.argv[1]))\n\n\nif __name__ == \"__main__\":\n    main()\n", "v1.2": "import sys\nfrom abc import ABC, abstractmethod\n\nDIGITS = \"0123456789\"\n\n\nclass Token:\n    def __init__(self, type, value):\n        self.type = type\n        self.value = value\n\n\nclass Lexer:\n    SYMBOLS = {\n        \"+\": \"PLUS\",\n        \"-\": \"MINUS\",\n        \"*\": \"MULT\",\n        \"/\": \"DIV\",\n        \"(\": \"OPEN_PAR\",\n        \")\": \"CLOSE_PAR\",\n    }\n\n    def __init__(self, source):\n        self.source = source\n        self.position = 0\n        self.next = None\n\n    def select_next(self):\n        while self.position < len(self.source) and self.source[self.position].isspace():\n            self.position += 1\n\n        if self.position >= len(self.source):\n            self.next = Token(\"EOF\", \"\")\n            return self.next\n\n        char = self.source[self.position]\n\n        if char in Lexer.SYMBOLS:\n            self.position += 1\n            self.next = Token(Lexer.SYMBOLS[char], char)\n        elif char in DIGITS:\n            number = char\n            self.position += 1\n            while self.position < len(self.source) and self.source[self.position] in DIGITS:\n                number += self.source[self.position]\n                self.position += 1\n            self.next = Token(\"INT\", int(number))\n        else:\n            raise Exception(f\"[Lexer] Invalid Symbol {char} at position {self.position}\")\n\n        return self.next\n\n\nclass Node(ABC):\n    def __init__(self, value, children):\n        self.value = value\n        self.children = children\n\n    @abstractmethod\n    def evaluate(self):\n        pass\n\n\nclass BinOp(Node):\n    def evaluate(self):\n        left = self.children[0].evaluate()\n        right = self.children[1].evaluate()\n\n        if self.value == \"+\":\n            return left + right\n\n        if self.value == \"-\":\n            return left - right\n\n        if self.value == \"*\":\n            return left * right\n\n        if self.value == \"/\":\n            if right == 0:\n                raise Exception(\"[Semantic] Division by zero\")\n            return left // right\n\n        raise Exception(f\"[Semantic] Unknown binary operator {self.value}\")\n\n\nclass UnOp(Node):\n    def evaluate(self):\n        operand = self.children[0].evaluate()\n\n        if self.value == \"+\":\n            return operand\n\n        if self.value == \"-\":\n            return -operand\n\n        raise Exception(f\"[Semantic] Unknown unary operator {self.value}\")\n\n\nclass IntVal(Node):\n    def evaluate(self):\n        return self.value\n\n\nclass Parser:\n    lexer = None\n\n    @staticmethod\n    def parse_expression():\n        result = Parser.parse_term()\n\n        while Parser.lexer.next.type in (\"PLUS\", \"MINUS\"):\n            operator = Parser.lexer.next.value\n            Parser.lexer.select_next()\n            result = BinOp(operator, [result, Parser.parse_term()])\n\n        return result\n\n    @staticmethod\n    def parse_term():\n        result = Parser.parse_factor()\n\n        while Parser.lexer.next.type in (\"MULT\", \"DIV\"):\n            operator = Parser.lexer.next.value\n            Parser.lexer.select_next()\n            result = BinOp(operator, [result, Parser.parse_factor()])\n\n        return result\n\n    @staticmethod\n    def parse_factor():\n        token = Parser.lexer.next\n\n        if token.type == \"INT\":\n            Parser.lexer.select_next()\n            return IntVal(token.value, [])\n\n        if token.type in (\"PLUS\", \"MINUS\"):\n            Parser.lexer.select_next()\n            return UnOp(token.value, [Parser.parse_factor()])\n\n        if token.type == \"OPEN_PAR\":\n            Parser.lexer.select_next()\n            result = Parser.parse_expression()\n\n            if Parser.lexer.next.type != \"CLOSE_PAR\":\n                raise Exception(f\"[Parser] Expected CLOSE_PAR, found {Parser.lexer.next.type}\")\n\n            Parser.lexer.select_next()\n            return result\n\n        raise Exception(f\"[Parser] Expected INT, unary operator or OPEN_PAR, found {token.type}\")\n\n    @staticmethod\n    def run(code):\n        Parser.lexer = Lexer(code)\n        Parser.lexer.select_next()\n        root = Parser.parse_expression()\n\n        if Parser.lexer.next.type != \"EOF\":\n            raise Exception(f\"[Parser] Unexpected token {Parser.lexer.next.type} after end of expression\")\n\n        return root\n\n\ndef main():\n    if len(sys.argv) != 2:\n        raise Exception(\"[Main] Usage: python3 main.py '<expression>'\")\n\n    print(Parser.run(sys.argv[1]).evaluate())\n\n\nif __name__ == \"__main__\":\n    main()\n"};
 
-/* =========================================================================
-   ABAS (funciona para qualquer número de grupos)
-   ========================================================================= */
-var REGISTRO_ABAS = {};
-(function () {
-  var grupos = document.querySelectorAll('[role="tablist"]');
-  Array.prototype.forEach.call(grupos, function (lista, gi) {
-    var abas = Array.prototype.slice.call(lista.querySelectorAll('[role="tab"]'));
-    if (!abas.length) return;
-    var CHAVE = "compilador-aba-" + gi;
-
-    function selecionar(alvo, focar) {
-      abas.forEach(function (a) {
-        var ativa = a === alvo;
-        a.setAttribute("aria-selected", ativa ? "true" : "false");
-        a.tabIndex = ativa ? 0 : -1;
-        var painel = document.getElementById(a.getAttribute("aria-controls"));
-        if (painel) painel.hidden = !ativa;
-      });
-      if (focar) alvo.focus();
-      try { localStorage.setItem(CHAVE, alvo.id); } catch (e) {}
-      window.dispatchEvent(new CustomEvent("aba-trocada"));
-    }
-
-    abas.forEach(function (a) {
-      a.addEventListener("click", function () { selecionar(a, false); });
-      REGISTRO_ABAS[a.getAttribute("aria-controls")] = function () { selecionar(a, false); };
-    });
-
-    lista.addEventListener("keydown", function (e) {
-      var i = abas.indexOf(document.activeElement);
-      if (i < 0) return;
-      var n = null;
-      if (e.key === "ArrowRight") n = abas[(i + 1) % abas.length];
-      else if (e.key === "ArrowLeft") n = abas[(i - 1 + abas.length) % abas.length];
-      else if (e.key === "Home") n = abas[0];
-      else if (e.key === "End") n = abas[abas.length - 1];
-      if (n) { e.preventDefault(); selecionar(n, true); }
-    });
-
-    var salva = null;
-    try { salva = localStorage.getItem(CHAVE); } catch (e) {}
-    var inicial = salva && document.getElementById(salva);
-    if (inicial && abas.indexOf(inicial) >= 0) selecionar(inicial, false);
-  });
-})();
 
 /* =========================================================================
    UTILITÁRIOS
@@ -3932,67 +4026,56 @@ function repetir(s, n) { var r = ""; for (var k = 0; k < n; k++) r += s; return 
 
 
 /* =========================================================================
-   SIDEBAR - troca de aba, rolagem e destaque da seçao atual
+   SIDEBAR - sumario com rolagem suave e destaque da secao visivel
    ========================================================================= */
 (function () {
   var nav = document.querySelector(".side-nav");
   if (!nav) return;
 
-  var subs = Array.prototype.slice.call(nav.querySelectorAll(".sn-sub[data-aba]"));
-  var parts = Array.prototype.slice.call(nav.querySelectorAll(".sn-part[data-sec]"));
+  var links = Array.prototype.slice.call(nav.querySelectorAll("a[href^='#']"));
+  var alvos = links.map(function (a) {
+    return { link: a, el: document.getElementById(a.getAttribute("href").slice(1)) };
+  }).filter(function (x) { return x.el; });
+
+  function deslocamento() { return window.matchMedia("(max-width:1040px)").matches ? 140 : 92; }
 
   nav.addEventListener("click", function (e) {
-    var a = e.target.closest ? e.target.closest("a") : null;
+    var a = e.target.closest ? e.target.closest("a[href^='#']") : null;
     if (!a) return;
-    var painel = a.getAttribute("data-aba");
-    if (painel && REGISTRO_ABAS[painel]) {
-      REGISTRO_ABAS[painel]();
-      subs.forEach(function (s) { s.classList.toggle("sel", s === a); });
-    }
-    var alvo = document.querySelector(a.getAttribute("href"));
-    if (alvo) {
-      e.preventDefault();
-      var topo = window.matchMedia("(max-width:1040px)").matches ? 56 : 8;
-      var y = alvo.getBoundingClientRect().top + window.pageYOffset - topo;
-      window.scrollTo({ top: y, behavior: "smooth" });
-      history.replaceState(null, "", a.getAttribute("href"));
-    }
+    var el = document.getElementById(a.getAttribute("href").slice(1));
+    if (!el) return;
+    e.preventDefault();
+    var y = el.getBoundingClientRect().top + window.pageYOffset - deslocamento();
+    window.scrollTo({ top: y, behavior: "smooth" });
+    history.replaceState(null, "", a.getAttribute("href"));
   });
 
-  /* marca a sub-aba correspondente quando a aba muda por outro caminho */
-  window.addEventListener("aba-trocada", function () {
-    subs.forEach(function (s) {
-      var pid = s.getAttribute("data-aba");
-      var painel = document.getElementById(pid);
-      s.classList.toggle("sel", !!painel && !painel.hidden);
+  function marcar() {
+    var lim = deslocamento() + 40, atual = null;
+    alvos.forEach(function (x) {
+      if (x.el.getBoundingClientRect().top <= lim) atual = x;
     });
-  });
-
-  /* destaque da parte visível */
-  var secoes = parts.map(function (a) { return document.getElementById(a.getAttribute("data-sec")); }).filter(Boolean);
-  function marcar(id) {
-    parts.forEach(function (a) { a.classList.toggle("ativo", a.getAttribute("data-sec") === id); });
-  }
-  if ("IntersectionObserver" in window && secoes.length) {
-    var vistos = {};
-    var obs = new IntersectionObserver(function (ents) {
-      ents.forEach(function (en) { vistos[en.target.id] = en.isIntersecting ? en.boundingClientRect.top : null; });
-      var melhor = null, menor = Infinity;
-      secoes.forEach(function (s) {
-        var r = s.getBoundingClientRect();
-        if (r.top <= 140 && r.bottom > 140) { if (r.top < menor || melhor === null) { melhor = s.id; menor = r.top; } }
-      });
-      if (melhor) marcar(melhor);
-    }, { rootMargin: "-120px 0px -60% 0px", threshold: [0, 0.01, 0.5] });
-    secoes.forEach(function (s) { obs.observe(s); });
+    if (!atual && alvos.length) atual = alvos[0];
+    links.forEach(function (a) {
+      var eh = atual && a === atual.link;
+      a.classList.toggle(a.classList.contains("sn-part") ? "ativo" : "sel", !!eh);
+    });
+    /* a parte que contém a subseção ativa também acende */
+    if (atual && atual.link.classList.contains("sn-sub")) {
+      var grupo = atual.link.closest(".sn-grupo");
+      var cab = grupo && grupo.querySelector(".sn-part");
+      if (cab) cab.classList.add("ativo");
+    }
   }
 
-  /* estado inicial */
-  subs.forEach(function (s) {
-    var painel = document.getElementById(s.getAttribute("data-aba"));
-    s.classList.toggle("sel", !!painel && !painel.hidden);
-  });
-  marcar("aulas");
+  var agendado = false;
+  window.addEventListener("scroll", function () {
+    if (agendado) return;
+    agendado = true;
+    requestAnimationFrame(function () { marcar(); agendado = false; });
+  }, { passive: true });
+  window.addEventListener("resize", marcar);
+  marcar();
 })();
 
 
@@ -4072,6 +4155,218 @@ function repetir(s, n) { var r = ""; for (var k = 0; k < n; k++) r += s; return 
 
   i = EXEMPLOS[atual].length - 1;
   pinta();
+})();
+
+
+/* =========================================================================
+   DIAGRAMAS SINTATICOS ANIMADOS
+   ========================================================================= */
+(function () {
+  var elInp = document.getElementById("tri-inp");
+  if (!elInp) return;
+  var elTok = document.getElementById("tri-tok"), elPilha = document.getElementById("tri-pilha");
+  var elRes = document.getElementById("tri-res"), elN1 = document.getElementById("tri-n1");
+  var elN2 = document.getElementById("tri-n2"), elConta = document.getElementById("tri-conta");
+  var elSlider = document.getElementById("tri-slider"), elPlay = document.getElementById("tri-play");
+  var elPres = document.getElementById("tri-presets");
+
+  var SY = { "+": "PLUS", "-": "MINUS", "*": "MULT", "/": "DIV", "(": "OPEN_PAR", ")": "CLOSE_PAR" };
+  var DGT = "0123456789";
+
+  ["3+4*2", "(2+3)*4", "2*3+4", "-5+1", "4/(1+1)*2"].forEach(function (s) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "preset"; b.textContent = s;
+    b.addEventListener("click", function () { elInp.value = s; recalcular(false); });
+    elPres.appendChild(b);
+  });
+
+  function analisar(codigo) {
+    var passos = [], pos = 0, next = null, pilha = [], res = null, erro = null;
+
+    function snap(dg, acesos, usados, l1, l2) {
+      passos.push({
+        dg: dg, acesos: acesos || [], usados: (usados || []).slice(),
+        pilha: pilha.slice(), tok: next ? { t: next.type, v: next.value } : null,
+        res: res, l1: l1, l2: l2 || ""
+      });
+    }
+    var usados = [];
+    function usar(id) { if (usados.indexOf(id) < 0) usados.push(id); }
+
+    function sel() {
+      while (pos < codigo.length && /\s/.test(codigo.charAt(pos))) pos++;
+      if (pos >= codigo.length) { next = { type: "EOF", value: "" }; return; }
+      var ch = codigo.charAt(pos);
+      if (SY[ch]) { pos++; next = { type: SY[ch], value: ch }; return; }
+      if (DGT.indexOf(ch) >= 0) {
+        var n = ch; pos++;
+        while (pos < codigo.length && DGT.indexOf(codigo.charAt(pos)) >= 0) { n += codigo.charAt(pos); pos++; }
+        next = { type: "INT", value: parseInt(n, 10) }; return;
+      }
+      throw new Error("[Lexer] simbolo invalido: " + ch);
+    }
+
+    function factor() {
+      pilha.push("FACTOR");
+      snap("F", ["f-ini", "f-v1"], usados, "Entrou no trilho FACTOR. Tres caminhos possiveis.", "qual deles? depende do token atual");
+      var tk = next;
+      var v;
+      if (tk.type === "INT") {
+        usar("f-num");
+        snap("F", ["f-b1", "f-num"], usados, "Token e um numero: toma o caminho de cima e consome " + tk.value + ".", "FACTOR -> NUMBER");
+        sel();
+        snap("F", ["f-b1b", "f-v2", "f-fim"], usados, "Sai do FACTOR devolvendo " + tk.value + ".", "return " + tk.value);
+        v = tk.value;
+      } else if (tk.type === "PLUS" || tk.type === "MINUS") {
+        usar("f-un");
+        snap("F", ["f-b2", "f-un"], usados, "Token e um operador unario " + tk.value + ": caminho do meio.", "FACTOR -> ('+'|'-') FACTOR");
+        sel();
+        snap("F", ["f-b2m", "f-unf"], usados, "O caminho do meio chama o proprio FACTOR - recursao.", "parse_factor()");
+        var a = factor();
+        v = (tk.value === "-") ? -a : a;
+        usar("f-unf");
+        snap("F", ["f-b2b", "f-v2", "f-fim"], usados, "Aplica o " + tk.value + " e sai com " + v + ".", "return " + v);
+      } else if (tk.type === "OPEN_PAR") {
+        usar("f-ab");
+        snap("F", ["f-b3", "f-ab"], usados, "Token e '(' : caminho de baixo.", "FACTOR -> '(' EXPRESSION ')'");
+        sel();
+        snap("F", ["f-b3m", "f-expr"], usados, "Volta ao topo da gramatica: um EXPRESSION dentro do parentese.", "parse_expression()");
+        v = expr();
+        if (next.type !== "CLOSE_PAR") throw new Error("[Parser] esperava ')' e achou " + next.type);
+        usar("f-fe");
+        snap("F", ["f-b3n", "f-fe"], usados, "Fecha o parentese.", "consome ')'");
+        sel();
+        snap("F", ["f-b3b", "f-v2", "f-fim"], usados, "Sai do FACTOR com " + v + ".", "return " + v);
+      } else {
+        throw new Error("[Parser] FACTOR nao aceita " + tk.type);
+      }
+      pilha.pop();
+      return v;
+    }
+
+    function term() {
+      pilha.push("TERM");
+      snap("T", ["t-ini", "t-v1", "t-factor"], usados, "Entrou no trilho TERM. Primeiro passo: ir ao FACTOR.", "parse_factor()");
+      var r = factor();
+      usar("t-factor");
+      snap("T", ["t-v2"], usados, "Voltou do FACTOR com " + r + ". Ha um * ou / a seguir?", "while next in (MULT, DIV)");
+      while (next.type === "MULT" || next.type === "DIV") {
+        var op = next.value;
+        usar("t-op");
+        snap("T", ["t-loop-a", "t-op"], usados, "Sim: " + op + ". Toma o laco em vez de sair.", "e por isso que * liga mais forte que +");
+        sel();
+        snap("T", ["t-loop-b", "t-factor"], usados, "O laco volta para ler outro FACTOR.", "parse_factor()");
+        var d = factor();
+        r = (op === "*") ? r * d : Math.floor(r / d);
+        snap("T", ["t-v2"], usados, "TERM calculou " + op + " -> " + r + ". Ha mais?", "result " + (op === "*" ? "*=" : "//=") + " ...");
+      }
+      snap("T", ["t-v3", "t-fim"], usados, "Nao ha mais * nem /. Sai do TERM devolvendo " + r + ".", "return " + r);
+      pilha.pop();
+      return r;
+    }
+
+    function expr() {
+      pilha.push("EXPRESSION");
+      snap("E", ["e-ini", "e-v1", "e-term"], usados, "Entrou no trilho EXPRESSION. Primeiro passo: ir ao TERM.", "parse_term()");
+      var r = term();
+      usar("e-term");
+      res = r;
+      snap("E", ["e-v2"], usados, "Voltou do TERM com " + r + ". Ha um + ou - a seguir?", "while next in (PLUS, MINUS)");
+      while (next.type === "PLUS" || next.type === "MINUS") {
+        var op = next.value;
+        usar("e-op");
+        snap("E", ["e-loop-a", "e-op"], usados, "Sim: " + op + ". Toma o laco.", "consome o operador");
+        sel();
+        snap("E", ["e-loop-b", "e-term"], usados, "O laco volta para ler outro TERM.", "parse_term()");
+        var d = term();
+        r = (op === "+") ? r + d : r - d;
+        res = r;
+        snap("E", ["e-v2"], usados, "EXPRESSION calculou " + op + " -> " + r + ".", "result " + (op === "+" ? "+=" : "-=") + " ...");
+      }
+      snap("E", ["e-v3", "e-fim"], usados, "Nao ha mais + nem -. Sai do EXPRESSION com " + r + ".", "return " + r);
+      pilha.pop();
+      return r;
+    }
+
+    try {
+      sel();
+      var total = expr();
+      if (next.type !== "EOF") throw new Error("[Parser] sobrou " + next.type);
+      res = total;
+      snap(null, ["e-fim"], usados, "Chegou ao fim do trilho com a entrada toda consumida. Resultado: " + total + ".", "cadeia valida");
+    } catch (e) {
+      erro = e.message;
+      snap(null, [], usados, erro, "o percurso parou aqui");
+    }
+    return { passos: passos, erro: erro };
+  }
+
+  var est = null, idx = 0, timer = null;
+
+  function recalcular(aoFim) {
+    parar();
+    est = analisar(elInp.value);
+    elSlider.max = String(Math.max(0, est.passos.length - 1));
+    idx = (aoFim === false) ? 0 : est.passos.length - 1;
+    Array.prototype.forEach.call(elPres.children, function (b) {
+      b.setAttribute("aria-pressed", b.textContent === elInp.value ? "true" : "false");
+    });
+    pinta();
+  }
+
+  function pinta() {
+    var s = est.passos[idx];
+    if (!s) return;
+    elSlider.value = String(idx);
+    elConta.textContent = "passo " + (idx + 1) + " / " + est.passos.length;
+
+    ["E", "T", "F"].forEach(function (d) {
+      var el = document.getElementById("tri-" + d);
+      el.classList.toggle("acordado", s.dg === d);
+      el.classList.toggle("dormindo", s.dg !== d);
+    });
+
+    Array.prototype.forEach.call(document.querySelectorAll(".tri .via, .tri .cx-box, .tri .pt"), function (g) {
+      g.classList.remove("on"); g.classList.remove("usado");
+    });
+    s.usados.forEach(function (id) { var g = document.getElementById(id); if (g) g.classList.add("usado"); });
+    s.acesos.forEach(function (id) { var g = document.getElementById(id); if (g) { g.classList.remove("usado"); g.classList.add("on"); } });
+
+    elTok.innerHTML = s.tok
+      ? '<span class="tokchip"><strong>' + esc(s.tok.t) + '</strong><span class="v">' + esc(JSON.stringify(s.tok.v)) + "</span></span>"
+      : '<span class="tokchip vazio">&#8212;</span>';
+
+    elPilha.innerHTML = s.pilha.length
+      ? s.pilha.map(function (q, i) { return '<div class="q" style="margin-left:' + (i * 9) + 'px">' + esc(q) + "</div>"; }).join("")
+      : '<span class="vazia">nenhum trilho aberto</span>';
+
+    elRes.innerHTML = (s.res === null || s.res === undefined)
+      ? '<div class="resbox vazio">ainda nao ha</div>'
+      : '<div class="resbox">' + esc(s.res) + "</div>";
+
+    elN1.textContent = s.l1;
+    elN2.textContent = s.l2;
+  }
+
+  function parar() { if (timer) { clearInterval(timer); timer = null; } elPlay.textContent = "▶ Percorrer"; }
+  function ir(n) { idx = Math.max(0, Math.min(est.passos.length - 1, n)); pinta(); }
+
+  document.getElementById("tri-prox").addEventListener("click", function () { parar(); ir(idx + 1); });
+  document.getElementById("tri-ant").addEventListener("click", function () { parar(); ir(idx - 1); });
+  document.getElementById("tri-ini").addEventListener("click", function () { parar(); ir(0); });
+  elSlider.addEventListener("input", function () { parar(); ir(parseInt(elSlider.value, 10)); });
+  elPlay.addEventListener("click", function () {
+    if (timer) { parar(); return; }
+    if (idx >= est.passos.length - 1) ir(0);
+    elPlay.textContent = "‖ Pausar";
+    timer = setInterval(function () {
+      if (idx >= est.passos.length - 1) { parar(); return; }
+      ir(idx + 1);
+    }, 850);
+  });
+  elInp.addEventListener("input", function () { recalcular(false); });
+
+  recalcular(true);
 })();
 
 </script>
