@@ -219,6 +219,124 @@ details.resp .corpo strong{color:var(--ink)}
 .sim-cadeia{font-family:var(--m);font-size:19px;letter-spacing:.12em}
 .sim-cadeia .troca{color:#a04422;font-weight:700;border-bottom:2px solid #a04422}
 
+
+/* ---------- quiz ---------- */
+.qz-top{display:flex;justify-content:space-between;gap:24px;align-items:center;flex-wrap:wrap;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:22px 26px}
+.qz-top .txt{flex:1 1 380px;display:flex;flex-direction:column;gap:7px}
+.qz-top p{color:var(--ink-2);font-size:14.5px}
+.qz-placar{display:flex;gap:10px;flex-wrap:wrap}
+.qz-caixa{min-width:104px;border-radius:9px;border:1px solid var(--rule);background:var(--sunk);padding:10px 14px;text-align:center}
+.qz-caixa strong{display:block;font-size:26px;line-height:1.1;font-variant-numeric:tabular-nums;color:var(--ink)}
+.qz-caixa span{font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-3);font-weight:700}
+.qz-caixa.ok strong{color:var(--green)}
+.qz-caixa.pg strong{color:#a04422}
+.qz-filtros{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.qz-filtros .preset{font-family:var(--f)}
+
+.qz{background:#fff;border:1px solid var(--rule);border-radius:11px;padding:19px 22px;scroll-margin-top:96px;transition:border-color .25s ease}
+.qz.acertou{border-color:#9fd3b6}
+.qz.errou{border-color:#e6c4b8}
+.qz>header{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.qz .qn{font-family:var(--m);font-size:13px;font-weight:700;color:var(--ink-3);min-width:1.8em}
+.qz .qt{font-size:11.5px;background:var(--sunk2);border-radius:5px;padding:3px 9px;color:var(--ink-2);font-weight:650}
+.qz .qt.cod{background:var(--syn-bg);color:#1b4f68}
+.qz .qtipo{font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--ink-3);font-weight:700;margin-left:auto}
+.qz .qpg{font-size:11px;letter-spacing:.8px;text-transform:uppercase;font-weight:750;color:#a04422;background:#fdf1ec;border-radius:5px;padding:3px 9px;display:none}
+.qz.respondida .qpg{display:inline-block;animation:surge .35s ease}
+.qz .enun{font-size:15.5px;line-height:1.6;color:var(--ink)}
+.qz-ops{display:flex;flex-direction:column;gap:7px;margin-top:14px}
+.qz-ops.vf{flex-direction:row;gap:10px}
+.qz-op{display:flex;align-items:center;gap:11px;text-align:left;border:1px solid #c9d5d6;border-radius:8px;padding:10px 14px;background:#fff;color:var(--ink);font-size:14.5px;transition:background .15s ease,border-color .15s ease,transform .12s ease}
+.qz-ops.vf .qz-op{flex:1;justify-content:center;font-weight:650}
+.qz-op:hover:not(:disabled){background:#edf4f0;border-color:#9fbfb2}
+.qz-op:active:not(:disabled){transform:scale(.99)}
+.qz-op .l{font-family:var(--m);font-size:12px;font-weight:700;color:var(--ink-3);width:18px;flex:none}
+.qz-op:disabled{cursor:default}
+.qz-op.certa{background:#e1f3e9;border-color:#52a67c;color:#14583f}
+.qz-op.certa .l{color:#14583f}
+.qz-op.errada{background:#fbeae5;border-color:#d99a86;color:#8a2d1a}
+.qz-op.apagada{opacity:.5}
+.qz-feed{margin-top:14px;border-radius:9px;padding:15px 17px;display:flex;flex-direction:column;gap:8px;animation:surge .38s ease}
+.qz-feed.ok{background:var(--mint-l);border:1px solid #bfdcd0}
+.qz-feed.no{background:#fdf1ec;border:1px solid #e6c4b8}
+.qz-feed .veredito{font-weight:700;font-size:14.5px}
+.qz-feed.ok .veredito{color:#14583f}
+.qz-feed.no .veredito{color:#a04422}
+.qz-feed p,.qz-feed li{font-size:14.5px;color:var(--ink-2)}
+.qz-feed ol{margin:0;padding-left:21px;display:flex;flex-direction:column;gap:5px}
+.qz textarea{width:100%;min-height:92px;margin-top:13px;border:1px solid #bfccce;border-radius:8px;padding:10px 12px;font:14px/1.55 var(--f);color:var(--ink);resize:vertical;background:#fff}
+.qz textarea:focus-visible{outline:3px solid #2474d8;outline-offset:2px}
+.qz-acoes{display:flex;gap:9px;flex-wrap:wrap;margin-top:10px}
+.qz-crit{display:flex;flex-direction:column;gap:5px;margin:4px 0 0;padding:0;list-style:none}
+.qz-crit li{font-size:13.5px;color:var(--ink-2);padding-left:20px;position:relative}
+.qz-crit li::before{content:"\2713";position:absolute;left:0;color:var(--green);font-weight:700}
+@keyframes surge{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.qz-lista{display:flex;flex-direction:column;gap:13px}
+.qz-lista .grupo{font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--green);font-weight:750;margin:14px 0 -2px}
+
+/* ---------- flashcards ---------- */
+.fc-wrap{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:18px}
+.fc-barra{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.fc-prog{flex:1 1 200px;height:8px;background:var(--sunk2);border-radius:99px;overflow:hidden;min-width:140px}
+.fc-prog i{display:block;height:100%;background:var(--green);border-radius:99px;transition:width .35s ease}
+.fc-conta{font-family:var(--m);font-size:12.5px;color:var(--ink-2);white-space:nowrap}
+.fc-temas{display:flex;gap:7px;flex-wrap:wrap}
+.fc-temas .preset{font-family:var(--f);font-size:12.5px}
+.fc-temas .preset .n{font-family:var(--m);font-size:11px;opacity:.7;margin-left:2px}
+.fc-temas .preset.destaque{border-color:var(--green);border-width:2px}
+.fc-palco{perspective:1400px;display:flex;justify-content:center}
+.fc{position:relative;width:100%;max-width:680px;min-height:270px;cursor:pointer;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.3,.7,.3,1);outline:none}
+.fc.virado{transform:rotateY(180deg)}
+.fc:focus-visible .fc-face{outline:3px solid #2474d8;outline-offset:3px}
+.fc-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;padding:28px 34px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+.fc-frente{background:var(--dark);color:#e2f1eb;box-shadow:0 14px 34px #102a2a26}
+.fc-verso{background:#fff;border:2px solid #bfdcd0;transform:rotateY(180deg);box-shadow:0 14px 34px #102a2a14}
+.fc-tema{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:750}
+.fc-frente .fc-tema{color:#9ce8bd}
+.fc-verso .fc-tema{color:var(--green)}
+.fc-q{font-size:23px;line-height:1.35;font-weight:650;letter-spacing:-.3px}
+.fc-a{font-size:16.5px;line-height:1.65;color:var(--ink)}
+.fc-a code.inl{font-size:.92em}
+.fc-dica{font-size:12px;color:#8fb5a6;margin-top:auto}
+.fc-verso .fc-dica{color:var(--ink-3)}
+.fc-nav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.btn.sei{background:var(--green);border-color:var(--green);color:#fff}
+.btn.sei:hover{background:var(--green-d)}
+.btn.revisar{border-color:#e6c4b8;color:#a04422}
+.btn.revisar:hover{background:#fdf1ec}
+.fc-marca{font-size:12px;font-weight:700;border-radius:5px;padding:3px 9px;margin-left:auto}
+.fc-marca.sei{background:var(--mint-2);color:#14583f}
+.fc-marca.rev{background:#fdf1ec;color:#a04422}
+
+/* ---------- colinha do codigo ---------- */
+.cl-wrap{background:#fff;border:1px solid var(--rule);border-radius:12px;overflow:hidden}
+.cl-barra{display:flex;gap:8px;flex-wrap:wrap;padding:14px 18px;border-bottom:1px solid var(--rule);background:var(--sunk);align-items:center}
+.cl-v{border:1px solid #c7d5d3;background:#fff;color:var(--ink-2);border-radius:8px;padding:7px 12px;display:flex;flex-direction:column;align-items:flex-start;gap:1px;text-align:left}
+.cl-v strong{font-family:var(--m);font-size:14px;color:var(--ink)}
+.cl-v span{font-size:11.5px}
+.cl-v:hover{background:var(--mint-l)}
+.cl-v[aria-pressed=true]{background:var(--green);border-color:var(--green)}
+.cl-v[aria-pressed=true] strong,.cl-v[aria-pressed=true] span{color:#fff}
+.cl-v.x{border-style:dashed}
+.cl-modo{display:flex;gap:6px;padding:12px 18px;border-bottom:1px solid var(--rule);align-items:center;flex-wrap:wrap}
+.cl-modo .info{font-size:13px;color:var(--ink-2);margin-left:auto}
+.cl-code{background:var(--code);color:var(--code-t);max-height:640px;overflow:auto;font:13px/1.75 var(--m)}
+.cl-code pre{margin:0;padding:14px 0}
+.cl-l{display:block;padding:0 18px 0 0;white-space:pre}
+.cl-l .ln{display:inline-block;width:46px;padding-right:14px;text-align:right;color:#6f8b92;user-select:none;font-size:11.5px}
+.cl-l.add{background:#1c4a36}
+.cl-l.add .ln{color:#97efbd}
+.cl-l.del{background:#4a2420;color:#f3b9ad}
+.cl-l.del .ln{color:#e89a8a}
+.cl-l.hunk{color:#8fd0f0;background:#1e343c}
+
+/* ---------- prova: pilha 1^n#1^(n+3) ---------- */
+.p13{border:1px solid var(--rule);border-radius:9px;background:#fff;padding:16px 18px;display:grid;grid-template-columns:minmax(0,1fr) 130px;gap:16px}
+@media(max-width:640px){.p13{grid-template-columns:1fr}}
+.p13 .pl{display:flex;flex-direction:column-reverse;gap:3px;min-height:150px;justify-content:flex-start;border:2px solid var(--rule-2);border-top:0;border-radius:0 0 7px 7px;padding:6px}
+.p13 .pl i{display:block;font-style:normal;text-align:center;font:12px/1 var(--m);font-weight:700;background:#ddf3e5;border:1px solid #b4d9c4;color:#195737;border-radius:4px;padding:5px 0;animation:surge .25s ease}
+.p13 .pl i.fixo{background:#fdf1e0;border-color:#e8d3ae;color:#8a5313}
+
 /* ---------- código ---------- */
 .code{background:var(--code);color:var(--code-t);border:0;border-radius:10px;padding:17px 20px;overflow-x:auto;font:13.5px/1.8 var(--m);tab-size:4}
 .code pre{margin:0}
@@ -585,13 +703,25 @@ footer.fim{margin-top:44px;padding-top:20px;border-top:1px solid var(--rule);fon
     </div>
 
     <div class="sn-grupo sn-g-aulas">
-      <a class="sn-part" href="#simulado" data-sec="simulado"><span class="rom">V</span>Simulado</a>
+      <a class="sn-part" href="#simulado" data-sec="simulado"><span class="rom">V</span>A prova do colega</a>
       <div class="sn-subs">
         <a class="sn-sub sn-s-syn" href="#sim-a" data-sub="sim-a">Linguagens formais</a>
         <a class="sn-sub sn-s-lex" href="#sim-b" data-sub="sim-b">Compiladores</a>
         <a class="sn-sub sn-s-sem" href="#sim-c" data-sub="sim-c">Projeto e paradigmas</a>
         <a class="sn-sub sn-s-err" href="#sim-licoes" data-sub="sim-licoes">Lições que se repetem</a>
       </div>
+    </div>
+
+    <div class="sn-grupo sn-g-teoria">
+      <a class="sn-part" href="#quiz" data-sec="quiz"><span class="rom">VI</span>Simulado · 30</a>
+    </div>
+
+    <div class="sn-grupo sn-g-impl">
+      <a class="sn-part" href="#flash" data-sec="flash"><span class="rom">VII</span>Flashcards</a>
+    </div>
+
+    <div class="sn-grupo sn-g-ref">
+      <a class="sn-part" href="#codigo" data-sec="codigo"><span class="rom">VIII</span>Colinha do código</a>
     </div>
 
   </nav>
@@ -2220,11 +2350,11 @@ L&#8321; , L&#8322; livres de contexto   &#8658;   L&#8321; &#8745; L&#8322;  po
         <svg viewBox="0 0 720 300" role="img" aria-label="Quatro caixas encaixadas: regulares dentro de livres de contexto, dentro de sensíveis ao contexto, dentro de recursivamente enumeráveis.">
           <rect x="16" y="14" width="688" height="268" rx="12" fill="none" stroke="currentColor" stroke-width="1.5"/>
           <text x="34" y="38" font-size="12.5" fill="currentColor" opacity=".85" font-weight="600">Tipo 0 &#183; Recursivamente enumeráveis</text>
-          <text x="34" y="54" font-size="10.5" fill="currentColor" opacity=".55">máquina de Turing &#183; sem restrição nas regras</text>
+          <text x="34" y="54" font-size="10.5" fill="currentColor" opacity=".55">a classe mais ampla &#183; sem restrição nas regras</text>
 
           <rect x="48" y="64" width="624" height="204" rx="11" fill="none" stroke="#9A5B1C" stroke-width="1.6"/>
           <text x="66" y="88" font-size="12.5" fill="#9A5B1C" font-weight="600">Tipo 1 &#183; Sensíveis ao contexto</text>
-          <text x="66" y="104" font-size="10.5" fill="#9A5B1C" opacity=".8">autômato linearmente limitado &#183; |&#945;| &#8804; |&#946;|</text>
+          <text x="66" y="104" font-size="10.5" fill="#9A5B1C" opacity=".8">|&#945;| &#8804; |&#946;| &#183; o lado esquerdo pode ter contexto</text>
 
           <rect x="82" y="114" width="556" height="140" rx="10" fill="none" stroke="#4A4FA0" stroke-width="1.8"/>
           <text x="100" y="138" font-size="12.5" fill="#4A4FA0" font-weight="600">Tipo 2 &#183; Livres de contexto</text>
@@ -2244,8 +2374,8 @@ L&#8321; , L&#8322; livres de contexto   &#8658;   L&#8321; &#8745; L&#8322;  po
           <tbody>
             <tr><td class="mono">3</td><td><strong>Regular</strong></td><td class="mono">A &#8594; aB &nbsp;|&nbsp; A &#8594; a</td><td>autômato finito</td><td class="mono">a b*</td></tr>
             <tr><td class="mono">2</td><td><strong>Livre de contexto</strong></td><td class="mono">A &#8594; &#946;</td><td>autômato de pilha</td><td class="mono">a&#8319; b&#8319;</td></tr>
-            <tr><td class="mono">1</td><td><strong>Sensível ao contexto</strong></td><td class="mono">&#945; &#8594; &#946;, com |&#945;| &#8804; |&#946;|</td><td>autômato linearmente limitado</td><td class="mono">a&#8319; b&#8319; c&#8319;</td></tr>
-            <tr><td class="mono">0</td><td><strong>Recursivamente enumerável</strong></td><td class="mono">&#945; &#8594; &#946;, sem restrição</td><td>máquina de Turing</td><td>problema da parada</td></tr>
+            <tr><td class="mono">1</td><td><strong>Sensível ao contexto</strong></td><td class="mono">&#945; &#8594; &#946;, com |&#945;| &#8804; |&#946;|</td><td style="color:var(--ink-3)">fora do escopo</td><td class="mono">a&#8319; b&#8319; c&#8319;</td></tr>
+            <tr><td class="mono">0</td><td><strong>Recursivamente enumerável</strong></td><td class="mono">&#945; &#8594; &#946;, sem restrição</td><td style="color:var(--ink-3)">fora do escopo</td><td style="color:var(--ink-3)">&#8212;</td></tr>
           </tbody>
         </table>
       </div>
@@ -2267,11 +2397,6 @@ L&#8321; , L&#8322; livres de contexto   &#8658;   L&#8321; &#8745; L&#8322;  po
         </table>
       </div>
       <p class="prose">Essa última linha é a moral da história. "Toda variável usada foi declarada" é uma restrição de tipo 1 disfarçada — gramática livre de contexto nenhuma expressa isso. Por isso todo compilador tem uma fase semântica <strong>separada</strong>: não é preguiça de projeto, é uma fronteira formal.</p>
-
-      <div class="nota f-err">
-        <span class="t">E o que fica de fora até do tipo 0</span>
-        <p>Subindo até o topo, as recursivamente enumeráveis ainda deixam problemas sem resposta. O <strong>problema da parada</strong> — dado um programa e uma entrada, ele termina? — é <em>indecidível</em>: nenhum algoritmo o resolve para todos os casos. É por isso que, para regulares, perguntas como "<em>L</em>&#8321; = <em>L</em>&#8322;?" são decidíveis, enquanto as mesmas perguntas para CFL já não são todas.</p>
-      </div>
 
       <a class="proxima" href="#t4"><span><span class="lbl">Próxima seção</span><span class="tt">Árvores: derivação vs. AST</span></span><span class="seta">&#8594;</span></a>
     </section>
@@ -3150,13 +3275,13 @@ SYMBOLS = { ..., <span class="s">"!"</span>: <span class="s">"FACT"</span> }
 <section id="simulado">
   <div class="section-head">
     <div class="eyebrow">Parte V</div>
-    <h2>Simulado</h2>
+    <h2>A prova do colega</h2>
   </div>
 
   <div class="sim-hero">
     <div class="txt">
-      <h3>Dezesseis questões de provas anteriores</h3>
-      <p>Todas com <strong>gabarito comentado</strong> e, mais importante, com <strong>onde a nota foi perdida</strong> na correção original. O conteúdo vai de linguagens formais até o projeto do compilador &#8212; para antes de Máquina de Turing.</p>
+      <h3>Dezessete questões de provas anteriores</h3>
+      <p>Todas com <strong>gabarito comentado</strong> e, mais importante, com <strong>onde a nota foi perdida</strong> na correção original. O conteúdo vai de linguagens formais até o projeto do compilador.</p>
       <p>Marque os critérios que a sua resposta cumpriria; o placar se ajusta sozinho e fica salvo no navegador.</p>
     </div>
     <div class="sim-placar">
@@ -3321,6 +3446,53 @@ L satisfaz o lema    &#8658;/     L regular                      &#10007;</pre><
             <p>Para provar que <em>é</em> regular, os caminhos válidos são construtivos: exibir uma expressão regular, um AFD/AFN, uma gramática regular, ou usar propriedades de fechamento a partir de linguagens sabidamente regulares.</p>
 <div class="criterios"><span class="ct">O que uma resposta de nota máxima precisa ter</span><label><input type="checkbox" data-pt="0.4"><span>Diz que o lema é condição necessária, não suficiente</span><span class="pv">0,4 pt</span></label><label><input type="checkbox" data-pt="0.3"><span>Explica que ele serve para provar NÃO-regularidade, por contradição</span><span class="pv">0,3 pt</span></label><label><input type="checkbox" data-pt="0.3"><span>Lista ao menos um caminho válido para provar regularidade</span><span class="pv">0,3 pt</span></label></div>
 <div class="armadilha"><span class="lbl">Onde a nota foi perdida</span><p>Nada perdido aqui &#8212; a resposta acertou o raciocínio. Vale apenas reforçar a formulação: o problema não é o lema &#8220;ser inconclusivo&#8221;, é que a implicação só vale num sentido.</p></div>
+          </div>
+        </details>
+      </div>
+      <div class="qcard">
+        <header>
+          <span class="qn">Questão 1.d</span>
+          <span class="qv">1,00 pt</span>
+          <span class="qnota bom">obteve 1,00</span>
+        </header>
+        <div class="enun">Considere a função <code class="inl">f(x) = x + 3</code> em <strong>unário</strong>, representada pela linguagem <code class="inl">L = { 1<sup>n</sup> # 1<sup>n+3</sup> : n &#8805; 0 }</code> &#8212; a entrada, um separador, e a saída. &#8220;<strong>L pode ser representada por uma Linguagem Livre de Contexto.</strong>&#8221; Concorde ou discorde. <strong>Justifique.</strong></div>
+        <details class="resp"><summary>Ver resposta comentada</summary>
+          <div class="corpo">
+            <p><strong>Concordo.</strong> E dá para provar das duas formas que a disciplina ensina &#8212; com gramática e com autômato.</p>
+            <p><strong>Pela gramática.</strong> Cada 1 da esquerda precisa de um 1 correspondente na direita, e o separador vem acompanhado de três 1 extras:</p>
+            <div class="code syn"><pre>S &#8594; 1 S 1  |  # 1 1 1</pre></div>
+            <p>A primeira regra gera os 1 aos pares, um de cada lado; a segunda fecha com o separador e os três a mais. Para <code class="inl">n = 2</code>:</p>
+            <div class="code"><pre>S &#8658; 1S1 &#8658; 11S11 &#8658; 11#11111        (2 à esquerda, 5 à direita)</pre></div>
+            <p>O lado esquerdo de toda regra é um único não-terminal: <strong>é livre de contexto</strong>.</p>
+            <p><strong>Pelo autômato de pilha.</strong> Empilha um <code class="inl">X</code> por 1 antes do <code class="inl">#</code>; ao ler o <code class="inl">#</code>, empilha <strong>mais três</strong>; depois desempilha um por 1. Aceita com pilha vazia. Rode:</p>
+            <div class="p13">
+              <div style="display:flex;flex-direction:column;gap:11px">
+                <div class="linha" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+                  <input type="text" id="p13-inp" value="11#11111" spellcheck="false" autocomplete="off" style="font-family:var(--m);font-size:15px;border:1px solid #bfccce;border-radius:6px;padding:8px 11px;width:160px">
+                  <div class="presets" id="p13-pres"></div>
+                </div>
+                <div class="fonte-cur" id="p13-fita"></div>
+                <div class="pda-acao" id="p13-acao"></div>
+                <div class="passos" style="border:0;background:transparent;padding:0">
+                  <button class="btn" id="p13-ini" type="button">&#9198;</button>
+                  <button class="btn" id="p13-ant" type="button">&#9664;</button>
+                  <button class="btn play" id="p13-play" type="button">&#9654; Rodar</button>
+                  <button class="btn" id="p13-prox" type="button">&#9654;</button>
+                </div>
+                <div class="sim-ver" id="p13-ver"></div>
+              </div>
+              <div>
+                <div class="eyebrow" style="text-align:center;margin-bottom:6px">Pilha</div>
+                <div class="pl" id="p13-pl"></div>
+              </div>
+            </div>
+            <p><strong>E ela não é regular</strong>: é preciso lembrar <em>quantos</em> 1 vieram antes do <code class="inl">#</code> para conferir a direita, e esse número não tem teto &#8212; nenhum conjunto finito de estados dá conta. Então a resposta completa é: livre de contexto, e <em>não</em> regular.</p>
+            <div class="criterios"><span class="ct">O que uma resposta de nota máxima precisa ter</span>
+              <label><input type="checkbox" data-pt="0.3"><span>Responde concordo</span><span class="pv">0,3 pt</span></label>
+              <label><input type="checkbox" data-pt="0.4"><span>Exibe uma GLC ou um PDA para a linguagem</span><span class="pv">0,4 pt</span></label>
+              <label><input type="checkbox" data-pt="0.3"><span>Explica por que precisa de pilha (não é regular)</span><span class="pv">0,3 pt</span></label>
+            </div>
+            <div class="armadilha"><span class="lbl">O que dá para aprender com a resposta original</span><p>O colega escreveu &#8220;colocar 3 1&#8217;s na pilha fixos e, para cada 1 de entrada, colocar 1 na pilha&#8221; &#8212; e levou nota cheia, com a anotação &#8220;ok, apesar de 1a estar errado&#8221;. A <strong>intuição estava certa</strong>: é exatamente o autômato acima, que empilha três fixos no separador. O que faltou foi formalizar: dizer qual é a linguagem, mostrar que o reconhecimento acaba com a pilha vazia, e justificar por que um autômato finito não bastaria.</p></div>
           </div>
         </details>
       </div>
@@ -3617,7 +3789,7 @@ Codegen       escolhe a instrução adequada ao tipo</pre></div>
 
   <div class="bloco-sim" id="sim-licoes">
     <h3>As lições que se repetem</h3>
-    <p class="intro">Olhando as dezesseis correções juntas, os pontos perdidos caem em cinco padrões. Eles valem mais que qualquer conteúdo específico.</p>
+    <p class="intro">Olhando as dezessete correções juntas, os pontos perdidos caem em cinco padrões. Eles valem mais que qualquer conteúdo específico.</p>
 
     <div class="lado-lado" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
       <div class="cx c-err">
@@ -3645,6 +3817,99 @@ Codegen       escolhe a instrução adequada ao tipo</pre></div>
         <div class="bd"><p>Todas seguiram o mesmo formato: <strong>uma tabela ou pipeline</strong> percorrendo as fases, com <strong>um exemplo concreto por linha</strong>, e uma frase final amarrando. Erros de compilação, v2.3×v3.0 e tipos saíram com 100% assim.</p></div>
       </div>
     </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ QUIZ -->
+
+<section id="quiz">
+  <div class="section-head">
+    <div class="eyebrow">Parte VI</div>
+    <h2>Simulado · 30 questões</h2>
+  </div>
+
+  <div class="qz-top">
+    <div class="txt">
+      <p><strong>10 questões sobre o nosso código</strong>, incluindo os três extras, e <strong>20 novas no estilo da prova</strong>. Há pegadinhas espalhadas &#8212; o selo só aparece depois que você responde, para não entregar o jogo.</p>
+      <p>Nas de verdadeiro ou falso, <strong>pense na justificativa antes de clicar</strong>: na prova, V/F sem justificativa vale zero. Para as questões de código, a <a href="#codigo">colinha</a> tem o código completo de todas as versões.</p>
+    </div>
+    <div class="qz-placar">
+      <div class="qz-caixa ok"><strong id="qz-acertos">0</strong><span>acertos</span></div>
+      <div class="qz-caixa"><strong id="qz-feitas">0/30</strong><span>respondidas</span></div>
+      <div class="qz-caixa pg"><strong id="qz-pg">0</strong><span>pegadinhas<br>em que caiu</span></div>
+    </div>
+  </div>
+
+  <div class="qz-filtros">
+    <span style="font-size:12px;font-weight:650;color:var(--ink-2)">Mostrar</span>
+    <button class="preset" type="button" data-f="todas" aria-pressed="true">Todas</button>
+    <button class="preset" type="button" data-f="codigo" aria-pressed="false">Só código</button>
+    <button class="preset" type="button" data-f="teoria" aria-pressed="false">Só teoria</button>
+    <button class="preset" type="button" data-f="erradas" aria-pressed="false">Só as que errei</button>
+    <button class="btn" type="button" id="qz-zerar" style="margin-left:auto">Recomeçar</button>
+  </div>
+
+  <div class="qz-lista" id="qz-lista"></div>
+</section>
+
+<!-- ============================================================ FLASHCARDS -->
+
+<section id="flash">
+  <div class="section-head">
+    <div class="eyebrow">Parte VII</div>
+    <h2>Flashcards</h2>
+  </div>
+  <p class="prose">Os conceitos que mais caem, um por cartão. Clique (ou aperte espaço) para virar, e marque se já sabe ou se precisa revisar &#8212; o filtro <strong>só os que revisar</strong> monta a próxima rodada com o que ficou.</p>
+
+  <div class="fc-wrap">
+    <div class="fc-barra">
+      <button class="btn" type="button" id="fc-emb">Embaralhar</button>
+      <button class="preset" type="button" id="fc-filtro" aria-pressed="false">Só os que revisar</button>
+      <div class="fc-prog"><i id="fc-prog"></i></div>
+      <span class="fc-conta" id="fc-conta"></span>
+    </div>
+    <div class="fc-temas" id="fc-temas"></div>
+    <div class="fc-palco">
+      <div class="fc" id="fc" tabindex="0" role="button" aria-label="Flashcard: clique para virar">
+        <div class="fc-face fc-frente">
+          <span class="fc-tema" id="fc-tema1"></span>
+          <div class="fc-q" id="fc-q"></div>
+          <span class="fc-dica">clique ou espaço para ver a resposta</span>
+        </div>
+        <div class="fc-face fc-verso">
+          <span class="fc-tema" id="fc-tema2"></span>
+          <div class="fc-a" id="fc-a"></div>
+          <span class="fc-dica">&#8592; &#8594; para navegar</span>
+        </div>
+      </div>
+    </div>
+    <div class="fc-nav">
+      <button class="btn" type="button" id="fc-ant">&#9664; Anterior</button>
+      <button class="btn revisar" type="button" id="fc-rev">Revisar</button>
+      <button class="btn sei" type="button" id="fc-sei">Já sei</button>
+      <button class="btn" type="button" id="fc-prox">Próximo &#9654;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ COLINHA -->
+
+<section id="codigo">
+  <div class="section-head">
+    <div class="eyebrow">Parte VIII</div>
+    <h2>Colinha · todo o código</h2>
+  </div>
+  <p class="prose">O <code class="inl">main.py</code> completo de cada tag, incluindo os três extras. No modo <strong>o que mudou</strong>, cada versão aparece como diff em relação à anterior &#8212; e nos extras, em relação ao roteiro de onde a branch saiu. Linhas verdes entraram; vermelhas saíram.</p>
+
+  <div class="cl-wrap">
+    <div class="cl-barra" id="cl-barra"></div>
+    <div class="cl-modo">
+      <button class="preset" type="button" data-m="completo" aria-pressed="true">Código completo</button>
+      <button class="preset" type="button" data-m="diff" aria-pressed="false">O que mudou</button>
+      <span class="info" id="cl-info"></span>
+    </div>
+    <div class="cl-code" id="cl-code"></div>
   </div>
 </section>
 
@@ -5244,6 +5509,347 @@ function repetir(s, n) { var r = ""; for (var k = 0; k < n; k++) r += s; return 
   }
   inp.addEventListener("input", testar);
   testar();
+})();
+
+var QUIZ = [{"bloco": "codigo", "tema": "Lexer · v1.2", "tipo": "mc", "pg": false, "enun": "No <code class='inl'>select_next()<\/code> da v1.2, o que acontece quando <code class='inl'>self.position >= len(self.source)<\/code>?", "op": ["Lança <code class='inl'>[Lexer] Invalid Symbol<\/code>", "<code class='inl'>self.next<\/code> passa a ser <code class='inl'>Token(\"EOF\", \"\")<\/code>", "<code class='inl'>self.next<\/code> passa a ser <code class='inl'>None<\/code>", "<code class='inl'>self.position<\/code> volta para 0"], "r": 1, "ex": "É para isso que o EOF existe: enquanto houver um <code class='inl'>EOF<\/code> no fim, o Parser pode consultar <code class='inl'>next<\/code> quantas vezes quiser sem nunca checar limite. Todo teste do tipo <code class='inl'>!= \"INT\"<\/code> dá verdadeiro ao bater no EOF, e o erro certo é disparado em vez de um <code class='inl'>IndexError<\/code>."}, {"bloco": "codigo", "tema": "Fases · v1.2", "tipo": "vf", "pg": true, "enun": "Na v1.2, a entrada <code class='inl'>\"1 1\"<\/code> é rejeitada pelo <strong>Lexer<\/strong>.", "r": false, "ex": "O Lexer devolve <code class='inl'>INT(1) INT(1) EOF<\/code> sem reclamar — ordem não é assunto dele. Quem rejeita é o <code class='inl'>run()<\/code>, na checagem final: sobrou um <code class='inl'>INT<\/code> onde devia haver <code class='inl'>EOF<\/code>, e sai <code class='inl'>[Parser] Unexpected token INT<\/code>. A pegadinha é achar que \"entrada inválida\" é sempre erro léxico."}, {"bloco": "codigo", "tema": "Semântica · v1.2", "tipo": "mc", "pg": true, "enun": "Qual o resultado de <code class='inl'>3 - -2/4<\/code> no compilador entregue?", "op": ["3", "4", "2", "erro de sintaxe"], "r": 1, "ex": "A divisão usa <code class='inl'>//<\/code>, que arredonda <em>para baixo<\/em>: <code class='inl'>-2 // 4 == -1<\/code>. Então <code class='inl'>3 - (-1) = 4<\/code>. Quem pensa em truncamento (como em C ou Go) calcula <code class='inl'>-2/4 = 0<\/code> e responde 3 — é exatamente a pegadinha."}, {"bloco": "codigo", "tema": "AST · v1.2", "tipo": "mc", "pg": false, "enun": "Na v1.2, qual nó é a <strong>raiz<\/strong> da AST de <code class='inl'>1+2*3<\/code>?", "op": ["<code class='inl'>IntVal(1)<\/code>", "<code class='inl'>BinOp('*')<\/code>", "<code class='inl'>BinOp('+')<\/code>", "<code class='inl'>UnOp('+')<\/code>"], "r": 2, "ex": "O operador que liga <em>menos<\/em> forte fica mais perto da raiz, porque é o último a ser resolvido. O <code class='inl'>*<\/code> é resolvido dentro do <code class='inl'>TERM<\/code> e vira o filho direito do <code class='inl'>+<\/code>: <code class='inl'>BinOp('+')[IntVal(1), BinOp('*')[IntVal(2), IntVal(3)]]<\/code>."}, {"bloco": "codigo", "tema": "Fases · v1.2", "tipo": "vf", "pg": true, "enun": "Na v1.2, <code class='inl'>1/0<\/code> dispara um erro com prefixo <code class='inl'>[Parser]<\/code>.", "r": false, "ex": "<code class='inl'>1/0<\/code> é sintaticamente perfeito: número, operador, número. O Parser monta a árvore sem objeção. O problema só aparece quando o <code class='inl'>evaluate()<\/code> do <code class='inl'>BinOp<\/code> tenta dividir — e sai <code class='inl'>[Semantic] Division by zero<\/code>. Erro de <em>significado<\/em>, não de forma."}, {"bloco": "codigo", "tema": "Extra x1.0 · XOR", "tipo": "mc", "pg": true, "enun": "No extra x1.0, quanto vale <code class='inl'>1+2^3<\/code>?", "op": ["9", "3", "0", "2"], "r": 2, "ex": "O <code class='inl'>^<\/code> é <strong>XOR<\/strong>, não potência, e tem a <strong>mesma precedência<\/strong> de <code class='inl'>+<\/code> — então avalia por ordem de chegada: <code class='inl'>(1+2)^3 = 3^3<\/code>. Em binário, <code class='inl'>11 XOR 11 = 00<\/code>, logo 0. Três armadilhas: 9 (achar que é potência), 2 (dar precedência maior ao ^: <code class='inl'>1+(2^3) = 1+1<\/code>), e 3."}, {"bloco": "codigo", "tema": "Extra x1.1 · potência", "tipo": "mc", "pg": true, "enun": "No extra x1.1, por que o Lexer testa <code class='inl'>**<\/code> <em>antes<\/em> de <code class='inl'>*<\/code>?", "op": ["Porque <code class='inl'>**<\/code> tem precedência maior que <code class='inl'>*<\/code>", "Para <code class='inl'>2**3<\/code> não virar dois tokens <code class='inl'>MULT<\/code>", "Porque o dicionário <code class='inl'>SYMBOLS<\/code> não aceita chaves de dois caracteres", "É indiferente; a ordem não importa"], "r": 1, "ex": "Se <code class='inl'>*<\/code> fosse testado primeiro, o Lexer consumiria um <code class='inl'>*<\/code> e devolveria <code class='inl'>MULT<\/code>; o próximo <code class='inl'>*<\/code> viraria outro <code class='inl'>MULT<\/code>, e o Parser receberia <code class='inl'>2 * * 3<\/code>. A primeira alternativa é a pegadinha: <strong>precedência é problema do Parser<\/strong>, nunca do Lexer — o Lexer só decide onde um token começa e termina."}, {"bloco": "codigo", "tema": "Extra x1.2 · fatorial", "tipo": "mc", "pg": true, "enun": "No extra x1.2, quanto vale <code class='inl'>-3!<\/code>?", "op": ["erro: fatorial de negativo", "6", "−6", "−3"], "r": 2, "ex": "O fatorial liga <strong>mais forte<\/strong> que o unário: <code class='inl'>-3!<\/code> é <code class='inl'>-(3!)<\/code> = −6. Só <code class='inl'>(-3)!<\/code> dá erro, porque aí o parêntese faz o −3 existir <em>antes<\/em> do fatorial — e o <code class='inl'>[Semantic]<\/code> barra o negativo."}, {"bloco": "codigo", "tema": "Extra x1.2 · fatorial", "tipo": "vf", "pg": false, "enun": "No extra x1.2, implementar o fatorial exigiu criar uma nova classe de nó na AST.", "r": false, "ex": "O fatorial é uma operação unária — um operador, um operando — então reusa o <code class='inl'>UnOp<\/code> com <code class='inl'>value = \"!\"<\/code>. Nos três extras (<code class='inl'>^<\/code>, <code class='inl'>**<\/code>, <code class='inl'>!<\/code>) nenhuma classe nova foi criada: é o teste de que a arquitetura do Roteiro 4 aguenta crescer."}, {"bloco": "codigo", "tema": "Lookahead · v1.0+", "tipo": "mc", "pg": false, "enun": "Se <code class='inl'>run()<\/code> esquecesse o <code class='inl'>select_next()<\/code> inicial, o que aconteceria ao chamar <code class='inl'>parse_expression()<\/code>?", "op": ["Funcionaria normalmente", "<code class='inl'>AttributeError<\/code>, porque <code class='inl'>lexer.next<\/code> ainda é <code class='inl'>None<\/code>", "O primeiro token seria pulado", "<code class='inl'>[Parser] Expected INT, found EOF<\/code>"], "r": 1, "ex": "O Lexer nasce com <code class='inl'>next = None<\/code>. O contrato do lookahead diz que, ao <em>entrar<\/em> em qualquer método do Parser, <code class='inl'>next<\/code> já contém o próximo token. Sem o <code class='inl'>select_next()<\/code> inicial, a primeira linha que faz <code class='inl'>Parser.lexer.next.type<\/code> tenta ler <code class='inl'>.type<\/code> de <code class='inl'>None<\/code>. A terceira alternativa descreve o erro <em>oposto<\/em>: chamar <code class='inl'>select_next()<\/code> demais."}, {"bloco": "teoria", "tema": "Pumping lemma", "tipo": "vf", "pg": true, "enun": "O Pumping Lemma pode ser usado para provar que uma linguagem é regular.", "r": false, "ex": "O lema é uma condição <strong>necessária<\/strong>, não suficiente: <code class='inl'>L regular ⇒ L satisfaz o lema<\/code>, mas a volta não vale. Por isso ele só serve para provar que algo <em>não<\/em> é regular, por contradição. Para provar que é, exiba um AF, uma ER ou uma gramática regular."}, {"bloco": "teoria", "tema": "Classes de linguagem", "tipo": "vf", "pg": true, "enun": "Como <code class='inl'>{aⁿbⁿ}<\/code> pode ser reconhecida por uma máquina com um único contador, ela é regular.", "r": false, "ex": "Um contador que pode crescer sem limite <strong>não é um autômato finito<\/strong>: ele precisa de um estado por valor possível, e são infinitos. O contador é, na verdade, uma pilha com um único símbolo — já está fora das regulares. A hierarquia real é Regulares ⊊ um contador ⊊ Livres de contexto."}, {"bloco": "teoria", "tema": "Hierarquia", "tipo": "vf", "pg": false, "enun": "Toda linguagem regular é também livre de contexto.", "r": true, "ex": "As classes se encaixam: Regulares ⊂ Livres de contexto. Toda gramática regular já é uma gramática livre de contexto (lado esquerdo com um só não-terminal), e todo autômato finito é um autômato de pilha que nunca usa a pilha."}, {"bloco": "teoria", "tema": "Fechamento", "tipo": "vf", "pg": true, "enun": "Se L₁ e L₂ são livres de contexto, então L₁ ∩ L₂ também é.", "r": false, "ex": "Contraexemplo clássico: <code class='inl'>L₁ = {aⁿbⁿcᵐ}<\/code> e <code class='inl'>L₂ = {aᵐbⁿcⁿ}<\/code> são ambas livres de contexto (cada uma casa um par). A interseção exige que os três casem: <code class='inl'>{aⁿbⁿcⁿ}<\/code>, que <strong>não<\/strong> é livre de contexto."}, {"bloco": "teoria", "tema": "Fechamento", "tipo": "vf", "pg": true, "enun": "A interseção de uma linguagem livre de contexto com uma linguagem regular é sempre livre de contexto.", "r": true, "ex": "É a exceção que salva as provas — e a pegadinha logo depois da questão anterior. CFL <strong>não<\/strong> fecha sob interseção geral, mas <strong>fecha<\/strong> sob interseção com regular. É o truque padrão: intersecta-se L com uma regular escolhida a dedo para isolar a parte difícil."}, {"bloco": "teoria", "tema": "Classes de linguagem", "tipo": "mc", "pg": true, "enun": "Qual destas linguagens <strong>não<\/strong> é regular?", "op": ["<code class='inl'>a*b*<\/code>", "<code class='inl'>(ab)*<\/code>", "<code class='inl'>a*b* ∪ b*a*<\/code>", "<code class='inl'>{aⁿbⁿ : n ≥ 0}<\/code>"], "r": 3, "ex": "A terceira parece exigir memória, mas não exige — os expoentes são independentes, e ela tem ER. Foi exatamente essa a pegadinha que derrubou a questão 3 da prova. Só <code class='inl'>aⁿbⁿ<\/code> amarra os dois expoentes, e é isso que exige contar."}, {"bloco": "teoria", "tema": "Autômatos", "tipo": "vf", "pg": false, "enun": "AFD e AFN reconhecem exatamente a mesma classe de linguagens.", "r": true, "ex": "Todo AFN pode ser convertido num AFD equivalente pela construção de subconjuntos (ao custo de possivelmente muitos mais estados). O não determinismo é uma conveniência de projeto, não um ganho de poder. Ambos reconhecem exatamente as regulares."}, {"bloco": "teoria", "tema": "Pumping lemma", "tipo": "mc", "pg": false, "enun": "No pumping lemma para linguagens livres de contexto, a palavra é dividida em:", "op": ["3 partes, bombeando 1", "5 partes, bombeando 2 ao mesmo tempo", "5 partes, bombeando 1", "4 partes, bombeando 2"], "r": 1, "ex": "<code class='inl'>z = uvwxy<\/code>, e bombeia-se <code class='inl'>v<\/code> e <code class='inl'>x<\/code> juntos: <code class='inl'>uvⁱwxⁱy ∈ L<\/code>. Vem de um não-terminal repetido num caminho da árvore de derivação — a recursão cresce para os <em>dois lados<\/em> dele. No caso regular são 3 partes (<code class='inl'>xyz<\/code>) e só <code class='inl'>y<\/code> se repete."}, {"bloco": "teoria", "tema": "Ambiguidade", "tipo": "vf", "pg": true, "enun": "Se uma gramática é ambígua, a linguagem que ela gera só pode ser descrita por gramáticas ambíguas.", "r": false, "ex": "Ambiguidade é propriedade da <strong>gramática<\/strong>, não da linguagem. A gramática <code class='inl'>E → E+E | E*E | n<\/code> é ambígua, mas a mesma linguagem é gerada sem ambiguidade por EXPRESSION/TERM/FACTOR. Linguagens <em>inerentemente<\/em> ambíguas existem, mas são exceção."}, {"bloco": "teoria", "tema": "Parsing LR", "tipo": "mc", "pg": false, "enun": "Num parser LR, a operação <code class='inl'>reduce<\/code>:", "op": ["Empilha o próximo token da entrada", "Troca o topo da pilha, que casa com o lado direito de uma produção, pelo lado esquerdo", "Descarta tokens inválidos", "Expande o não-terminal mais à esquerda"], "r": 1, "ex": "<code class='inl'>shift<\/code> empilha; <code class='inl'>reduce<\/code> reconhece e troca. A quarta alternativa descreve o que um parser <strong>LL<\/strong> faz — expansão top-down — e é a confusão mais comum entre as duas famílias."}, {"bloco": "teoria", "tema": "Parsing LL", "tipo": "vf", "pg": true, "enun": "O parser do nosso compilador é LR(1), pois olha um token à frente para decidir.", "r": false, "ex": "É <strong>LL(1)<\/strong>. Olhar 1 token à frente é o <code class='inl'>k = 1<\/code>, que vale para os dois. O que distingue LL de LR é a <em>direção<\/em>: o nosso parte de <code class='inl'>EXPRESSION<\/code> e expande até a cadeia (top-down, descida recursiva). Um LR partiria da cadeia e reduziria até o símbolo inicial, com shift/reduce."}, {"bloco": "teoria", "tema": "Autômato de pilha", "tipo": "vf", "pg": true, "enun": "Dois contadores independentes — um para <code class='inl'>[ ]<\/code> e outro para <code class='inl'>{ }<\/code> — bastam para reconhecer expressões com colchetes e chaves bem aninhados.", "r": false, "ex": "<code class='inl'>[{]}<\/code> passa nos dois contadores (cada um abre e fecha uma vez) e é inválida. Contadores separados perdem a <strong>ordem de entrelaçamento<\/strong>. Só uma pilha única, guardando <code class='inl'>X<\/code> e <code class='inl'>Y<\/code> na sequência em que chegaram, detecta que o <code class='inl'>]<\/code> tentou fechar com um <code class='inl'>{<\/code> no topo."}, {"bloco": "teoria", "tema": "Fases", "tipo": "mc", "pg": false, "enun": "Qual fase detecta o erro em <code class='inl'>x = 10 + \"abc\";<\/code>?", "op": ["Léxica", "Sintática", "Semântica", "Nenhuma — é válido"], "r": 2, "ex": "Os tokens são todos válidos e a ordem obedece à gramática. O problema é o <em>significado<\/em>: somar inteiro com string. Só a análise semântica, consultando os tipos na tabela de símbolos, consegue reprovar."}, {"bloco": "teoria", "tema": "Fases", "tipo": "vf", "pg": true, "enun": "O Lexer é capaz de detectar que <code class='inl'>((2+3)<\/code> tem um parêntese não fechado.", "r": false, "ex": "O Lexer é um <strong>autômato finito<\/strong>: não conta nada, só reconhece onde cada token começa e termina. Ele devolve <code class='inl'>( ( 2 + 3 ) EOF<\/code> sem reclamar. Quem percebe o desbalanço é o Parser, ao esperar <code class='inl'>CLOSE_PAR<\/code> e encontrar <code class='inl'>EOF<\/code> — e ele consegue porque tem pilha (a de chamadas)."}, {"bloco": "teoria", "tema": "Hierarquia", "tipo": "mc", "pg": false, "enun": "Qual máquina reconhece exatamente as linguagens livres de contexto?", "op": ["Autômato finito determinístico", "Autômato de pilha não determinístico", "Autômato finito não determinístico", "Expressão regular"], "r": 1, "ex": "É o teorema da Aula 7: <strong>GLC ↔ PDA<\/strong>. E precisa ser o PDA <em>não determinístico<\/em> — nem toda CFL tem um PDA determinístico. As outras três alternativas reconhecem exatamente as regulares."}, {"bloco": "teoria", "tema": "Fechamento", "tipo": "vf", "pg": false, "enun": "Linguagens livres de contexto são fechadas sob complemento.", "r": false, "ex": "Não são — e decorre da interseção, por De Morgan: <code class='inl'>L₁ ∩ L₂ = complemento(complemento(L₁) ∪ complemento(L₂))<\/code>. Se CFL fechasse sob complemento, como já fecha sob união, fecharia sob interseção — o que é falso. Já as regulares fecham sob complemento."}, {"bloco": "teoria", "tema": "Pumping CFL", "tipo": "disc", "pg": false, "enun": "Mostre que <code class='inl'>L = {aⁿbⁿcⁿ : n ≥ 0}<\/code> não é livre de contexto.", "modelo": "<ol><li>Suponha <code class='inl'>L<\/code> livre de contexto. Existe então o comprimento <code class='inl'>n<\/code> do lema.<\/li><li>Escolha <code class='inl'>z = aⁿbⁿcⁿ<\/code> — <strong>ela pertence a L<\/strong>, e |z| ≥ n.<\/li><li>O lema garante <code class='inl'>z = uvwxy<\/code> com <code class='inl'>|vwx| ≤ n<\/code> e <code class='inl'>vx ≠ ε<\/code>.<\/li><li>Como <code class='inl'>|vwx| ≤ n<\/code>, esse trecho é curto demais para tocar as três letras: cobre no máximo duas (a e b, ou b e c).<\/li><li>Bombeando com <code class='inl'>i = 2<\/code>, as letras tocadas crescem e a terceira fica para trás.<\/li><li>As três quantidades deixam de ser iguais: <code class='inl'>uv²wx²y ∉ L<\/code>. <strong>Contradição<\/strong>.<\/li><\/ol>", "crit": ["Escolhe uma palavra que pertence a L", "Usa a decomposição em 5 partes com as duas condições", "Argumenta que vwx não alcança as três letras", "Conclui por contradição"]}, {"bloco": "teoria", "tema": "Compilação · estilo Q1", "tipo": "disc", "pg": false, "enun": "Usando a v1.2 como base, explique passo a passo como implementaria o operador <code class='inl'>%<\/code> (resto da divisão inteira), com a <strong>mesma precedência<\/strong> de <code class='inl'>*<\/code> e <code class='inl'>/<\/code>. Explore todas as etapas.", "modelo": "<p><strong>Lexer:<\/strong> uma entrada nova em <code class='inl'>SYMBOLS<\/code>: <code class='inl'>\"%\": \"MOD\"<\/code>.<\/p><p><strong>Parser:<\/strong> mesma precedência = <em>mesmo nível<\/em>. Entra no <code class='inl'>while<\/code> de <code class='inl'>parse_term()<\/code> junto de <code class='inl'>MULT<\/code> e <code class='inl'>DIV<\/code>. Nenhuma função nova — é o caso do XOR no x1.0, não o do <code class='inl'>**<\/code>.<\/p><p><strong>AST:<\/strong> reusa <code class='inl'>BinOp<\/code> com <code class='inl'>value = \"%\"<\/code>. Nenhuma classe nova.<\/p><p><strong>Semântico:<\/strong> o <code class='inl'>evaluate()<\/code> do <code class='inl'>BinOp<\/code> ganha o ramo <code class='inl'>%<\/code>, com checagem de divisor zero levantando <code class='inl'>[Semantic]<\/code>.<\/p><p><strong>Testes que provam a precedência:<\/strong> <code class='inl'>7%3 → 1<\/code> · <code class='inl'>2+7%3 → 3<\/code> (acima do +) · <code class='inl'>7%3*2 → 2<\/code> (mesmo nível que *, esquerda para direita).<\/p>", "crit": ["Lexer: token novo", "Parser: entra no MESMO while do TERM, sem função nova", "AST: reusa BinOp", "Semântico: avaliação e divisor zero", "Um teste que comprova a precedência"]}, {"bloco": "teoria", "tema": "Árvores", "tipo": "disc", "pg": false, "enun": "Explique a diferença entre árvore de derivação e AST. Por que os parênteses não aparecem na AST?", "modelo": "<p>A <strong>árvore de derivação<\/strong> registra cada regra da gramática aplicada: <code class='inl'>EXPRESSION<\/code>, <code class='inl'>TERM<\/code>, <code class='inl'>FACTOR<\/code>, <code class='inl'>NUMBER<\/code> aparecem como nós, e os terminais como folhas. Ela <em>prova<\/em> que a cadeia obedece à gramática.<\/p><p>A <strong>AST<\/strong> guarda só o que importa para executar: operadores como nós internos, valores como folhas. Os não-terminais somem; o operador, que era um terminal de passagem, vira o nó.<\/p><p><strong>Parênteses:<\/strong> existem porque a escrita é <em>linear<\/em> — num texto de uma dimensão é preciso marcar o que agrupa com o quê. A árvore é bidimensional: o agrupamento já está na posição do nó. <code class='inl'>(1+2)*3<\/code> e <code class='inl'>1+2*3<\/code> geram ASTs de <em>formatos<\/em> diferentes, e é o formato que decide a ordem da conta.<\/p>", "crit": ["Descreve a árvore de derivação (não-terminais como nós)", "Descreve a AST (só operadores e valores)", "Explica que o agrupamento está na forma da árvore", "Dá um exemplo com formatos diferentes"]}, {"bloco": "teoria", "tema": "Semântica e Chomsky", "tipo": "disc", "pg": false, "enun": "Se a sintaxe da linguagem já é descrita por uma gramática, por que o compilador precisa de uma fase semântica separada?", "modelo": "<p>Porque há restrições que <strong>nenhuma gramática livre de contexto consegue expressar<\/strong>. A mais importante: <em>toda variável usada foi declarada antes, com o tipo certo<\/em>. Sintaticamente, <code class='inl'>y = x + 1<\/code> é impecável mesmo que <code class='inl'>x<\/code> nunca tenha existido.<\/p><p>Esse tipo de restrição exige memória de coisas vistas <em>arbitrariamente longe<\/em> no programa — algo como <code class='inl'>aⁿbⁿcⁿ<\/code>, que o pumping lemma para CFL mostra não ser livre de contexto.<\/p><p>Por isso existe uma fase separada, com uma <strong>tabela de símbolos<\/strong> que guarda nome, tipo e escopo de cada variável. Não é preguiça de projeto: é uma fronteira formal. A sintaxe cuida da forma; ela literalmente não alcança o resto.<\/p>", "crit": ["Dá um exemplo de restrição que a GLC não expressa", "Relaciona com os limites das linguagens livres de contexto", "Menciona a tabela de símbolos como solução"]}];
+var FLASH = [{"tema": "Gramática do compilador", "q": "Escreva a regra <strong>EXPRESSION<\/strong> em EBNF.", "a": "<code class='inl'>EXPRESSION = TERM, { (\"+\" | \"-\"), TERM } ;<\/code><br><br>Um TERM, seguido de zero ou mais pares <em>operador + TERM<\/em>. Cuida de <strong>+ e −<\/strong> — o que liga <em>menos<\/em> forte."}, {"tema": "Gramática do compilador", "q": "Escreva a regra <strong>TERM<\/strong> em EBNF.", "a": "<code class='inl'>TERM = FACTOR, { (\"*\" | \"/\"), FACTOR } ;<\/code><br><br>Mesmo formato do EXPRESSION, um nível abaixo. Cuida de <strong>* e /<\/strong>."}, {"tema": "Gramática do compilador", "q": "Escreva a regra <strong>FACTOR<\/strong> em EBNF.", "a": "<code class='inl'>FACTOR = NUMBER | (\"+\" | \"-\"), FACTOR | \"(\", EXPRESSION, \")\" ;<\/code><br><br>Três caminhos: um número, um unário aplicado a outro FACTOR, ou uma expressão entre parênteses. Liga <em>mais<\/em> forte."}, {"tema": "Gramática do compilador", "q": "E as regras <strong>NUMBER<\/strong> e <strong>DIGIT<\/strong>?", "a": "<code class='inl'>NUMBER = DIGIT, { DIGIT } ;<\/code><br><code class='inl'>DIGIT = \"0\" | \"1\" | ... | \"9\" ;<\/code><br><br>Um dígito seguido de zero ou mais. É a camada <strong>léxica<\/strong>: vira o laço interno do <code class='inl'>select_next()<\/code>."}, {"tema": "Gramática do compilador", "q": "Traduza os símbolos da EBNF para código.", "a": "<code class='inl'>{ ... }<\/code> &#8594; <strong>while<\/strong><br><code class='inl'>( A | B )<\/code> &#8594; <strong>if / elif<\/strong><br><code class='inl'>\"x\"<\/code> &#8594; <strong>consumir um token<\/strong><br><code class='inl'>NOME<\/code> &#8594; <strong>chamar a função<\/strong> daquela regra"}, {"tema": "Gramática do compilador", "q": "No diagrama sintático, o que significa um <strong>círculo<\/strong> e um <strong>retângulo<\/strong>?", "a": "<strong>Círculo<\/strong>: consumir um token da entrada (<em>+<\/em>, <em>(<\/em>, <em>number<\/em>).<br><strong>Retângulo<\/strong>: chamar outro diagrama e voltar (<em>TERM<\/em>, <em>FACTOR<\/em>, <em>EXPRESSION<\/em>)."}, {"tema": "Gramática do compilador", "q": "Quem chama quem, e por que isso dá a precedência?", "a": "<code class='inl'>EXPRESSION &#8594; TERM &#8594; FACTOR<\/code><br><br>O mais fundo termina primeiro, então liga mais forte. Em <code class='inl'>2+3*4<\/code>, o TERM resolve <code class='inl'>3*4<\/code> inteiro antes de devolver — o + só enxerga o 12 pronto."}, {"tema": "Gramática do compilador", "q": "Em <code class='inl'>2+3*4<\/code>, que trecho do texto cada nível cobre?", "a": "<strong>FACTOR<\/strong>: <code class='inl'>2<\/code> · <code class='inl'>3<\/code> · <code class='inl'>4<\/code><br><strong>TERM<\/strong>: <code class='inl'>2<\/code> e <code class='inl'>3*4<\/code><br><strong>EXPRESSION<\/strong>: <code class='inl'>2+3*4<\/code><br><br>O <code class='inl'>3*4<\/code> forma um TERM próprio, separado do 2 — é a multiplicação ligando mais forte."}, {"tema": "Gramática do compilador", "q": "Em <code class='inl'>(2+3)*4<\/code>, o que é um FACTOR?", "a": "O <strong>parêntese inteiro<\/strong> <code class='inl'>(2+3)<\/code> é um FACTOR — além do <code class='inl'>4<\/code>, e do <code class='inl'>2<\/code> e do <code class='inl'>3<\/code> lá dentro.<br><br>E dentro dele nasce uma <strong>EXPRESSION nova<\/strong>: <code class='inl'>2+3<\/code>. É a recursão."}, {"tema": "Gramática do compilador", "q": "Por que o FACTOR chama a si mesmo?", "a": "Pelo caminho do unário: <code class='inl'>FACTOR = (\"+\"|\"-\"), FACTOR<\/code>.<br><br>É o que faz <code class='inl'>+--++3<\/code> funcionar sem nenhum código especial para unários encadeados."}, {"tema": "Gramática do compilador", "q": "Por que o FACTOR chama o EXPRESSION?", "a": "Pelo parêntese: <code class='inl'>\"(\", EXPRESSION, \")\"<\/code>. O nível mais interno volta ao mais externo e <strong>o ciclo se fecha<\/strong>.<br><br>É isso que permite aninhar parênteses sem limite — e é por isso que a linguagem deixa de ser regular."}, {"tema": "Gramática do compilador", "q": "Que regra quebra se eu trocar a ordem dos níveis?", "a": "A precedência. Se EXPRESSION cuidasse de * e TERM de +, então <code class='inl'>2+3*4<\/code> seria lido como <code class='inl'>(2+3)*4 = 20<\/code> em vez de 14. <strong>A ordem dos níveis é a tabela de precedência.<\/strong>"}, {"tema": "Gramática do compilador", "q": "Por que 10-3-2 dá 5 e não 9, olhando para a gramática?", "a": "A repetição <code class='inl'>{ (\"+\"|\"-\"), TERM }<\/code> vira um <code class='inl'>while<\/code> que acumula da esquerda para a direita: <code class='inl'>(10-3)-2<\/code>.<br><br>Em BNF, isso é a <strong>recursão à esquerda<\/strong>: <code class='inl'>E &#8594; E - T<\/code>."}, {"tema": "Gramática do compilador", "q": "Como inserir um operador com precedência <em>nova<\/em> na gramática?", "a": "<strong>Dividindo um nível em dois.<\/strong> Foi o que o <code class='inl'>**<\/code> (x1.1) e o <code class='inl'>!<\/code> (x1.2) exigiram:<br><code class='inl'>FACTOR = (\"+\"|\"-\"), FACTOR | BASE, { \"**\", BASE }<\/code><br><code class='inl'>BASE = NUMBER | \"(\", EXPRESSION, \")\"<\/code>"}, {"tema": "Gramática do compilador", "q": "E um operador com a <em>mesma<\/em> precedência de um existente?", "a": "Entra na <strong>mesma regra<\/strong>, sem nível novo. O XOR (x1.0) tem a precedência do + e do −:<br><code class='inl'>EXPRESSION = TERM, { (\"+\"|\"-\"|\"^\"), TERM }<\/code>"}, {"tema": "Gramática do compilador", "q": "Que ordem o validador do README exige no FACTOR?", "a": "<code class='inl'>NUMBER<\/code> como <strong>primeira<\/strong> alternativa, e dígitos <strong>entre aspas<\/strong>:<br><code class='inl'>FACTOR = NUMBER | (\"+\"|\"-\"), FACTOR | \"(\", EXPRESSION, \")\" ;<\/code><br><code class='inl'>DIGIT = \"0\" | \"1\" | ... | \"9\" ;<\/code><br><em>A ordem do enunciado reprovou o v1.1.0.<\/em>"}, {"tema": "Gramática do compilador", "q": "Como a gramática cresce no Roteiro 5?", "a": "Duas camadas <strong>acima<\/strong> e uma alternativa <strong>dentro<\/strong>:<br><code class='inl'>PROGRAM = { STMT }<\/code><br><code class='inl'>STMT = [ IDEN \"=\" EXPR | PRINT \"(\" EXPR \")\" ] EOL<\/code><br><code class='inl'>FACTOR<\/code> ganha o caminho <code class='inl'>IDEN<\/code>.<br>EXPR e TERM não mudam."}, {"tema": "Linguagens", "q": "O que é Σ*?", "a": "O conjunto de <strong>todas as cadeias finitas<\/strong> formáveis com os símbolos do alfabeto Σ — incluindo a cadeia vazia ε."}, {"tema": "Linguagens", "q": "O que é uma linguagem formal?", "a": "Qualquer <strong>subconjunto de Σ*<\/strong>. <code class='inl'>L ⊆ Σ*<\/code>. Linguagem é um conjunto de cadeias, nada mais."}, {"tema": "Gramáticas", "q": "Qual a quádrupla de uma gramática?", "a": "<code class='inl'>G = (V, Σ, P, S)<\/code><br>V: não-terminais · Σ: terminais · P: produções · S ∈ V: símbolo inicial.<br><em>V não é \"vocabulário\"<\/em> — isso já custou nota."}, {"tema": "Gramáticas", "q": "Terminal × não-terminal", "a": "<strong>Terminal<\/strong>: aparece na cadeia final e não se expande.<br><strong>Não-terminal<\/strong>: nome de regra, sempre se expande até sumir."}, {"tema": "Gramáticas", "q": "O que é uma derivação?", "a": "A sequência de substituições do símbolo inicial até sobrar só terminais.<br><code class='inl'>S ⇒ aSb ⇒ aaSbb ⇒ aabb<\/code>"}, {"tema": "Gramáticas", "q": "Quando uma gramática é ambígua?", "a": "Quando <strong>uma mesma cadeia<\/strong> admite <strong>duas árvores de derivação diferentes<\/strong>. Ex.: 3+4*2 com E → E+E | E*E | n dá 11 ou 14."}, {"tema": "Gramáticas", "q": "Como EXPRESSION/TERM/FACTOR removem a ambiguidade?", "a": "Estratificando: um TERM <strong>nunca<\/strong> contém um + solto. A precedência fica embutida em quem chama quem — não há tabela de prioridade."}, {"tema": "Árvores", "q": "Árvore de derivação × AST", "a": "<strong>Derivação<\/strong>: todo não-terminal aplicado vira nó; prova que a cadeia obedece à gramática.<br><strong>AST<\/strong>: só operadores e valores; serve para executar."}, {"tema": "Árvores", "q": "Por que parênteses somem na AST?", "a": "Porque o agrupamento já está na <strong>forma<\/strong> da árvore. Parêntese só existe porque texto é linear."}, {"tema": "Árvores", "q": "O evaluate() percorre a árvore em que ordem?", "a": "<strong>Pós-ordem<\/strong>: esquerda, direita, raiz. Um BinOp não pode operar antes de saber o valor dos filhos."}, {"tema": "Autômatos", "q": "AFD × AFN", "a": "AFD: <strong>uma<\/strong> transição por (estado, símbolo). AFN: várias possíveis.<br>Reconhecem <strong>exatamente as mesmas<\/strong> linguagens — as regulares."}, {"tema": "Autômatos", "q": "Operadores de expressão regular", "a": "<code class='inl'>a|b<\/code> união · <code class='inl'>ab<\/code> concatenação · <code class='inl'>a*<\/code> estrela de Kleene (zero ou mais)"}, {"tema": "Autômatos", "q": "As três representações de uma linguagem regular", "a": "Gramática linear ↔ Autômato finito ↔ Expressão regular. Mesmo poder expressivo."}, {"tema": "Pumping", "q": "Pumping lemma para regulares", "a": "<code class='inl'>w = xyz<\/code> com<br><code class='inl'>|xy| ≤ p<\/code> · <code class='inl'>|y| > 0<\/code> · <code class='inl'>xyⁱz ∈ L ∀ i ≥ 0<\/code>"}, {"tema": "Pumping", "q": "Pumping lemma para livres de contexto", "a": "<code class='inl'>z = uvwxy<\/code> com<br><code class='inl'>|vwx| ≤ n<\/code> · <code class='inl'>vx ≠ ε<\/code> · <code class='inl'>uvⁱwxⁱy ∈ L ∀ i ≥ 0<\/code><br>Duas partes bombeadas juntas."}, {"tema": "Pumping", "q": "Para que serve o pumping lemma?", "a": "Para provar que uma linguagem <strong>NÃO<\/strong> pertence à classe, por contradição. É condição <em>necessária<\/em>, não suficiente."}, {"tema": "Pumping", "q": "Primeiro passo de toda prova por pumping", "a": "Verificar que a <strong>palavra escolhida pertence à linguagem<\/strong>. Se não pertencer, a prova desmorona antes de começar."}, {"tema": "Fechamento", "q": "O que significa \"fechada sob uma operação\"?", "a": "Aplicar a operação a linguagens da classe produz um resultado que <strong>continua na classe<\/strong>."}, {"tema": "Fechamento", "q": "Fechamento das regulares", "a": "Praticamente tudo: ∪, concatenação, *, ∩, complemento, diferença, reversão."}, {"tema": "Fechamento", "q": "Fechamento das livres de contexto", "a": "<strong>Sim<\/strong>: ∪, concatenação, *, reversão, ∩ com regular.<br><strong>Não<\/strong>: ∩, complemento, diferença."}, {"tema": "Pilha", "q": "O que o autômato de pilha tem que o finito não tem?", "a": "Uma <strong>pilha<\/strong>: memória ilimitada, mas só se lê e mexe no <strong>topo<\/strong>."}, {"tema": "Pilha", "q": "Qual o teorema central da Aula 7?", "a": "<strong>GLC ↔ PDA<\/strong>. Toda gramática livre de contexto tem um autômato de pilha (não determinístico) equivalente, e vice-versa."}, {"tema": "Pilha", "q": "Por que um contador não substitui a pilha?", "a": "O contador só guarda <strong>quantos<\/strong>. Não distingue tipos de símbolo nem a ordem de entrelaçamento: <code class='inl'>([)]<\/code> e <code class='inl'>[{]}<\/code> passariam."}, {"tema": "Pilha", "q": "Por que \"só o topo\" é uma virtude?", "a": "Porque é exatamente a regra do aninhamento: o que abriu por último fecha primeiro. Poder mexer no meio aceitaria [{]}."}, {"tema": "Compilador", "q": "Em que classe vivem o Lexer e o Parser?", "a": "<strong>Lexer<\/strong>: regular — autômato finito.<br><strong>Parser<\/strong>: livre de contexto — pilha (a de chamadas do Python)."}, {"tema": "Compilador", "q": "Lexer × Parser em uma frase", "a": "Lexer: <em>\"que token é este?\"<\/em><br>Parser: <em>\"essa sequência de tokens é válida?\"<\/em>"}, {"tema": "Compilador", "q": "As três fases que disparam erro", "a": "<code class='inl'>[Lexer]<\/code> símbolo inválido — <code class='inl'>@<\/code><br><code class='inl'>[Parser]<\/code> ordem inválida — <code class='inl'>1 1<\/code><br><code class='inl'>[Semantic]<\/code> sentido inválido — <code class='inl'>1/0<\/code>"}, {"tema": "Compilador", "q": "De onde vem a precedência no parser?", "a": "Da <strong>profundidade de chamada<\/strong>. O método mais fundo termina primeiro, então liga mais forte. Não existe tabela."}, {"tema": "Compilador", "q": "Por que 10-3-2 dá 5 e não 9?", "a": "O <code class='inl'>while<\/code> acumula da esquerda para a direita: <code class='inl'>(10-3)-2<\/code>. É a recursão à esquerda da BNF, traduzida em laço."}, {"tema": "Parsing", "q": "LL(k)", "a": "Top-down · lê da esquerda · derivação mais à esquerda · k tokens de lookahead.<br><strong>O nosso compilador é LL(1)<\/strong> — descida recursiva."}, {"tema": "Parsing", "q": "LR(k)", "a": "Bottom-up · parte da cadeia e reduz até o símbolo inicial, com <code class='inl'>shift<\/code> e <code class='inl'>reduce<\/code> sobre uma pilha. Quase sempre gerado por ferramenta."}, {"tema": "Compilador", "q": "Tabela de símbolos e escopo", "a": "Uma tabela por escopo, com ponteiro para a do pai. A busca sobe a cadeia até achar — é o que permite <strong>shadowing<\/strong>."}, {"tema": "Compilador", "q": "O que é constant folding?", "a": "Resolver na AST, em compilação, subexpressões constantes: <code class='inl'>3+4*2 → 11<\/code>. Preserva o comportamento porque as operações são puras."}, {"tema": "Paradigmas", "q": "Quais os quatro paradigmas principais?", "a": "<strong>Imperativo<\/strong> (comandos que mudam estado) · <strong>OO<\/strong> (objetos) · <strong>Funcional<\/strong> (funções, imutabilidade) · <strong>Lógico<\/strong> (relações).<br><em>Compilado × interpretado não é paradigma.<\/em>"}];
+var COLINHA = {"versoes": [{"id": "v0.0", "rot": "v0.0", "desc": "Roteiro 1 · soma e subtração", "src": "import sys\n\nDIGITS = \"0123456789\"\n\n\nclass Token:\n    def __init__(self, type, value):\n        self.type = type\n        self.value = value\n\n\nclass Tokenizer:\n    def __init__(self, source):\n        self.source = source\n        self.position = 0\n        self.next = None\n\n    def select_next(self):\n        while self.position < len(self.source) and self.source[self.position].isspace():\n            self.position += 1\n\n        if self.position >= len(self.source):\n            self.next = Token(\"EOF\", None)\n            return self.next\n\n        char = self.source[self.position]\n\n        if char == \"+\":\n            self.position += 1\n            self.next = Token(\"PLUS\", \"+\")\n        elif char == \"-\":\n            self.position += 1\n            self.next = Token(\"MINUS\", \"-\")\n        elif char in DIGITS:\n            number = \"\"\n            while self.position < len(self.source) and self.source[self.position] in DIGITS:\n                number += self.source[self.position]\n                self.position += 1\n            self.next = Token(\"INT\", int(number))\n        else:\n            raise Exception(f\"Caractere invalido '{char}' na posicao {self.position}\")\n\n        return self.next\n\n\nclass Parser:\n    def __init__(self):\n        self.tokenizer = None\n\n    def parse_expression(self):\n        if self.tokenizer.next.type != \"INT\":\n            raise Exception(f\"Esperado um numero, encontrado '{self.tokenizer.next.type}'\")\n\n        result = self.tokenizer.next.value\n        self.tokenizer.select_next()\n\n        while self.tokenizer.next.type in (\"PLUS\", \"MINUS\"):\n            operator = self.tokenizer.next.type\n            self.tokenizer.select_next()\n\n            if self.tokenizer.next.type != \"INT\":\n                raise Exception(f\"Esperado um numero apos o operador, encontrado '{self.tokenizer.next.type}'\")\n\n            if operator == \"PLUS\":\n                result += self.tokenizer.next.value\n            else:\n                result -= self.tokenizer.next.value\n\n            self.tokenizer.select_next()\n\n        return result\n\n    def run(self, code):\n        self.tokenizer = Tokenizer(code)\n        self.tokenizer.select_next()\n        result = self.parse_expression()\n\n        if self.tokenizer.next.type != \"EOF\":\n            raise Exception(f\"Token inesperado no fim da expressao: '{self.tokenizer.next.type}'\")\n\n        return result\n\n\ndef main():\n    if len(sys.argv) != 2:\n        raise Exception(\"Uso: python3 main.py '<expressao>'\")\n\n    print(Parser().run(sys.argv[1]))\n\n\nif __name__ == \"__main__\":\n    main()\n", "base": null}, {"id": "v1.0", "rot": "v1.0", "desc": "Roteiro 2 · Lexer e Parser", "src": "import sys\n\nDIGITS = \"0123456789\"\n\n\nclass Token:\n    def __init__(self, type, value):\n        self.type = type\n        self.value = value\n\n\nclass Lexer:\n    def __init__(self, source):\n        self.source = source\n        self.position = 0\n        self.next = None\n\n    def select_next(self):\n        while self.position < len(self.source) and self.source[self.position].isspace():\n            self.position += 1\n\n        if self.position >= len(self.source):\n            self.next = Token(\"EOF\", \"\")\n            return self.next\n\n        char = self.source[self.position]\n\n        if char == \"+\":\n            self.position += 1\n            self.next = Token(\"PLUS\", \"+\")\n        elif char == \"-\":\n            self.position += 1\n            self.next = Token(\"MINUS\", \"-\")\n        elif char in DIGITS:\n            number = char\n            self.position += 1\n            while self.position < len(self.source) and self.source[self.position] in DIGITS:\n                number += self.source[self.position]\n                self.position += 1\n            self.next = Token(\"INT\", int(number))\n        else:\n            raise Exception(f\"[Lexer] Invalid Symbol {char} at position {self.position}\")\n\n        return self.next\n\n\nclass Parser:\n    lexer = None\n\n    @staticmethod\n    def parse_expression():\n        if Parser.lexer.next.type != \"INT\":\n            raise Exception(f\"[Parser] Expected INT, found {Parser.lexer.next.type}\")\n\n        result = Parser.lexer.next.value\n        Parser.lexer.select_next()\n\n        while Parser.lexer.next.type in (\"PLUS\", \"MINUS\"):\n            operator = Parser.lexer.next.type\n            Parser.lexer.select_next()\n\n            if Parser.lexer.next.type != \"INT\":\n                raise Exception(f\"[Parser] Expected INT after {operator}, found {Parser.lexer.next.type}\")\n\n            if operator == \"PLUS\":\n                result += Parser.lexer.next.value\n            else:\n                result -= Parser.lexer.next.value\n\n            Parser.lexer.select_next()\n\n        return result\n\n    @staticmethod\n    def run(code):\n        Parser.lexer = Lexer(code)\n        Parser.lexer.select_next()\n        result = Parser.parse_expression()\n\n        if Parser.lexer.next.type != \"EOF\":\n            raise Exception(f\"[Parser] Unexpected token {Parser.lexer.next.type} after end of expression\")\n\n        return result\n\n\ndef main():\n    if len(sys.argv) != 2:\n        raise Exception(\"[Main] Usage: python3 main.py '<expression>'\")\n\n    print(Parser.run(sys.argv[1]))\n\n\nif __name__ == \"__main__\":\n    main()\n", "base": "v0.0.0..v1.0.0"}, {"id": "v1.1", "rot": "v1.1", "desc": "Roteiro 3 · precedência", "src": "import sys\n\nDIGITS = \"0123456789\"\n\n\nclass Token:\n    def __init__(self, type, value):\n        self.type = type\n        self.value = value\n\n\nclass Lexer:\n    SYMBOLS = {\n        \"+\": \"PLUS\",\n        \"-\": \"MINUS\",\n        \"*\": \"MULT\",\n        \"/\": \"DIV\",\n        \"(\": \"OPEN_PAR\",\n        \")\": \"CLOSE_PAR\",\n    }\n\n    def __init__(self, source):\n        self.source = source\n        self.position = 0\n        self.next = None\n\n    def select_next(self):\n        while self.position < len(self.source) and self.source[self.position].isspace():\n            self.position += 1\n\n        if self.position >= len(self.source):\n            self.next = Token(\"EOF\", \"\")\n            return self.next\n\n        char = self.source[self.position]\n\n        if char in Lexer.SYMBOLS:\n            self.position += 1\n            self.next = Token(Lexer.SYMBOLS[char], char)\n        elif char in DIGITS:\n            number = char\n            self.position += 1\n            while self.position < len(self.source) and self.source[self.position] in DIGITS:\n                number += self.source[self.position]\n                self.position += 1\n            self.next = Token(\"INT\", int(number))\n        else:\n            raise Exception(f\"[Lexer] Invalid Symbol {char} at position {self.position}\")\n\n        return self.next\n\n\nclass Parser:\n    lexer = None\n\n    @staticmethod\n    def parse_expression():\n        result = Parser.parse_term()\n\n        while Parser.lexer.next.type in (\"PLUS\", \"MINUS\"):\n            operator = Parser.lexer.next.type\n            Parser.lexer.select_next()\n\n            if operator == \"PLUS\":\n                result += Parser.parse_term()\n            else:\n                result -= Parser.parse_term()\n\n        return result\n\n    @staticmethod\n    def parse_term():\n        result = Parser.parse_factor()\n\n        while Parser.lexer.next.type in (\"MULT\", \"DIV\"):\n            operator = Parser.lexer.next.type\n            Parser.lexer.select_next()\n\n            if operator == \"MULT\":\n                result *= Parser.parse_factor()\n            else:\n                result //= Parser.parse_factor()\n\n        return result\n\n    @staticmethod\n    def parse_factor():\n        token = Parser.lexer.next\n\n        if token.type == \"INT\":\n            Parser.lexer.select_next()\n            return token.value\n\n        if token.type == \"PLUS\":\n            Parser.lexer.select_next()\n            return Parser.parse_factor()\n\n        if token.type == \"MINUS\":\n            Parser.lexer.select_next()\n            return -Parser.parse_factor()\n\n        if token.type == \"OPEN_PAR\":\n            Parser.lexer.select_next()\n            result = Parser.parse_expression()\n\n            if Parser.lexer.next.type != \"CLOSE_PAR\":\n                raise Exception(f\"[Parser] Expected CLOSE_PAR, found {Parser.lexer.next.type}\")\n\n            Parser.lexer.select_next()\n            return result\n\n        raise Exception(f\"[Parser] Expected INT, unary operator or OPEN_PAR, found {token.type}\")\n\n    @staticmethod\n    def run(code):\n        Parser.lexer = Lexer(code)\n        Parser.lexer.select_next()\n        result = Parser.parse_expression()\n\n        if Parser.lexer.next.type != \"EOF\":\n            raise Exception(f\"[Parser] Unexpected token {Parser.lexer.next.type} after end of expression\")\n\n        return result\n\n\ndef main():\n    if len(sys.argv) != 2:\n        raise Exception(\"[Main] Usage: python3 main.py '<expression>'\")\n\n    print(Parser.run(sys.argv[1]))\n\n\nif __name__ == \"__main__\":\n    main()\n", "base": "v1.0.0..v1.1.1"}, {"id": "v1.2", "rot": "v1.2", "desc": "Roteiro 4 · AST", "src": "import sys\nfrom abc import ABC, abstractmethod\n\nDIGITS = \"0123456789\"\n\n\nclass Token:\n    def __init__(self, type, value):\n        self.type = type\n        self.value = value\n\n\nclass Lexer:\n    SYMBOLS = {\n        \"+\": \"PLUS\",\n        \"-\": \"MINUS\",\n        \"*\": \"MULT\",\n        \"/\": \"DIV\",\n        \"(\": \"OPEN_PAR\",\n        \")\": \"CLOSE_PAR\",\n    }\n\n    def __init__(self, source):\n        self.source = source\n        self.position = 0\n        self.next = None\n\n    def select_next(self):\n        while self.position < len(self.source) and self.source[self.position].isspace():\n            self.position += 1\n\n        if self.position >= len(self.source):\n            self.next = Token(\"EOF\", \"\")\n            return self.next\n\n        char = self.source[self.position]\n\n        if char in Lexer.SYMBOLS:\n            self.position += 1\n            self.next = Token(Lexer.SYMBOLS[char], char)\n        elif char in DIGITS:\n            number = char\n            self.position += 1\n            while self.position < len(self.source) and self.source[self.position] in DIGITS:\n                number += self.source[self.position]\n                self.position += 1\n            self.next = Token(\"INT\", int(number))\n        else:\n            raise Exception(f\"[Lexer] Invalid Symbol {char} at position {self.position}\")\n\n        return self.next\n\n\nclass Node(ABC):\n    def __init__(self, value, children):\n        self.value = value\n        self.children = children\n\n    @abstractmethod\n    def evaluate(self):\n        pass\n\n\nclass BinOp(Node):\n    def evaluate(self):\n        left = self.children[0].evaluate()\n        right = self.children[1].evaluate()\n\n        if self.value == \"+\":\n            return left + right\n\n        if self.value == \"-\":\n            return left - right\n\n        if self.value == \"*\":\n            return left * right\n\n        if self.value == \"/\":\n            if right == 0:\n                raise Exception(\"[Semantic] Division by zero\")\n            return left // right\n\n        raise Exception(f\"[Semantic] Unknown binary operator {self.value}\")\n\n\nclass UnOp(Node):\n    def evaluate(self):\n        operand = self.children[0].evaluate()\n\n        if self.value == \"+\":\n            return operand\n\n        if self.value == \"-\":\n            return -operand\n\n        raise Exception(f\"[Semantic] Unknown unary operator {self.value}\")\n\n\nclass IntVal(Node):\n    def evaluate(self):\n        return self.value\n\n\nclass Parser:\n    lexer = None\n\n    @staticmethod\n    def parse_expression():\n        result = Parser.parse_term()\n\n        while Parser.lexer.next.type in (\"PLUS\", \"MINUS\"):\n            operator = Parser.lexer.next.value\n            Parser.lexer.select_next()\n            result = BinOp(operator, [result, Parser.parse_term()])\n\n        return result\n\n    @staticmethod\n    def parse_term():\n        result = Parser.parse_factor()\n\n        while Parser.lexer.next.type in (\"MULT\", \"DIV\"):\n            operator = Parser.lexer.next.value\n            Parser.lexer.select_next()\n            result = BinOp(operator, [result, Parser.parse_factor()])\n\n        return result\n\n    @staticmethod\n    def parse_factor():\n        token = Parser.lexer.next\n\n        if token.type == \"INT\":\n            Parser.lexer.select_next()\n            return IntVal(token.value, [])\n\n        if token.type in (\"PLUS\", \"MINUS\"):\n            Parser.lexer.select_next()\n            return UnOp(token.value, [Parser.parse_factor()])\n\n        if token.type == \"OPEN_PAR\":\n            Parser.lexer.select_next()\n            result = Parser.parse_expression()\n\n            if Parser.lexer.next.type != \"CLOSE_PAR\":\n                raise Exception(f\"[Parser] Expected CLOSE_PAR, found {Parser.lexer.next.type}\")\n\n            Parser.lexer.select_next()\n            return result\n\n        raise Exception(f\"[Parser] Expected INT, unary operator or OPEN_PAR, found {token.type}\")\n\n    @staticmethod\n    def run(code):\n        Parser.lexer = Lexer(code)\n        Parser.lexer.select_next()\n        root = Parser.parse_expression()\n\n        if Parser.lexer.next.type != \"EOF\":\n            raise Exception(f\"[Parser] Unexpected token {Parser.lexer.next.type} after end of expression\")\n\n        return root\n\n\ndef main():\n    if len(sys.argv) != 2:\n        raise Exception(\"[Main] Usage: python3 main.py '<expression>'\")\n\n    print(Parser.run(sys.argv[1]).evaluate())\n\n\nif __name__ == \"__main__\":\n    main()\n", "base": "v1.1.1..v1.2.1"}, {"id": "x1.0", "rot": "x1.0", "desc": "Extra · XOR ^", "src": "import sys\n\nDIGITS = \"0123456789\"\n\n\nclass Token:\n    def __init__(self, type, value):\n        self.type = type\n        self.value = value\n\n\nclass Lexer:\n    def __init__(self, source):\n        self.source = source\n        self.position = 0\n        self.next = None\n\n    def select_next(self):\n        while self.position < len(self.source) and self.source[self.position].isspace():\n            self.position += 1\n\n        if self.position >= len(self.source):\n            self.next = Token(\"EOF\", \"\")\n            return self.next\n\n        char = self.source[self.position]\n\n        if char == \"+\":\n            self.position += 1\n            self.next = Token(\"PLUS\", \"+\")\n        elif char == \"-\":\n            self.position += 1\n            self.next = Token(\"MINUS\", \"-\")\n        elif char == \"^\":\n            self.position += 1\n            self.next = Token(\"XOR\", \"^\")\n        elif char in DIGITS:\n            number = char\n            self.position += 1\n            while self.position < len(self.source) and self.source[self.position] in DIGITS:\n                number += self.source[self.position]\n                self.position += 1\n            self.next = Token(\"INT\", int(number))\n        else:\n            raise Exception(f\"[Lexer] Invalid Symbol {char} at position {self.position}\")\n\n        return self.next\n\n\nclass Parser:\n    lexer = None\n\n    @staticmethod\n    def parse_expression():\n        if Parser.lexer.next.type != \"INT\":\n            raise Exception(f\"[Parser] Expected INT, found {Parser.lexer.next.type}\")\n\n        result = Parser.lexer.next.value\n        Parser.lexer.select_next()\n\n        while Parser.lexer.next.type in (\"PLUS\", \"MINUS\", \"XOR\"):\n            operator = Parser.lexer.next.type\n            Parser.lexer.select_next()\n\n            if Parser.lexer.next.type != \"INT\":\n                raise Exception(f\"[Parser] Expected INT after {operator}, found {Parser.lexer.next.type}\")\n\n            if operator == \"PLUS\":\n                result += Parser.lexer.next.value\n            elif operator == \"MINUS\":\n                result -= Parser.lexer.next.value\n            else:\n                result ^= Parser.lexer.next.value\n\n            Parser.lexer.select_next()\n\n        return result\n\n    @staticmethod\n    def run(code):\n        Parser.lexer = Lexer(code)\n        Parser.lexer.select_next()\n        result = Parser.parse_expression()\n\n        if Parser.lexer.next.type != \"EOF\":\n            raise Exception(f\"[Parser] Unexpected token {Parser.lexer.next.type} after end of expression\")\n\n        return result\n\n\ndef main():\n    if len(sys.argv) != 2:\n        raise Exception(\"[Main] Usage: python3 main.py '<expression>'\")\n\n    print(Parser.run(sys.argv[1]))\n\n\nif __name__ == \"__main__\":\n    main()\n", "base": "v1.0.0..x1.0.0"}, {"id": "x1.1", "rot": "x1.1", "desc": "Extra · potência **", "src": "import sys\n\nDIGITS = \"0123456789\"\n\n\nclass Token:\n    def __init__(self, type, value):\n        self.type = type\n        self.value = value\n\n\nclass Lexer:\n    SYMBOLS = {\n        \"+\": \"PLUS\",\n        \"-\": \"MINUS\",\n        \"*\": \"MULT\",\n        \"/\": \"DIV\",\n        \"(\": \"OPEN_PAR\",\n        \")\": \"CLOSE_PAR\",\n    }\n\n    def __init__(self, source):\n        self.source = source\n        self.position = 0\n        self.next = None\n\n    def select_next(self):\n        while self.position < len(self.source) and self.source[self.position].isspace():\n            self.position += 1\n\n        if self.position >= len(self.source):\n            self.next = Token(\"EOF\", \"\")\n            return self.next\n\n        char = self.source[self.position]\n\n        if self.source.startswith(\"**\", self.position):\n            self.position += 2\n            self.next = Token(\"POWER\", \"**\")\n        elif char in Lexer.SYMBOLS:\n            self.position += 1\n            self.next = Token(Lexer.SYMBOLS[char], char)\n        elif char in DIGITS:\n            number = char\n            self.position += 1\n            while self.position < len(self.source) and self.source[self.position] in DIGITS:\n                number += self.source[self.position]\n                self.position += 1\n            self.next = Token(\"INT\", int(number))\n        else:\n            raise Exception(f\"[Lexer] Invalid Symbol {char} at position {self.position}\")\n\n        return self.next\n\n\nclass Parser:\n    lexer = None\n\n    @staticmethod\n    def parse_expression():\n        result = Parser.parse_term()\n\n        while Parser.lexer.next.type in (\"PLUS\", \"MINUS\"):\n            operator = Parser.lexer.next.type\n            Parser.lexer.select_next()\n\n            if operator == \"PLUS\":\n                result += Parser.parse_term()\n            else:\n                result -= Parser.parse_term()\n\n        return result\n\n    @staticmethod\n    def parse_term():\n        result = Parser.parse_factor()\n\n        while Parser.lexer.next.type in (\"MULT\", \"DIV\"):\n            operator = Parser.lexer.next.type\n            Parser.lexer.select_next()\n\n            if operator == \"MULT\":\n                result *= Parser.parse_factor()\n            else:\n                result //= Parser.parse_factor()\n\n        return result\n\n    @staticmethod\n    def parse_factor():\n        if Parser.lexer.next.type == \"PLUS\":\n            Parser.lexer.select_next()\n            return Parser.parse_factor()\n\n        if Parser.lexer.next.type == \"MINUS\":\n            Parser.lexer.select_next()\n            return -Parser.parse_factor()\n\n        result = Parser.parse_base()\n\n        while Parser.lexer.next.type == \"POWER\":\n            Parser.lexer.select_next()\n            result **= Parser.parse_base()\n\n        return result\n\n    @staticmethod\n    def parse_base():\n        token = Parser.lexer.next\n\n        if token.type == \"INT\":\n            Parser.lexer.select_next()\n            return token.value\n\n        if token.type == \"OPEN_PAR\":\n            Parser.lexer.select_next()\n            result = Parser.parse_expression()\n\n            if Parser.lexer.next.type != \"CLOSE_PAR\":\n                raise Exception(f\"[Parser] Expected CLOSE_PAR, found {Parser.lexer.next.type}\")\n\n            Parser.lexer.select_next()\n            return result\n\n        raise Exception(f\"[Parser] Expected INT, unary operator or OPEN_PAR, found {token.type}\")\n\n    @staticmethod\n    def run(code):\n        Parser.lexer = Lexer(code)\n        Parser.lexer.select_next()\n        result = Parser.parse_expression()\n\n        if Parser.lexer.next.type != \"EOF\":\n            raise Exception(f\"[Parser] Unexpected token {Parser.lexer.next.type} after end of expression\")\n\n        return result\n\n\ndef main():\n    if len(sys.argv) != 2:\n        raise Exception(\"[Main] Usage: python3 main.py '<expression>'\")\n\n    print(Parser.run(sys.argv[1]))\n\n\nif __name__ == \"__main__\":\n    main()\n", "base": "v1.1.1..x1.1.0"}, {"id": "x1.2", "rot": "x1.2", "desc": "Extra · fatorial !", "src": "import math\nimport sys\nfrom abc import ABC, abstractmethod\n\nDIGITS = \"0123456789\"\n\n\nclass Token:\n    def __init__(self, type, value):\n        self.type = type\n        self.value = value\n\n\nclass Lexer:\n    SYMBOLS = {\n        \"+\": \"PLUS\",\n        \"-\": \"MINUS\",\n        \"*\": \"MULT\",\n        \"/\": \"DIV\",\n        \"(\": \"OPEN_PAR\",\n        \")\": \"CLOSE_PAR\",\n        \"!\": \"FACT\",\n    }\n\n    def __init__(self, source):\n        self.source = source\n        self.position = 0\n        self.next = None\n\n    def select_next(self):\n        while self.position < len(self.source) and self.source[self.position].isspace():\n            self.position += 1\n\n        if self.position >= len(self.source):\n            self.next = Token(\"EOF\", \"\")\n            return self.next\n\n        char = self.source[self.position]\n\n        if char in Lexer.SYMBOLS:\n            self.position += 1\n            self.next = Token(Lexer.SYMBOLS[char], char)\n        elif char in DIGITS:\n            number = char\n            self.position += 1\n            while self.position < len(self.source) and self.source[self.position] in DIGITS:\n                number += self.source[self.position]\n                self.position += 1\n            self.next = Token(\"INT\", int(number))\n        else:\n            raise Exception(f\"[Lexer] Invalid Symbol {char} at position {self.position}\")\n\n        return self.next\n\n\nclass Node(ABC):\n    def __init__(self, value, children):\n        self.value = value\n        self.children = children\n\n    @abstractmethod\n    def evaluate(self):\n        pass\n\n\nclass BinOp(Node):\n    def evaluate(self):\n        left = self.children[0].evaluate()\n        right = self.children[1].evaluate()\n\n        if self.value == \"+\":\n            return left + right\n\n        if self.value == \"-\":\n            return left - right\n\n        if self.value == \"*\":\n            return left * right\n\n        if self.value == \"/\":\n            if right == 0:\n                raise Exception(\"[Semantic] Division by zero\")\n            return left // right\n\n        raise Exception(f\"[Semantic] Unknown binary operator {self.value}\")\n\n\nclass UnOp(Node):\n    def evaluate(self):\n        operand = self.children[0].evaluate()\n\n        if self.value == \"+\":\n            return operand\n\n        if self.value == \"-\":\n            return -operand\n\n        if self.value == \"!\":\n            if operand < 0:\n                raise Exception(f\"[Semantic] Factorial of negative number {operand}\")\n            return math.factorial(operand)\n\n        raise Exception(f\"[Semantic] Unknown unary operator {self.value}\")\n\n\nclass IntVal(Node):\n    def evaluate(self):\n        return self.value\n\n\nclass Parser:\n    lexer = None\n\n    @staticmethod\n    def parse_expression():\n        result = Parser.parse_term()\n\n        while Parser.lexer.next.type in (\"PLUS\", \"MINUS\"):\n            operator = Parser.lexer.next.value\n            Parser.lexer.select_next()\n            result = BinOp(operator, [result, Parser.parse_term()])\n\n        return result\n\n    @staticmethod\n    def parse_term():\n        result = Parser.parse_factor()\n\n        while Parser.lexer.next.type in (\"MULT\", \"DIV\"):\n            operator = Parser.lexer.next.value\n            Parser.lexer.select_next()\n            result = BinOp(operator, [result, Parser.parse_factor()])\n\n        return result\n\n    @staticmethod\n    def parse_factor():\n        if Parser.lexer.next.type in (\"PLUS\", \"MINUS\"):\n            operator = Parser.lexer.next.value\n            Parser.lexer.select_next()\n            return UnOp(operator, [Parser.parse_factor()])\n\n        result = Parser.parse_base()\n\n        while Parser.lexer.next.type == \"FACT\":\n            Parser.lexer.select_next()\n            result = UnOp(\"!\", [result])\n\n        return result\n\n    @staticmethod\n    def parse_base():\n        token = Parser.lexer.next\n\n        if token.type == \"INT\":\n            Parser.lexer.select_next()\n            return IntVal(token.value, [])\n\n        if token.type == \"OPEN_PAR\":\n            Parser.lexer.select_next()\n            result = Parser.parse_expression()\n\n            if Parser.lexer.next.type != \"CLOSE_PAR\":\n                raise Exception(f\"[Parser] Expected CLOSE_PAR, found {Parser.lexer.next.type}\")\n\n            Parser.lexer.select_next()\n            return result\n\n        raise Exception(f\"[Parser] Expected INT, unary operator or OPEN_PAR, found {token.type}\")\n\n    @staticmethod\n    def run(code):\n        Parser.lexer = Lexer(code)\n        Parser.lexer.select_next()\n        root = Parser.parse_expression()\n\n        if Parser.lexer.next.type != \"EOF\":\n            raise Exception(f\"[Parser] Unexpected token {Parser.lexer.next.type} after end of expression\")\n\n        return root\n\n\ndef main():\n    if len(sys.argv) != 2:\n        raise Exception(\"[Main] Usage: python3 main.py '<expression>'\")\n\n    print(Parser.run(sys.argv[1]).evaluate())\n\n\nif __name__ == \"__main__\":\n    main()\n", "base": "v1.2.1..x1.2.0"}], "diffs": {"v0.0.0..v1.0.0": "@@ -10,5 +10,5 @@ class Token:\n \n \n-class Tokenizer:\n+class Lexer:\n     def __init__(self, source):\n         self.source = source\n@@ -21,5 +21,5 @@ class Tokenizer:\n \n         if self.position >= len(self.source):\n-            self.next = Token(\"EOF\", None)\n+            self.next = Token(\"EOF\", \"\")\n             return self.next\n \n@@ -33,5 +33,6 @@ class Tokenizer:\n             self.next = Token(\"MINUS\", \"-\")\n         elif char in DIGITS:\n-            number = \"\"\n+            number = char\n+            self.position += 1\n             while self.position < len(self.source) and self.source[self.position] in DIGITS:\n                 number += self.source[self.position]\n@@ -39,5 +40,5 @@ class Tokenizer:\n             self.next = Token(\"INT\", int(number))\n         else:\n-            raise Exception(f\"Caractere invalido '{char}' na posicao {self.position}\")\n+            raise Exception(f\"[Lexer] Invalid Symbol {char} at position {self.position}\")\n \n         return self.next\n@@ -45,37 +46,38 @@ class Tokenizer:\n \n class Parser:\n-    def __init__(self):\n-        self.tokenizer = None\n+    lexer = None\n \n-    def parse_expression(self):\n-        if self.tokenizer.next.type != \"INT\":\n-            raise Exception(f\"Esperado um numero, encontrado '{self.tokenizer.next.type}'\")\n+    @staticmethod\n+    def parse_expression():\n+        if Parser.lexer.next.type != \"INT\":\n+            raise Exception(f\"[Parser] Expected INT, found {Parser.lexer.next.type}\")\n \n-        result = self.tokenizer.next.value\n-        self.tokenizer.select_next()\n+        result = Parser.lexer.next.value\n+        Parser.lexer.select_next()\n \n-        while self.tokenizer.next.type in (\"PLUS\", \"MINUS\"):\n-            operator = self.tokenizer.next.type\n-            self.tokenizer.select_next()\n+        while Parser.lexer.next.type in (\"PLUS\", \"MINUS\"):\n+            operator = Parser.lexer.next.type\n+            Parser.lexer.select_next()\n \n-            if self.tokenizer.next.type != \"INT\":\n-                raise Exception(f\"Esperado um numero apos o operador, encontrado '{self.tokenizer.next.type}'\")\n+            if Parser.lexer.next.type != \"INT\":\n+                raise Exception(f\"[Parser] Expected INT after {operator}, found {Parser.lexer.next.type}\")\n \n             if operator == \"PLUS\":\n-                result += self.tokenizer.next.value\n+                result += Parser.lexer.next.value\n             else:\n-                result -= self.tokenizer.next.value\n+                result -= Parser.lexer.next.value\n \n-            self.tokenizer.select_next()\n+            Parser.lexer.select_next()\n \n         return result\n \n-    def run(self, code):\n-        self.tokenizer = Tokenizer(code)\n-        self.tokenizer.select_next()\n-        result = self.parse_expression()\n+    @staticmethod\n+    def run(code):\n+        Parser.lexer = Lexer(code)\n+        Parser.lexer.select_next()\n+        result = Parser.parse_expression()\n \n-        if self.tokenizer.next.type != \"EOF\":\n-            raise Exception(f\"Token inesperado no fim da expressao: '{self.tokenizer.next.type}'\")\n+        if Parser.lexer.next.type != \"EOF\":\n+            raise Exception(f\"[Parser] Unexpected token {Parser.lexer.next.type} after end of expression\")\n \n         return result\n@@ -84,7 +86,7 @@ class Parser:\n def main():\n     if len(sys.argv) != 2:\n-        raise Exception(\"Uso: python3 main.py '<expressao>'\")\n+        raise Exception(\"[Main] Usage: python3 main.py '<expression>'\")\n \n-    print(Parser().run(sys.argv[1]))\n+    print(Parser.run(sys.argv[1]))\n \n \n", "v1.0.0..v1.1.1": "@@ -11,4 +11,13 @@ class Token:\n \n class Lexer:\n+    SYMBOLS = {\n+        \"+\": \"PLUS\",\n+        \"-\": \"MINUS\",\n+        \"*\": \"MULT\",\n+        \"/\": \"DIV\",\n+        \"(\": \"OPEN_PAR\",\n+        \")\": \"CLOSE_PAR\",\n+    }\n+\n     def __init__(self, source):\n         self.source = source\n@@ -26,10 +35,7 @@ class Lexer:\n         char = self.source[self.position]\n \n-        if char == \"+\":\n-            self.position += 1\n-            self.next = Token(\"PLUS\", \"+\")\n-        elif char == \"-\":\n+        if char in Lexer.SYMBOLS:\n             self.position += 1\n-            self.next = Token(\"MINUS\", \"-\")\n+            self.next = Token(Lexer.SYMBOLS[char], char)\n         elif char in DIGITS:\n             number = char\n@@ -50,9 +56,5 @@ class Parser:\n     @staticmethod\n     def parse_expression():\n-        if Parser.lexer.next.type != \"INT\":\n-            raise Exception(f\"[Parser] Expected INT, found {Parser.lexer.next.type}\")\n-\n-        result = Parser.lexer.next.value\n-        Parser.lexer.select_next()\n+        result = Parser.parse_term()\n \n         while Parser.lexer.next.type in (\"PLUS\", \"MINUS\"):\n@@ -60,16 +62,54 @@ class Parser:\n             Parser.lexer.select_next()\n \n-            if Parser.lexer.next.type != \"INT\":\n-                raise Exception(f\"[Parser] Expected INT after {operator}, found {Parser.lexer.next.type}\")\n-\n             if operator == \"PLUS\":\n-                result += Parser.lexer.next.value\n+                result += Parser.parse_term()\n             else:\n-                result -= Parser.lexer.next.value\n+                result -= Parser.parse_term()\n+\n+        return result\n \n+    @staticmethod\n+    def parse_term():\n+        result = Parser.parse_factor()\n+\n+        while Parser.lexer.next.type in (\"MULT\", \"DIV\"):\n+            operator = Parser.lexer.next.type\n             Parser.lexer.select_next()\n \n+            if operator == \"MULT\":\n+                result *= Parser.parse_factor()\n+            else:\n+                result //= Parser.parse_factor()\n+\n         return result\n \n+    @staticmethod\n+    def parse_factor():\n+        token = Parser.lexer.next\n+\n+        if token.type == \"INT\":\n+            Parser.lexer.select_next()\n+            return token.value\n+\n+        if token.type == \"PLUS\":\n+            Parser.lexer.select_next()\n+            return Parser.parse_factor()\n+\n+        if token.type == \"MINUS\":\n+            Parser.lexer.select_next()\n+            return -Parser.parse_factor()\n+\n+        if token.type == \"OPEN_PAR\":\n+            Parser.lexer.select_next()\n+            result = Parser.parse_expression()\n+\n+            if Parser.lexer.next.type != \"CLOSE_PAR\":\n+                raise Exception(f\"[Parser] Expected CLOSE_PAR, found {Parser.lexer.next.type}\")\n+\n+            Parser.lexer.select_next()\n+            return result\n+\n+        raise Exception(f\"[Parser] Expected INT, unary operator or OPEN_PAR, found {token.type}\")\n+\n     @staticmethod\n     def run(code):\n", "v1.1.1..v1.2.1": "@@ -1,3 +1,4 @@\n import sys\n+from abc import ABC, abstractmethod\n \n DIGITS = \"0123456789\"\n@@ -51,4 +52,54 @@ class Lexer:\n \n \n+class Node(ABC):\n+    def __init__(self, value, children):\n+        self.value = value\n+        self.children = children\n+\n+    @abstractmethod\n+    def evaluate(self):\n+        pass\n+\n+\n+class BinOp(Node):\n+    def evaluate(self):\n+        left = self.children[0].evaluate()\n+        right = self.children[1].evaluate()\n+\n+        if self.value == \"+\":\n+            return left + right\n+\n+        if self.value == \"-\":\n+            return left - right\n+\n+        if self.value == \"*\":\n+            return left * right\n+\n+        if self.value == \"/\":\n+            if right == 0:\n+                raise Exception(\"[Semantic] Division by zero\")\n+            return left // right\n+\n+        raise Exception(f\"[Semantic] Unknown binary operator {self.value}\")\n+\n+\n+class UnOp(Node):\n+    def evaluate(self):\n+        operand = self.children[0].evaluate()\n+\n+        if self.value == \"+\":\n+            return operand\n+\n+        if self.value == \"-\":\n+            return -operand\n+\n+        raise Exception(f\"[Semantic] Unknown unary operator {self.value}\")\n+\n+\n+class IntVal(Node):\n+    def evaluate(self):\n+        return self.value\n+\n+\n class Parser:\n     lexer = None\n@@ -59,11 +110,7 @@ class Parser:\n \n         while Parser.lexer.next.type in (\"PLUS\", \"MINUS\"):\n-            operator = Parser.lexer.next.type\n+            operator = Parser.lexer.next.value\n             Parser.lexer.select_next()\n-\n-            if operator == \"PLUS\":\n-                result += Parser.parse_term()\n-            else:\n-                result -= Parser.parse_term()\n+            result = BinOp(operator, [result, Parser.parse_term()])\n \n         return result\n@@ -74,11 +121,7 @@ class Parser:\n \n         while Parser.lexer.next.type in (\"MULT\", \"DIV\"):\n-            operator = Parser.lexer.next.type\n+            operator = Parser.lexer.next.value\n             Parser.lexer.select_next()\n-\n-            if operator == \"MULT\":\n-                result *= Parser.parse_factor()\n-            else:\n-                result //= Parser.parse_factor()\n+            result = BinOp(operator, [result, Parser.parse_factor()])\n \n         return result\n@@ -90,13 +133,9 @@ class Parser:\n         if token.type == \"INT\":\n             Parser.lexer.select_next()\n-            return token.value\n+            return IntVal(token.value, [])\n \n-        if token.type == \"PLUS\":\n+        if token.type in (\"PLUS\", \"MINUS\"):\n             Parser.lexer.select_next()\n-            return Parser.parse_factor()\n-\n-        if token.type == \"MINUS\":\n-            Parser.lexer.select_next()\n-            return -Parser.parse_factor()\n+            return UnOp(token.value, [Parser.parse_factor()])\n \n         if token.type == \"OPEN_PAR\":\n@@ -116,10 +155,10 @@ class Parser:\n         Parser.lexer = Lexer(code)\n         Parser.lexer.select_next()\n-        result = Parser.parse_expression()\n+        root = Parser.parse_expression()\n \n         if Parser.lexer.next.type != \"EOF\":\n             raise Exception(f\"[Parser] Unexpected token {Parser.lexer.next.type} after end of expression\")\n \n-        return result\n+        return root\n \n \n@@ -128,5 +167,5 @@ def main():\n         raise Exception(\"[Main] Usage: python3 main.py '<expression>'\")\n \n-    print(Parser.run(sys.argv[1]))\n+    print(Parser.run(sys.argv[1]).evaluate())\n \n \n", "v1.0.0..x1.0.0": "@@ -32,4 +32,7 @@ class Lexer:\n             self.position += 1\n             self.next = Token(\"MINUS\", \"-\")\n+        elif char == \"^\":\n+            self.position += 1\n+            self.next = Token(\"XOR\", \"^\")\n         elif char in DIGITS:\n             number = char\n@@ -56,5 +59,5 @@ class Parser:\n         Parser.lexer.select_next()\n \n-        while Parser.lexer.next.type in (\"PLUS\", \"MINUS\"):\n+        while Parser.lexer.next.type in (\"PLUS\", \"MINUS\", \"XOR\"):\n             operator = Parser.lexer.next.type\n             Parser.lexer.select_next()\n@@ -65,6 +68,8 @@ class Parser:\n             if operator == \"PLUS\":\n                 result += Parser.lexer.next.value\n-            else:\n+            elif operator == \"MINUS\":\n                 result -= Parser.lexer.next.value\n+            else:\n+                result ^= Parser.lexer.next.value\n \n             Parser.lexer.select_next()\n", "v1.1.1..x1.1.0": "@@ -35,5 +35,8 @@ class Lexer:\n         char = self.source[self.position]\n \n-        if char in Lexer.SYMBOLS:\n+        if self.source.startswith(\"**\", self.position):\n+            self.position += 2\n+            self.next = Token(\"POWER\", \"**\")\n+        elif char in Lexer.SYMBOLS:\n             self.position += 1\n             self.next = Token(Lexer.SYMBOLS[char], char)\n@@ -86,17 +89,27 @@ class Parser:\n     @staticmethod\n     def parse_factor():\n-        token = Parser.lexer.next\n+        if Parser.lexer.next.type == \"PLUS\":\n+            Parser.lexer.select_next()\n+            return Parser.parse_factor()\n \n-        if token.type == \"INT\":\n+        if Parser.lexer.next.type == \"MINUS\":\n             Parser.lexer.select_next()\n-            return token.value\n+            return -Parser.parse_factor()\n \n-        if token.type == \"PLUS\":\n+        result = Parser.parse_base()\n+\n+        while Parser.lexer.next.type == \"POWER\":\n             Parser.lexer.select_next()\n-            return Parser.parse_factor()\n+            result **= Parser.parse_base()\n \n-        if token.type == \"MINUS\":\n+        return result\n+\n+    @staticmethod\n+    def parse_base():\n+        token = Parser.lexer.next\n+\n+        if token.type == \"INT\":\n             Parser.lexer.select_next()\n-            return -Parser.parse_factor()\n+            return token.value\n \n         if token.type == \"OPEN_PAR\":\n", "v1.2.1..x1.2.0": "@@ -1,2 +1,3 @@\n+import math\n import sys\n from abc import ABC, abstractmethod\n@@ -19,4 +20,5 @@ class Lexer:\n         \"(\": \"OPEN_PAR\",\n         \")\": \"CLOSE_PAR\",\n+        \"!\": \"FACT\",\n     }\n \n@@ -94,4 +96,9 @@ class UnOp(Node):\n             return -operand\n \n+        if self.value == \"!\":\n+            if operand < 0:\n+                raise Exception(f\"[Semantic] Factorial of negative number {operand}\")\n+            return math.factorial(operand)\n+\n         raise Exception(f\"[Semantic] Unknown unary operator {self.value}\")\n \n@@ -129,4 +136,19 @@ class Parser:\n     @staticmethod\n     def parse_factor():\n+        if Parser.lexer.next.type in (\"PLUS\", \"MINUS\"):\n+            operator = Parser.lexer.next.value\n+            Parser.lexer.select_next()\n+            return UnOp(operator, [Parser.parse_factor()])\n+\n+        result = Parser.parse_base()\n+\n+        while Parser.lexer.next.type == \"FACT\":\n+            Parser.lexer.select_next()\n+            result = UnOp(\"!\", [result])\n+\n+        return result\n+\n+    @staticmethod\n+    def parse_base():\n         token = Parser.lexer.next\n \n@@ -135,8 +157,4 @@ class Parser:\n             return IntVal(token.value, [])\n \n-        if token.type in (\"PLUS\", \"MINUS\"):\n-            Parser.lexer.select_next()\n-            return UnOp(token.value, [Parser.parse_factor()])\n-\n         if token.type == \"OPEN_PAR\":\n             Parser.lexer.select_next()\n"}};
+
+/* =========================================================================
+   PROVA 1.d - pilha para 1^n # 1^(n+3)
+   ========================================================================= */
+(function () {
+  var inp = document.getElementById("p13-inp");
+  if (!inp) return;
+  var fita = document.getElementById("p13-fita"), pl = document.getElementById("p13-pl");
+  var acao = document.getElementById("p13-acao"), ver = document.getElementById("p13-ver");
+  var play = document.getElementById("p13-play"), pres = document.getElementById("p13-pres");
+  ["11#11111", "#111", "1#1111", "11#1111", "1#11"].forEach(function (s) {
+    var b = document.createElement("button"); b.type = "button"; b.className = "preset"; b.textContent = s;
+    b.addEventListener("click", function () { inp.value = s; reset(true); }); pres.appendChild(b);
+  });
+  var P = [], i = 0, tm = null;
+  function montar(s) {
+    var ps = [], pilha = [], viuSep = false;
+    ps.push({ i: -1, p: [], a: "pilha vazia, cursor antes do primeiro simbolo", f: null });
+    for (var k = 0; k < s.length; k++) {
+      var c = s.charAt(k);
+      if (c === "1" && !viuSep) { pilha = pilha.concat(["X"]); ps.push({ i: k, p: pilha.slice(), a: "le 1 antes do #  →  empilha X", f: null }); }
+      else if (c === "#" && !viuSep) { viuSep = true; pilha = pilha.concat(["+", "+", "+"]); ps.push({ i: k, p: pilha.slice(), a: "le #  →  empilha TRES marcadores fixos (os +3 da funcao)", f: null }); }
+      else if (c === "1" && viuSep) {
+        if (!pilha.length) { ps.push({ i: k, p: [], a: "le 1, mas a pilha ja esta vazia — saida grande demais", f: false }); return ps; }
+        pilha = pilha.slice(0, -1); ps.push({ i: k, p: pilha.slice(), a: "le 1 depois do #  →  desempilha", f: null });
+      } else { ps.push({ i: k, p: pilha.slice(), a: "simbolo “" + c + "” fora do lugar", f: false }); return ps; }
+    }
+    ps.push({ i: s.length, p: pilha.slice(), a: !viuSep ? "faltou o separador #" : (pilha.length ? "entrada acabou com " + pilha.length + " simbolo(s) na pilha — saida curta demais" : "entrada acabou com a pilha vazia"), f: viuSep && !pilha.length });
+    return ps;
+  }
+  function pinta() {
+    var q = P[i], s = inp.value, h = "";
+    for (var k = 0; k < s.length; k++) h += '<span class="ch' + (k === q.i ? " agora" : (k < q.i ? " lido" : "")) + '">' + esc(s.charAt(k)) + "</span>";
+    fita.innerHTML = h || '<span class="ch">&nbsp;</span>';
+    pl.innerHTML = q.p.map(function (x) { return x === "+" ? '<i class="fixo">+3</i>' : "<i>X</i>"; }).join("");
+    acao.textContent = q.a;
+    if (q.f === null) { ver.className = "sim-ver"; ver.innerHTML = ""; }
+    else ver.innerHTML = '<span class="b">' + (q.f ? "aceita" : "rejeita") + '</span><span class="pq">' + (q.f ? "a saida tem exatamente 3 a mais que a entrada" : "a saida nao e a entrada + 3") + "</span>", ver.className = "sim-ver " + (q.f ? "sim" : "nao");
+  }
+  function parar() { if (tm) { clearInterval(tm); tm = null; } play.textContent = "▶ Rodar"; }
+  function reset(fim) { parar(); P = montar(inp.value.replace(/\s/g, "")); i = fim === false ? 0 : P.length - 1; pinta(); }
+  function ir(n) { i = Math.max(0, Math.min(P.length - 1, n)); pinta(); }
+  document.getElementById("p13-prox").addEventListener("click", function () { parar(); ir(i + 1); });
+  document.getElementById("p13-ant").addEventListener("click", function () { parar(); ir(i - 1); });
+  document.getElementById("p13-ini").addEventListener("click", function () { parar(); ir(0); });
+  inp.addEventListener("input", function () { reset(false); });
+  play.addEventListener("click", function () {
+    if (tm) { parar(); return; }
+    if (i >= P.length - 1) ir(0);
+    play.textContent = "‖ Pausar";
+    tm = setInterval(function () { if (i >= P.length - 1) { parar(); return; } ir(i + 1); }, 650);
+  });
+  reset(true);
+})();
+
+/* =========================================================================
+   SIMULADO DE 30 QUESTOES
+   ========================================================================= */
+(function () {
+  var lista = document.getElementById("qz-lista");
+  if (!lista) return;
+  var CH = "quiz-compiladores-v1", estado = {}, filtro = "todas";
+  try { estado = JSON.parse(localStorage.getItem(CH) || "{}"); } catch (e) { estado = {}; }
+  function salvar() { try { localStorage.setItem(CH, JSON.stringify(estado)); } catch (e) {} }
+
+  var LET = ["A", "B", "C", "D"];
+  var TIPO = { vf: "verdadeiro ou falso", mc: "múltipla escolha", disc: "discursiva" };
+
+  function card(q, i) {
+    var el = document.createElement("div");
+    el.className = "qz"; el.id = "qz-" + i; el.setAttribute("data-bloco", q.bloco);
+    var h = '<header><span class="qn">' + String(i + 1).padStart(2, "0") + "</span>" +
+      '<span class="qt' + (q.bloco === "codigo" ? " cod" : "") + '">' + q.tema + "</span>" +
+      '<span class="qpg">&#9888; pegadinha</span>' +
+      '<span class="qtipo">' + TIPO[q.tipo] + "</span></header>" +
+      '<div class="enun">' + q.enun + "</div>";
+    if (q.tipo === "vf") {
+      h += '<div class="qz-ops vf"><button class="qz-op" type="button" data-v="1">Verdadeiro</button><button class="qz-op" type="button" data-v="0">Falso</button></div>';
+    } else if (q.tipo === "mc") {
+      h += '<div class="qz-ops">' + q.op.map(function (o, k) {
+        return '<button class="qz-op" type="button" data-v="' + k + '"><span class="l">' + LET[k] + "</span><span>" + o + "</span></button>";
+      }).join("") + "</div>";
+    } else {
+      h += '<textarea placeholder="Escreva sua resposta antes de conferir (opcional, fica só no seu navegador)"></textarea>' +
+        '<div class="qz-acoes"><button class="btn play" type="button" data-acao="ver">Ver resposta modelo</button></div>';
+    }
+    h += '<div class="qz-slot"></div>';
+    el.innerHTML = h;
+
+    el.addEventListener("click", function (ev) {
+      var b = ev.target.closest ? ev.target.closest("button") : null;
+      if (!b || b.disabled) return;
+      if (q.tipo === "disc") {
+        if (b.getAttribute("data-acao") === "ver") { estado[i] = estado[i] || { v: null }; estado[i].aberta = true; salvar(); pinta(el, q, i); }
+        else if (b.hasAttribute("data-auto")) { estado[i].v = b.getAttribute("data-auto") === "1"; salvar(); pinta(el, q, i); placar(); }
+        return;
+      }
+      var v = q.tipo === "vf" ? b.getAttribute("data-v") === "1" : parseInt(b.getAttribute("data-v"), 10);
+      estado[i] = { v: v }; salvar(); pinta(el, q, i); placar();
+    });
+
+    var ta = el.querySelector("textarea");
+    if (ta) {
+      ta.value = (estado[i] && estado[i].txt) || "";
+      ta.addEventListener("input", function () { estado[i] = estado[i] || { v: null }; estado[i].txt = ta.value; salvar(); });
+    }
+    return el;
+  }
+
+  function certo(q, v) { return q.tipo === "vf" ? v === q.r : v === q.r; }
+
+  function pinta(el, q, i) {
+    var e = estado[i], slot = el.querySelector(".qz-slot");
+    el.classList.remove("acertou", "errou", "respondida");
+    if (q.tipo === "disc") {
+      if (!e || !e.aberta) { slot.innerHTML = ""; return; }
+      el.classList.add("respondida");
+      var crit = q.crit.map(function (c) { return "<li>" + c + "</li>"; }).join("");
+      var auto = e.v === true ? "ok" : (e.v === false ? "no" : "");
+      slot.innerHTML = '<div class="qz-feed ' + (auto || "ok") + '"><span class="veredito">Resposta modelo</span>' + q.modelo +
+        '<span class="veredito" style="margin-top:4px;font-size:13px">O que conferir na sua</span><ul class="qz-crit">' + crit + "</ul>" +
+        '<div class="qz-acoes"><button class="btn sei" type="button" data-auto="1">Cobri os pontos</button><button class="btn revisar" type="button" data-auto="0">Faltou coisa</button></div></div>';
+      if (e.v === true) el.classList.add("acertou");
+      if (e.v === false) el.classList.add("errou");
+      var bt = el.querySelector('[data-acao="ver"]'); if (bt) bt.style.display = "none";
+      return;
+    }
+    var bots = el.querySelectorAll(".qz-op");
+    Array.prototype.forEach.call(bots, function (b) { b.disabled = false; b.className = "qz-op"; });
+    if (!e || e.v === null || e.v === undefined) { slot.innerHTML = ""; return; }
+    var ok = certo(q, e.v);
+    el.classList.add("respondida", ok ? "acertou" : "errou");
+    Array.prototype.forEach.call(bots, function (b) {
+      b.disabled = true;
+      var bv = q.tipo === "vf" ? b.getAttribute("data-v") === "1" : parseInt(b.getAttribute("data-v"), 10);
+      if (bv === q.r) b.classList.add("certa");
+      else if (bv === e.v) b.classList.add("errada");
+      else b.classList.add("apagada");
+    });
+    var resp = q.tipo === "vf" ? (q.r ? "Verdadeiro" : "Falso") : LET[q.r];
+    slot.innerHTML = '<div class="qz-feed ' + (ok ? "ok" : "no") + '"><span class="veredito">' +
+      (ok ? "Certo" : "Resposta: " + resp) + (q.pg && !ok ? " &#8212; caiu na pegadinha" : "") + "</span><p>" + q.ex + "</p></div>";
+  }
+
+  function placar() {
+    var ac = 0, feitas = 0, pg = 0;
+    QUIZ.forEach(function (q, i) {
+      var e = estado[i];
+      if (!e || e.v === null || e.v === undefined) return;
+      feitas++;
+      var ok = q.tipo === "disc" ? e.v === true : certo(q, e.v);
+      if (ok) ac++; else if (q.pg) pg++;
+    });
+    document.getElementById("qz-acertos").textContent = ac;
+    document.getElementById("qz-feitas").textContent = feitas + "/" + QUIZ.length;
+    document.getElementById("qz-pg").textContent = pg;
+  }
+
+  function aplicarFiltro() {
+    Array.prototype.forEach.call(lista.children, function (el) {
+      if (!el.classList.contains("qz")) { el.hidden = filtro !== "todas"; return; }
+      var i = parseInt(el.id.slice(3), 10), q = QUIZ[i], e = estado[i];
+      var mostra = filtro === "todas" || q.bloco === filtro ||
+        (filtro === "erradas" && e && e.v !== null && e.v !== undefined && !(q.tipo === "disc" ? e.v === true : certo(q, e.v)));
+      el.hidden = !mostra;
+    });
+  }
+
+  var g1 = document.createElement("div"); g1.className = "grupo"; g1.textContent = "Sobre o nosso código · 10 questões"; lista.appendChild(g1);
+  QUIZ.forEach(function (q, i) {
+    if (i === 10) { var g2 = document.createElement("div"); g2.className = "grupo"; g2.textContent = "No estilo da prova · 20 questões"; lista.appendChild(g2); }
+    var el = card(q, i); lista.appendChild(el); pinta(el, q, i);
+  });
+  placar();
+
+  Array.prototype.forEach.call(document.querySelectorAll(".qz-filtros [data-f]"), function (b) {
+    b.addEventListener("click", function () {
+      filtro = b.getAttribute("data-f");
+      Array.prototype.forEach.call(document.querySelectorAll(".qz-filtros [data-f]"), function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      aplicarFiltro();
+    });
+  });
+  document.getElementById("qz-zerar").addEventListener("click", function () {
+    if (!confirm("Apagar todas as respostas do simulado?")) return;
+    estado = {}; salvar();
+    Array.prototype.forEach.call(lista.querySelectorAll(".qz"), function (el) {
+      var i = parseInt(el.id.slice(3), 10); var ta = el.querySelector("textarea"); if (ta) ta.value = "";
+      var bt = el.querySelector('[data-acao="ver"]'); if (bt) bt.style.display = "";
+      pinta(el, QUIZ[i], i);
+    });
+    placar(); aplicarFiltro();
+  });
+})();
+
+/* =========================================================================
+   FLASHCARDS
+   ========================================================================= */
+(function () {
+  var fc = document.getElementById("fc");
+  if (!fc) return;
+  var CH = "flash-compiladores-v1", marcas = {};
+  try { marcas = JSON.parse(localStorage.getItem(CH) || "{}"); } catch (e) { marcas = {}; }
+  function salvar() { try { localStorage.setItem(CH, JSON.stringify(marcas)); } catch (e) {} }
+
+  var ordem = FLASH.map(function (_, i) { return i; }), pos = 0, soRevisar = false, tema = "todos";
+
+  function visiveis() {
+    return ordem.filter(function (i) {
+      if (tema !== "todos" && FLASH[i].tema !== tema) return false;
+      if (soRevisar && marcas[i] === "sei") return false;
+      return true;
+    });
+  }
+
+  var temas = [];
+  FLASH.forEach(function (c) { if (temas.indexOf(c.tema) < 0) temas.push(c.tema); });
+  var caixaTemas = document.getElementById("fc-temas");
+  ["todos"].concat(temas).forEach(function (tm) {
+    var n = tm === "todos" ? FLASH.length : FLASH.filter(function (c) { return c.tema === tm; }).length;
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "preset" + (tm !== "todos" && tm.indexOf("Gram") === 0 ? " destaque" : "");
+    b.setAttribute("aria-pressed", tm === tema ? "true" : "false");
+    b.innerHTML = (tm === "todos" ? "Todos" : tm) + ' <span class="n">' + n + "</span>";
+    b.addEventListener("click", function () {
+      tema = tm; pos = 0;
+      Array.prototype.forEach.call(caixaTemas.children, function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      fc.classList.remove("virado"); setTimeout(pinta, 160);
+    });
+    caixaTemas.appendChild(b);
+  });
+
+  function pinta() {
+    var v = visiveis();
+    if (!v.length) {
+      document.getElementById("fc-tema1").textContent = "";
+      document.getElementById("fc-q").textContent = "Nenhum cartão para revisar. Bom trabalho.";
+      document.getElementById("fc-a").textContent = "";
+      fc.classList.remove("virado");
+    } else {
+      if (pos >= v.length) pos = v.length - 1;
+      var c = FLASH[v[pos]];
+      document.getElementById("fc-tema1").textContent = c.tema;
+      document.getElementById("fc-tema2").textContent = c.tema;
+      document.getElementById("fc-q").innerHTML = c.q;
+      document.getElementById("fc-a").innerHTML = c.a;
+    }
+    var sei = FLASH.filter(function (_, i) { return marcas[i] === "sei"; }).length;
+    document.getElementById("fc-prog").style.width = (sei / FLASH.length * 100) + "%";
+    document.getElementById("fc-conta").textContent = (v.length ? (pos + 1) + " / " + v.length : "0 / 0") + "  ·  " + sei + " de " + FLASH.length + " dominados";
+  }
+  function virar() { fc.classList.toggle("virado"); }
+  function ir(d) {
+    var v = visiveis(); if (!v.length) return;
+    fc.classList.remove("virado");
+    setTimeout(function () { pos = (pos + d + v.length) % v.length; pinta(); }, 160);
+  }
+  function marcar(m) {
+    var v = visiveis(); if (!v.length) return;
+    marcas[v[pos]] = m; salvar();
+    if (soRevisar && m === "sei") { fc.classList.remove("virado"); setTimeout(pinta, 160); }
+    else ir(1);
+  }
+
+  fc.addEventListener("click", virar);
+  fc.addEventListener("keydown", function (e) {
+    if (e.key === " " || e.key === "Enter") { e.preventDefault(); virar(); }
+    else if (e.key === "ArrowRight") ir(1);
+    else if (e.key === "ArrowLeft") ir(-1);
+  });
+  document.getElementById("fc-prox").addEventListener("click", function () { ir(1); });
+  document.getElementById("fc-ant").addEventListener("click", function () { ir(-1); });
+  document.getElementById("fc-sei").addEventListener("click", function () { marcar("sei"); });
+  document.getElementById("fc-rev").addEventListener("click", function () { marcar("rev"); });
+  document.getElementById("fc-emb").addEventListener("click", function () {
+    for (var i = ordem.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var tmp = ordem[i]; ordem[i] = ordem[j]; ordem[j] = tmp; }
+    pos = 0; fc.classList.remove("virado"); setTimeout(pinta, 160);
+  });
+  var bf = document.getElementById("fc-filtro");
+  bf.addEventListener("click", function () {
+    soRevisar = !soRevisar; bf.setAttribute("aria-pressed", soRevisar ? "true" : "false");
+    pos = 0; fc.classList.remove("virado"); setTimeout(pinta, 160);
+  });
+  pinta();
+})();
+
+/* =========================================================================
+   COLINHA DO CODIGO
+   ========================================================================= */
+(function () {
+  var barra = document.getElementById("cl-barra");
+  if (!barra) return;
+  var elCode = document.getElementById("cl-code"), elInfo = document.getElementById("cl-info");
+  var atual = "v1.2", modo = "completo";
+
+  COLINHA.versoes.forEach(function (v) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "cl-v" + (v.id.charAt(0) === "x" ? " x" : "");
+    b.setAttribute("aria-pressed", v.id === atual ? "true" : "false");
+    b.innerHTML = "<strong>" + v.rot + "</strong><span>" + v.desc + "</span>";
+    b.addEventListener("click", function () { atual = v.id; pinta(); });
+    barra.appendChild(b);
+  });
+  Array.prototype.forEach.call(document.querySelectorAll(".cl-modo [data-m]"), function (b) {
+    b.addEventListener("click", function () { modo = b.getAttribute("data-m"); pinta(); });
+  });
+
+  function pinta() {
+    var v = COLINHA.versoes.filter(function (x) { return x.id === atual; })[0];
+    Array.prototype.forEach.call(barra.children, function (b, k) {
+      b.setAttribute("aria-pressed", COLINHA.versoes[k].id === atual ? "true" : "false");
+    });
+    Array.prototype.forEach.call(document.querySelectorAll(".cl-modo [data-m]"), function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-m") === modo ? "true" : "false");
+    });
+    var h = "";
+    if (modo === "diff" && v.base) {
+      var linhas = COLINHA.diffs[v.base].replace(/\n$/, "").split("\n"), mais = 0, menos = 0;
+      linhas.forEach(function (l) {
+        var cls = l.charAt(0) === "+" ? "add" : l.charAt(0) === "-" ? "del" : l.slice(0, 2) === "@@" ? "hunk" : "";
+        if (cls === "add") mais++; if (cls === "del") menos++;
+        var mark = cls === "add" ? "+" : cls === "del" ? "−" : "";
+        var corpo = cls === "hunk" ? esc(l) : realcePy(l.slice(1));
+        h += '<span class="cl-l ' + cls + '"><span class="ln">' + mark + "</span>" + corpo + "</span>";
+      });
+      var de = v.base.split("..")[0];
+      elInfo.textContent = "+" + mais + "  −" + menos + "  em relação a " + de;
+    } else {
+      var src = v.src.replace(/\n$/, "").split("\n");
+      src.forEach(function (l, k) {
+        h += '<span class="cl-l"><span class="ln">' + (k + 1) + "</span>" + realcePy(l) + "</span>";
+      });
+      elInfo.textContent = src.length + " linhas" + (modo === "diff" && !v.base ? " · a primeira versão não tem anterior" : "");
+    }
+    elCode.innerHTML = "<pre>" + h + "</pre>";
+  }
+  pinta();
 })();
 
 </script>
