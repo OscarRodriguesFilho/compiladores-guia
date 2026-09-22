@@ -508,6 +508,7 @@ details.resp .corpo strong{color:var(--ink)}
 .rv-link{align-self:flex-start;font-size:14px;font-weight:650;color:var(--green)}
 
 /* ---------- colinha: descricao ---------- */
+.cl-desc-cab{border-top:1px solid var(--rule)}
 .cl-desc{padding:18px 20px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:18px}
 @media(max-width:900px){.cl-desc{grid-template-columns:1fr}}
 .cl-desc .col{display:flex;flex-direction:column;gap:10px}
@@ -4391,8 +4392,8 @@ Codegen       escolhe a instrução adequada ao tipo</pre></div>
     <h2>Colinha · todo o código</h2>
   </div>
   <p class="prose">O <code class="inl">main.py</code> completo de cada tag, incluindo os três extras. No modo <strong>o que mudou</strong>, cada versão aparece como diff em relação à anterior &#8212; e nos extras, em relação ao roteiro de onde a branch saiu. Linhas verdes entraram; vermelhas saíram.</p>
-  <p class="prose">Cada versão vem com uma <strong>descrição</strong>: o que o programa faz, a gramática, o que mudou e exemplos de execução, todos gerados rodando aquele código. Ao lado do código, a lista <strong>peça por peça</strong> explica cada classe e cada função. Clique numa peça para destacar as linhas dela.</p>
-  <p class="prose">Entre a descrição e o código, cada versão mostra <strong>a gramática regra por regra</strong> com o <strong>diagrama sintático</strong> de cada regra (círculo ou pílula = token consumido, retângulo = chamada de outra regra), <strong>as árvores</strong> de um exemplo (a de derivação, gerada instrumentando o parser real, e a AST quando existe) e <strong>as classes e como se relacionam</strong>, extraídas do código.</p>
+  <p class="prose">Primeiro vem o <strong>código</strong>, com a lista <strong>peça por peça</strong> ao lado explicando cada classe e cada função. Clique numa peça para destacar as linhas dela. Logo abaixo fica a <strong>descrição</strong> da versão: o que o programa faz, o que mudou, a gramática e exemplos de execução, todos gerados rodando aquele código.</p>
+  <p class="prose">Depois da descrição, cada versão mostra <strong>a gramática regra por regra</strong> com o <strong>diagrama sintático</strong> de cada regra (círculo ou pílula = token consumido, retângulo = chamada de outra regra), <strong>as árvores</strong> de um exemplo (a de derivação, gerada instrumentando o parser real, e a AST quando existe) e <strong>as classes e como se relacionam</strong>, extraídas do código.</p>
 
   <div class="cl-wrap">
     <div class="cl-barra" id="cl-barra"></div>
@@ -4401,13 +4402,14 @@ Codegen       escolhe a instrução adequada ao tipo</pre></div>
       <button class="preset" type="button" data-m="diff" aria-pressed="false">O que mudou</button>
       <span class="info" id="cl-info"></span>
     </div>
-    <div class="cl-desc" id="cl-desc"></div>
-    <div class="cl-extra" id="cl-extra"></div>
     <div class="cl-code-cab"><span class="cl-h">Código</span><span class="cl-dica">clique numa peça à esquerda para destacar as linhas</span></div>
     <div class="cl-corpo">
       <aside class="cl-pecas" id="cl-pecas"></aside>
       <div class="cl-code" id="cl-code"></div>
     </div>
+    <div class="cl-code-cab cl-desc-cab"><span class="cl-h">Descrição desta versão</span><span class="cl-dica">o que faz, o que mudou, gramática, diagramas, árvores e classes</span></div>
+    <div class="cl-desc" id="cl-desc"></div>
+    <div class="cl-extra" id="cl-extra"></div>
   </div>
 </section>
 
