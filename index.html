@@ -443,6 +443,32 @@ details.resp .corpo strong{color:var(--ink)}
 .mp .alvo .dg-no{fill:#fff1ef}
 .mp-dica{font-size:12.5px;color:var(--ink-3)}
 
+
+/* ---------- diagramas de estados (Q3.b) ---------- */
+.af-box{border:1px solid var(--rule);border-radius:10px;background:#fff;padding:14px 16px;display:flex;flex-direction:column;gap:12px}
+.af{width:100%;max-width:640px;height:auto;display:block;margin:0 auto}
+.af-st circle{fill:#fff;stroke:#2b3b38;stroke-width:1.8;transition:fill .2s ease,stroke .2s ease}
+.af-st .af-in{fill:none}
+.af-st text{font:600 14px/1 var(--m);fill:#1d2b28;text-anchor:middle}
+.af-ed{fill:none;stroke:#2b3b38;stroke-width:1.6}
+.af-lb{font:600 14px/1 var(--m);fill:#14674c;text-anchor:middle}
+.af-ramo{font:12px/1 var(--m);fill:#7b8c88}
+.af-st.at circle{fill:#e3f1ea;stroke:#14674c;stroke-width:2.6}
+.af-st.at .af-in{fill:none}
+.af-st.morto.at circle{fill:#fbe9e4;stroke:#c0392b}
+.af-e.at .af-ed{stroke:#e0392b;stroke-width:2.6}
+.af-e.at .af-lb{fill:#e0392b}
+.af-sim{border-top:1px solid var(--rule);padding-top:12px;display:flex;flex-direction:column;gap:10px}
+.af-sim .linha{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.af-sim input[type=text]{font-family:var(--m);font-size:15px;border:1px solid #bfccce;border-radius:6px;padding:7px 11px;width:150px}
+.af-fita{display:flex;gap:4px;flex-wrap:wrap;min-height:34px;align-items:center}
+.af-fita span{font:700 15px/1 var(--m);border:1.5px solid #bfccce;border-radius:5px;padding:7px 10px;background:#fff;color:var(--ink)}
+.af-fita span.lido{background:#eef3f1;color:#7b8c88}
+.af-fita span.agora{border-color:#e0392b;background:#fff1ef;color:#c0392b}
+.af-fita .vazio{font:13px var(--f);color:var(--ink-3);border:0;background:none;padding:0}
+.af-msg{font-size:14.5px;color:var(--ink-2)}
+.af-msg.ok{color:var(--green);font-weight:650}
+.af-msg.nao{color:#a04422;font-weight:650}
 /* ---------- código ---------- */
 .code{background:var(--code);color:var(--code-t);border:0;border-radius:10px;padding:17px 20px;overflow-x:auto;font:13.5px/1.8 var(--m);tab-size:4}
 .code pre{margin:0}
@@ -3602,17 +3628,47 @@ bbbaaaa</pre></div>
           <div class="corpo">
             <p><strong>Não precisa de pilha.</strong> Repare que o enunciado usa <code class="inl">m</code> e <code class="inl">n</code> <em>independentes</em> &#8212; não exige que sejam iguais. Logo:</p>
             <div class="code syn"><pre>L = a* b*  |  b* a*</pre></div>
-            <p>Isso é uma <strong>expressão regular</strong>, então um autômato finito basta. Um AFN resolve com uma escolha inicial entre os dois ramos:</p>
-            <div class="code"><pre>              a          b
-             ┌─┐        ┌─┐
-    ┌──&#8594; q1 ─┘  ──b──&#8594; q2┘        ramo 1: a* b*
-    │   (aceita)      (aceita)
- &#8594; q0
-    │   (aceita)      (aceita)
-    └──&#8594; q3 ─┐  ──a──&#8594; q4┐        ramo 2: b* a*
-             └─┘        └─┘
-              b          a</pre></div>
-            <p>Todos os estados são de aceitação, porque <code class="inl">&#949;</code>, <code class="inl">a</code>, <code class="inl">bbb</code> etc. pertencem a L. Dá para determinizar depois, mas o AFN já responde a questão.</p>
+            <p>Isso é uma <strong>expressão regular</strong>, então um autômato finito basta. Convenção dos diagramas: <strong>círculo duplo</strong> = estado de aceitação; a seta <em>início</em> marca o estado inicial.</p>
+
+            <p><strong>Versão 1 &#183; AFN.</strong> Do estado inicial saem duas transições <code class="inl">&#949;</code> (sem consumir nada): o autômato &#8220;escolhe&#8221; em qual ramo apostar. Em cima fica <code class="inl">a*b*</code>, embaixo <code class="inl">b*a*</code>.</p>
+            <div class="af-box"><svg class="af" viewBox="0 0 540 300" role="img" aria-label="AFN com transições epsilon para a*b* união b*a*"><defs><marker id="afn-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2b3b38"/></marker></defs><path class="af-ed" d="M30 150 H74" marker-end="url(#afn-s)"/><text class="af-lb" x="26" y="142" text-anchor="start">início</text><g class="af-e" data-e="x"><path class="af-ed" d="M121.8 139.9 L236.4 86.9" marker-end="url(#afn-s)"/><text class="af-lb" x="173.2" y="104.7">&#949;</text></g><g class="af-e" data-e="x"><path class="af-ed" d="M121.8 160.1 L236.4 213.1" marker-end="url(#afn-s)"/><text class="af-lb" x="173.2" y="203.3">&#949;</text></g><g class="af-e" data-e="x"><path class="af-ed" d="M284.0 76.0 L424.0 76.0" marker-end="url(#afn-s)"/><text class="af-lb" x="354.0" y="66.0">b</text></g><g class="af-e" data-e="x"><path class="af-ed" d="M284.0 224.0 L424.0 224.0" marker-end="url(#afn-s)"/><text class="af-lb" x="354.0" y="242.0">a</text></g><g class="af-e" data-e="x"><path class="af-ed" d="M248 56 C230 8, 290 8, 272 55" marker-end="url(#afn-s)"/><text class="af-lb" x="260" y="18">a</text></g><g class="af-e" data-e="x"><path class="af-ed" d="M438 56 C420 8, 480 8, 462 55" marker-end="url(#afn-s)"/><text class="af-lb" x="450" y="18">b</text></g><g class="af-e" data-e="x"><path class="af-ed" d="M248 244 C230 292, 290 292, 272 245" marker-end="url(#afn-s)"/><text class="af-lb" x="260" y="294">b</text></g><g class="af-e" data-e="x"><path class="af-ed" d="M438 244 C420 292, 480 292, 462 245" marker-end="url(#afn-s)"/><text class="af-lb" x="450" y="294">a</text></g><g class="af-st" data-s="q0"><circle cx="100" cy="150" r="24"/><text x="100" y="155">q0</text></g><g class="af-st" data-s="q1"><circle cx="260" cy="76" r="24"/><circle class="af-in" cx="260" cy="76" r="19"/><text x="260" y="81">q1</text></g><g class="af-st" data-s="q2"><circle cx="450" cy="76" r="24"/><circle class="af-in" cx="450" cy="76" r="19"/><text x="450" y="81">q2</text></g><g class="af-st" data-s="q3"><circle cx="260" cy="224" r="24"/><circle class="af-in" cx="260" cy="224" r="19"/><text x="260" y="229">q3</text></g><g class="af-st" data-s="q4"><circle cx="450" cy="224" r="24"/><circle class="af-in" cx="450" cy="224" r="19"/><text x="450" y="229">q4</text></g><text class="af-ramo" x="530" y="80" text-anchor="end">a*b*</text><text class="af-ramo" x="530" y="228" text-anchor="end">b*a*</text></svg></div>
+            <ul>
+              <li><code class="inl">q1</code>: só viu <code class="inl">a</code> até agora &#8212; aceita, porque <code class="inl">a&#8319;</code> &#8712; L.</li>
+              <li><code class="inl">q2</code>: viu <code class="inl">a</code>&#8217;s e depois <code class="inl">b</code>&#8217;s. Daqui em diante só pode vir <code class="inl">b</code>; um <code class="inl">a</code> não tem transição e a cadeia morre nesse ramo.</li>
+              <li><code class="inl">q3</code> e <code class="inl">q4</code>: o mesmo raciocínio, espelhado.</li>
+              <li>A cadeia vazia é aceita porque, pelas <code class="inl">&#949;</code>, <code class="inl">q0</code> já alcança estados de aceitação.</li>
+            </ul>
+
+            <p><strong>Versão 2 &#183; AFD</strong> (se a questão pedir determinístico). Sem <code class="inl">&#949;</code>: é a primeira letra que escolhe o ramo. Aparece um estado novo, <code class="inl">q5</code>, o <strong>estado morto</strong> &#8212; para onde vai toda cadeia que já trocou de símbolo duas vezes. Ele não é de aceitação e não tem saída.</p>
+            <div class="af-box"><svg class="af" id="afd-svg" viewBox="0 0 720 340" role="img" aria-label="AFD equivalente com estado morto"><defs><marker id="afd-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2b3b38"/></marker></defs><path class="af-ed" d="M30 165 H74" marker-end="url(#afd-s)"/><text class="af-lb" x="26" y="157" text-anchor="start">início</text><g class="af-e" data-e="S-a"><path class="af-ed" d="M121.3 153.9 L247.0 88.1" marker-end="url(#afd-s)"/><text class="af-lb" x="177.6" y="112.6">a</text></g><g class="af-e" data-e="S-b"><path class="af-ed" d="M121.3 176.1 L247.0 241.9" marker-end="url(#afd-s)"/><text class="af-lb" x="177.6" y="225.4">b</text></g><g class="af-e" data-e="A-b"><path class="af-ed" d="M294.0 76.0 L444.0 76.0" marker-end="url(#afd-s)"/><text class="af-lb" x="369.0" y="66.0">b</text></g><g class="af-e" data-e="B-a"><path class="af-ed" d="M294.0 254.0 L444.0 254.0" marker-end="url(#afd-s)"/><text class="af-lb" x="369.0" y="272.0">a</text></g><g class="af-e" data-e="AB-a"><path class="af-ed" d="M490.3 88.9 L588.1 151.1" marker-end="url(#afd-s)"/><text class="af-lb" x="546.7" y="112.1">a</text></g><g class="af-e" data-e="BA-b"><path class="af-ed" d="M490.3 241.1 L588.1 178.9" marker-end="url(#afd-s)"/><text class="af-lb" x="546.7" y="225.9">b</text></g><g class="af-e" data-e="A-a"><path class="af-ed" d="M258 56 C240 8, 300 8, 282 55" marker-end="url(#afd-s)"/><text class="af-lb" x="270" y="18">a</text></g><g class="af-e" data-e="AB-b"><path class="af-ed" d="M458 56 C440 8, 500 8, 482 55" marker-end="url(#afd-s)"/><text class="af-lb" x="470" y="18">b</text></g><g class="af-e" data-e="B-b"><path class="af-ed" d="M258 274 C240 322, 300 322, 282 275" marker-end="url(#afd-s)"/><text class="af-lb" x="270" y="324">b</text></g><g class="af-e" data-e="BA-a"><path class="af-ed" d="M458 274 C440 322, 500 322, 482 275" marker-end="url(#afd-s)"/><text class="af-lb" x="470" y="324">a</text></g><g class="af-e" data-e="M-a M-b"><path class="af-ed" d="M630 153 C678 135, 678 195, 631 177" marker-end="url(#afd-s)"/><text class="af-lb" x="676" y="170" text-anchor="start">a, b</text></g><g class="af-st" data-s="S"><circle cx="100" cy="165" r="24"/><circle class="af-in" cx="100" cy="165" r="19"/><text x="100" y="170">q0</text></g><g class="af-st" data-s="A"><circle cx="270" cy="76" r="24"/><circle class="af-in" cx="270" cy="76" r="19"/><text x="270" y="81">q1</text></g><g class="af-st" data-s="AB"><circle cx="470" cy="76" r="24"/><circle class="af-in" cx="470" cy="76" r="19"/><text x="470" y="81">q2</text></g><g class="af-st" data-s="B"><circle cx="270" cy="254" r="24"/><circle class="af-in" cx="270" cy="254" r="19"/><text x="270" y="259">q3</text></g><g class="af-st" data-s="BA"><circle cx="470" cy="254" r="24"/><circle class="af-in" cx="470" cy="254" r="19"/><text x="470" y="259">q4</text></g><g class="af-st" data-s="M"><circle cx="610" cy="165" r="24"/><text x="610" y="170">q5</text></g></svg>
+              <div class="af-sim">
+                <div class="linha">
+                  <input type="text" id="af-inp" value="aabbb" spellcheck="false" autocomplete="off" aria-label="Cadeia para rodar no AFD">
+                  <div class="presets" id="af-pres"></div>
+                </div>
+                <div class="af-fita" id="af-fita"></div>
+                <div class="linha">
+                  <button class="btn" type="button" id="af-ant">&#9664;</button>
+                  <button class="btn play" type="button" id="af-play">&#9654; Rodar</button>
+                  <button class="btn" type="button" id="af-prox">&#9654;</button>
+                  <span class="af-msg" id="af-msg"></span>
+                </div>
+              </div>
+            </div>
+            <div class="tab-wrap">
+              <table class="tab">
+                <thead><tr><th>estado</th><th>o que ele &#8220;lembra&#8221;</th><th>lendo a</th><th>lendo b</th><th>aceita?</th></tr></thead>
+                <tbody>
+                  <tr><td class="mono">&#8594; q0</td><td>nada lido ainda</td><td class="mono">q1</td><td class="mono">q3</td><td>sim (&#949;)</td></tr>
+                  <tr><td class="mono">q1</td><td>só a&#8217;s</td><td class="mono">q1</td><td class="mono">q2</td><td>sim</td></tr>
+                  <tr><td class="mono">q2</td><td>a&#8217;s e depois b&#8217;s</td><td class="mono">q5</td><td class="mono">q2</td><td>sim</td></tr>
+                  <tr><td class="mono">q3</td><td>só b&#8217;s</td><td class="mono">q4</td><td class="mono">q3</td><td>sim</td></tr>
+                  <tr><td class="mono">q4</td><td>b&#8217;s e depois a&#8217;s</td><td class="mono">q4</td><td class="mono">q5</td><td>sim</td></tr>
+                  <tr><td class="mono">q5</td><td>trocou de símbolo duas vezes</td><td class="mono">q5</td><td class="mono">q5</td><td>não</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Repare: os estados guardam só <em>em que fase</em> a leitura está, nunca <em>quantas</em> letras vieram. Seis estados bastam para qualquer tamanho de cadeia &#8212; é exatamente isso que faz a linguagem ser regular. Para <code class="inl">a&#8319;b&#8319;</code> seria preciso um estado por valor de n, e aí não há autômato finito que dê conta.</p>
 <div class="criterios"><span class="ct">O que uma resposta de nota máxima precisa ter</span><label><input type="checkbox" data-pt="0.4"><span>Percebe que m e n são independentes &#8212; não exige m = n</span><span class="pv">0,4 pt</span></label><label><input type="checkbox" data-pt="0.3"><span>Conclui que a linguagem é regular</span><span class="pv">0,3 pt</span></label><label><input type="checkbox" data-pt="0.3"><span>Apresenta AF, AFN ou expressão regular como reconhecedor</span><span class="pv">0,3 pt</span></label></div>
 <div class="armadilha"><span class="lbl">Onde a nota foi perdida</span><p>A resposta propôs um <strong>autômato de pilha não determinístico</strong> &#8212; máquina forte demais para o problema. O erro nasce de ler <code class="inl">a<sup>m</sup>b<sup>n</sup></code> como se fosse <code class="inl">a<sup>n</sup>b<sup>n</sup></code>. <strong>Sempre confira se os expoentes são o mesmo símbolo</strong>: essa única letra decide entre regular e livre de contexto.</p></div>
           </div>
@@ -6533,6 +6589,68 @@ var DG = (function () {
       ln.addEventListener("mouseleave", function () { acende(ks, false); });
     });
   });
+})();
+
+
+/* =========================================================================
+   Q3.b - simulador do AFD de a*b* U b*a*
+   ========================================================================= */
+(function () {
+  var svg = document.getElementById("afd-svg");
+  if (!svg) return;
+  var q = function (id) { return document.getElementById(id); };
+  var DELTA = { S: { a: "A", b: "B" }, A: { a: "A", b: "AB" }, AB: { a: "M", b: "AB" },
+                B: { a: "BA", b: "B" }, BA: { a: "BA", b: "M" }, M: { a: "M", b: "M" } };
+  var ROT = { S: "q0", A: "q1", AB: "q2", B: "q3", BA: "q4", M: "q5" };
+  var ACEITA = { S: 1, A: 1, AB: 1, B: 1, BA: 1 };
+  var morto = svg.querySelector('[data-s="M"]'); if (morto) morto.classList.add("morto");
+  var cad = "", k = 0, timer = null;
+
+  ["aabbb", "bbaa", "abba", "", "ba", "aaab"].forEach(function (s) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "preset"; b.textContent = s === "" ? "ε" : s;
+    b.addEventListener("click", function () { q("af-inp").value = s; carrega(); });
+    q("af-pres").appendChild(b);
+  });
+
+  function carrega() {
+    parar();
+    cad = q("af-inp").value.replace(/[^ab]/g, "");
+    if (cad !== q("af-inp").value) q("af-inp").value = cad;
+    k = 0; pinta();
+  }
+  function pinta() {
+    var st = "S", ult = null;
+    for (var i = 0; i < k; i++) { ult = st + "-" + cad.charAt(i); st = DELTA[st][cad.charAt(i)]; }
+    Array.prototype.forEach.call(svg.querySelectorAll(".af-st"), function (g) { g.classList.toggle("at", g.getAttribute("data-s") === st); });
+    Array.prototype.forEach.call(svg.querySelectorAll(".af-e"), function (g) {
+      g.classList.toggle("at", !!ult && (g.getAttribute("data-e") || "").split(" ").indexOf(ult) >= 0);
+    });
+    q("af-fita").innerHTML = cad.length ? cad.split("").map(function (c, i) {
+      return '<span class="' + (i < k - 1 ? "lido" : i === k - 1 ? "agora" : "") + '">' + c + "</span>";
+    }).join("") : '<span class="vazio">cadeia vazia (ε)</span>';
+    var m = q("af-msg");
+    if (k < cad.length) {
+      m.className = "af-msg";
+      m.textContent = k === 0 ? "Começa em q0. Aperte ▶ para ler o primeiro símbolo." : "Leu '" + cad.charAt(k - 1) + "' e foi para " + ROT[st] + ".";
+    } else {
+      var ok = !!ACEITA[st];
+      m.className = "af-msg " + (ok ? "ok" : "nao");
+      m.textContent = "Fim da cadeia em " + ROT[st] + " → " + (ok ? "ACEITA: pertence a L." : "REJEITA: trocou de símbolo duas vezes e caiu no estado morto.");
+    }
+  }
+  function parar() { if (timer) { clearInterval(timer); timer = null; } q("af-play").textContent = "▶ Rodar"; }
+  q("af-prox").addEventListener("click", function () { parar(); if (k < cad.length) { k++; pinta(); } });
+  q("af-ant").addEventListener("click", function () { parar(); if (k > 0) { k--; pinta(); } });
+  q("af-play").addEventListener("click", function () {
+    if (timer) { parar(); return; }
+    if (k >= cad.length) k = 0;
+    pinta();
+    q("af-play").textContent = "‖ Pausar";
+    timer = setInterval(function () { if (k >= cad.length) { parar(); return; } k++; pinta(); }, 800);
+  });
+  q("af-inp").addEventListener("input", carrega);
+  carrega();
 })();
 
 </script>
